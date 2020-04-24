@@ -31,6 +31,11 @@ let PASSWORD_INCORRECT: String     = "Passwords are mismatching please type agai
 let INVALID_EMAIL: String     = "Email field is empty"
 let EMAIL_ERROR_MESSAGE: String     = "This email that you enter is invalid."
 let EMAIL_SUCCESS_MESSAGE : String = "We have e-mailed your password reset link!"
+//MARK:- CHANGE Password
+
+let INVALID: String     = "Fill all field to continue"
+let PASSWORD_MISMATCH : String = "Passwords are mismatching please type again and continue."
+let SUCCESS_STRING : String = "Successful"
 
 //MARK:- ButtonString
 

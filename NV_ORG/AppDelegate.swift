@@ -11,28 +11,62 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+    var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
     var navigatinController = UINavigationController()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-                let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-                let homeView =  storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        //        self.window?.rootViewController = homeView
-                if #available(iOS 13.0, *) {
-                    UIApplication.shared.statusBarStyle = .lightContent
-                    navigatinController = UINavigationController(rootViewController: homeView)
-                    navigatinController.isNavigationBarHidden = true
-                    self.window?.rootViewController = navigatinController
-                    self.window?.makeKeyAndVisible()
-                }else{
-                    self.window?.rootViewController = homeView
-                }
+        if let _ = UserDefaults.standard.value(forKey: "token"){
+            homeScreen()
+        }else{
+            loginScreen()
+        }
         return true
     }
     
+    func homeScreen(){
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let homeView =  storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! MainTabBar
+            homeView.setUPViewController()
+            //        self.window?.rootViewController = homeView
+            
+            if #available(iOS 13.0, *) {
+                UIApplication.shared.statusBarStyle = .lightContent
+                self.navigatinController = UINavigationController(rootViewController: homeView)
+                self.navigatinController.isNavigationBarHidden = true
+                self.window?.rootViewController = self.navigatinController
+//                self.window?.makeKeyAndVisible()
+            }else{
+                self.window?.rootViewController = homeView
+            }
+        }
+        
+    }
+    func loginScreen(){
+        DispatchQueue.main.async {
+                    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let homeView =  storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            if #available(iOS 13.0, *) {
+                UIApplication.shared.statusBarStyle = .lightContent
+                self.navigatinController = UINavigationController(rootViewController: homeView)
+                self.navigatinController.isNavigationBarHidden = true
+                self.window?.rootViewController = self.navigatinController
+                self.window?.makeKeyAndVisible()
+            }else{
+                self.window?.rootViewController = homeView
+            }
+        }
+
+    }
     func currentTopViewController() -> UIViewController {
-        var topVC: UIViewController? = self.window?.rootViewController
+        var topVC: UIViewController?
+        if #available(iOS 13.0, *){
+            topVC  = (self.window?.rootViewController as! UINavigationController).children[0]
+        }else{
+            topVC  = self.window?.rootViewController
+        }
+        
         while ((topVC?.presentedViewController) != nil) {
             topVC = topVC?.presentedViewController
         }

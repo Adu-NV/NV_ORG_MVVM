@@ -1,0 +1,22 @@
+PODS:
+  - SDWebImage (5.6.1):
+    - SDWebImage/Core (= 5.6.1)
+  - SDWebImage/Core (5.6.1)
+  - ViewPager-Swift (2.0.1)
+
+DEPENDENCIES:
+  - SDWebImage
+  - ViewPager-Swift
+
+SPEC REPOS:
+  trunk:
+    - SDWebImage
+    - ViewPager-Swift
+
+SPEC CHECKSUMS:
+  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
+  ViewPager-Swift: 7d83f5d4888a0fa808c08c8405ba84e603a2eb58
+
+PODFILE CHECKSUM: 7db0589310947a2cb004fcbb7e48ec1a230118c0
+
+COCOAPODS: 1.9.1

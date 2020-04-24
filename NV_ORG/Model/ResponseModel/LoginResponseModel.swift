@@ -29,4 +29,5 @@ struct LoginResponseModel : Decodable {
 struct LoginResponseData : Decodable{
     let User_id : Int?
     let message : String?
+    let otp : Int?
 }

@@ -30,6 +30,7 @@ extension Webservice{
                         let login = try? jsonDecoder.decode(LoginResponseModel.self,from: data)
                         if login?.data != nil{
                             if  (login?.code)! != 401{
+                                debugPrint("model \(login)")
                                 UserDefaults.standard.set((login?.data?.User_id)!, forKey: "userID")
                                 completionBlock(login, nil)
                             }else{
@@ -180,4 +181,64 @@ extension Webservice{
             }catch{
             }
         }
+    
+    //MARK: Change Password
+    func changePassword(body : Dictionary<String,String>, completionBlock : @escaping(ChangePasswordResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + CHANGE_PASSWORD_URL)
+        do {
+            let request  = getRequest(url: url!, method: .post, auth: false, accept: .json, Content_Type: .json, body: body)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        if let reset = try? jsonDecoder.decode(ChangePasswordResponseModel.self,from: data){
+                            if  (reset.code)! == 200{
+                                completionBlock(reset, nil)
+                            }else{
+                                completionBlock(nil, (reset.message)!)
+                            }
+                        }else{
+                            completionBlock(nil, "the process unsuccessful")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
+    
+    //MARK: Change Password
+    func dashBoardFeed(body : Dictionary<String,Any>, completionBlock : @escaping(DashBoardFeedResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + DASHBOARD_FEED_URL)
+        do {
+            let request  = getRequest(url: url!, method: .post, auth: true, accept: .json, Content_Type: .json, body: body)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        if let reset = try? jsonDecoder.decode(DashBoardFeedResponseModel.self,from: data){
+                            if  (reset.code)! == 200{
+                                completionBlock(reset, nil)
+                            }else{
+                                completionBlock(nil, (reset.message)!)
+                            }
+                        }else{
+                            completionBlock(nil, "the process unsuccessful")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
 }

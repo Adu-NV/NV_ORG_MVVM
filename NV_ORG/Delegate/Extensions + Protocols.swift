@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 // MARK:- Login Delegates
 
 public protocol LoginViewDelegateProtocol{
@@ -43,10 +42,10 @@ public protocol EmailCheckDelegateProtocol{
     func moveToResetOTP(viewController : UIViewController, otp :String )
     func backButtontapped(view : UIViewController)
 }
+
 public protocol EmailCheckViewControllerDelegateProtocol{
     func sendInformationBack(success:Bool , message: String?,model: Dictionary<String,String>?)
 }
-
 
 // MARK:- Reset OTP Delegates
 
@@ -70,4 +69,94 @@ public protocol ResetPasswordViewModelDelegateProtocol{
 
 public protocol ResetPasswordViewControllerDelegateProtocol{
     func sendInformationBack(success:Bool , message: String?,model : Dictionary<String,String>?)
+}
+
+// MARK:- Change Password Delegates
+
+public protocol ChangePasswordViewModelDelegateProtocol{
+    func sendnewPassword(from old: String? ,to password: String?,confirm_password : String?)
+    func moveToSuccessPage(viewController : UIViewController)
+    func skipButtontapped(view : UIViewController)
+}
+
+public protocol ChangePasswordViewControllerDelegateProtocol{
+    func sendInformationBack(success:Bool , message: String?,model : Dictionary<String,String>?)
+}
+
+// MARK:- DashBoard Delegates
+
+public protocol DashBoardViewModelDelegateProtocol{
+    func moveToMenuPage(viewController : UIViewController ,model:DashBoardResponseModel?)
+    func skipButtontapped(view : UIViewController)
+    mutating func setDashBoardCell(model : DashBoardResponseData)
+}
+
+public protocol DashBoardViewModelViewControllerDelegateProtocol{
+}
+
+// MARK:- Menu Delegates
+public protocol MenuViewModelDelegateProtocol{
+    func skipButtontapped(view : UIViewController)
+    func moveToPage(from viewController : UIViewController,index : Int)
+    func moveToLogin()
+}
+
+public protocol MenuViewControllerDelegateProtocol{
+    func didCallSignOutAPI()
+}
+
+// MARK:- Homefeed Delegates
+public protocol HomeFeedSettingsViewModelDelegateProtocol{
+    func setdashBoardFeedModel(model:DashBoardResponseModel)
+    func skipButtontapped(view : UIViewController)
+}
+
+public protocol HomeFeedSettingsViewControllerDelegateProtocol{
+}
+
+// MARK:- Notification Delegates
+public protocol NotificationSettingsViewModelDelegateProtocol{
+    func skipButtontapped(view : UIViewController)
+}
+
+public protocol NotificationSettingsViewControllerDelegateProtocol{
+}
+
+// MARK:- About Delegates
+public protocol AboutViewModelDelegateProtocol{
+    func skipButtontapped(view : UIViewController)
+}
+public protocol AboutUsViewControllerDelegateProtocol{
+}
+
+// MARK:- Privacy Delegates
+public protocol PrivacyViewModelDelegateProtocol{
+    func skipButtontapped(view : UIViewController)
+}
+public protocol PrivacyPolicyViewControllerDelegateProtocol{
+}
+
+// MARK:- Leadership Delegates
+public protocol LeaderShipViewModelDelegateProtocol{
+    func skipButtontapped(view : UIViewController)
+}
+public protocol LeaderShipViewControllerDelegateProtocol{
+}
+
+// MARK:- ProfileViewController Delegates
+public protocol ProfileViewModelDelegateProtocol{
+        func setProfileModel(model:UserDetailsResponseModel)
+    func edittapped(view : UIViewController)
+}
+public protocol ProfileViewControllerDelegateProtocol{
+}
+
+
+//MARK:- NewsListPageControllerDelegate
+
+public protocol NewsListPageViewModelDelegateProtocol{
+    func skipButtontapped(view : UIViewController)
+}
+public protocol NewsListPageDelegateProtocol{
+    
 }

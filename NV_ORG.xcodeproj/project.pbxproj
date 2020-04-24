@@ -3,10 +3,49 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DAF009170FFF1161011F270 /* Pods_NV_ORG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA7EF3A9A550A287BB658E9 /* Pods_NV_ORG.framework */; };
+		53A4DFB42D982EC5C87E3A2B /* Pods_NV_ORGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BB90CDEEA90F2D829A314A /* Pods_NV_ORGTests.framework */; };
+		59A8F25A42A6EAB40F948FED /* Pods_NV_ORG_NV_ORGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593A3AAF3B93D10614921894 /* Pods_NV_ORG_NV_ORGUITests.framework */; };
+		E433FD1724347445005D1359 /* UserDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E433FD1624347445005D1359 /* UserDetailResponseModel.swift */; };
+		E4347B362432FA430097920B /* HomeFeedSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4347B352432FA420097920B /* HomeFeedSettingsViewController.swift */; };
+		E4347B382432FA810097920B /* HomeFeedSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4347B372432FA810097920B /* HomeFeedSettingsViewModel.swift */; };
+		E4347B3A2432FF4E0097920B /* AboutUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4347B392432FF4E0097920B /* AboutUSViewController.swift */; };
+		E4347B3C2432FF6B0097920B /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4347B3B2432FF6B0097920B /* PrivacyPolicyViewController.swift */; };
+		E4347B3E2432FFF50097920B /* AboutUsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4347B3D2432FFF50097920B /* AboutUsViewModel.swift */; };
+		E4347B40243303A70097920B /* PrivacyPolicyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4347B3F243303A70097920B /* PrivacyPolicyViewModel.swift */; };
+		E4347B42243320FC0097920B /* NotificationSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4347B41243320FC0097920B /* NotificationSettingsViewModel.swift */; };
+		E4347B44243322B00097920B /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4347B43243322B00097920B /* NotificationSettingsViewController.swift */; };
+		E4347B462433463C0097920B /* LeaderShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4347B452433463C0097920B /* LeaderShipViewController.swift */; };
+		E4347B4A243346BC0097920B /* LeaderShipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4347B49243346BC0097920B /* LeaderShipViewModel.swift */; };
+		E437726D243D9C7800C9FE25 /* DashBoardFeedRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437726C243D9C7800C9FE25 /* DashBoardFeedRequestModel.swift */; };
+		E437726F243DA5FE00C9FE25 /* DashBoardFeedResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E437726E243DA5FE00C9FE25 /* DashBoardFeedResponseModel.swift */; };
+		E4383E51242F0EFC0032A6AD /* SignOutResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383E50242F0EFC0032A6AD /* SignOutResponseModel.swift */; };
+		E4383E53242F124E0032A6AD /* DashBoardResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383E52242F124E0032A6AD /* DashBoardResponseModel.swift */; };
+		E4383E56242F14BB0032A6AD /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383E55242F14BB0032A6AD /* DashBoardViewController.swift */; };
+		E4383E58242F14CB0032A6AD /* DirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383E57242F14CB0032A6AD /* DirectoryViewController.swift */; };
+		E4383E5A242F14DD0032A6AD /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383E59242F14DD0032A6AD /* NotificationViewController.swift */; };
+		E4383E5C242F14FC0032A6AD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383E5B242F14FC0032A6AD /* ProfileViewController.swift */; };
+		E4383E5E242F1E370032A6AD /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383E5D242F1E370032A6AD /* MainTabBar.swift */; };
+		E4383E60242F52F90032A6AD /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383E5F242F52F90032A6AD /* MenuViewController.swift */; };
+		E4383E62242F614E0032A6AD /* UITableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383E61242F614E0032A6AD /* UITableViews.swift */; };
+		E4383E64242F63500032A6AD /* MenuControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4383E63242F63500032A6AD /* MenuControllerViewModel.swift */; };
+		E43A18C92438633A00C90FE9 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43A18C82438633A00C90FE9 /* NotificationsViewModel.swift */; };
+		E43A18CC2438963700C90FE9 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43A18CB2438963700C90FE9 /* EditProfileViewController.swift */; };
+		E43A6EAD2441CF9100C97FAC /* NewsListPageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43A6EAC2441CF9100C97FAC /* NewsListPageResponseModel.swift */; };
+		E43A6EAF2441DB7B00C97FAC /* JobsListPageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43A6EAE2441DB7B00C97FAC /* JobsListPageResponseModel.swift */; };
+		E43FCFA1244436B400DC883B /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43FCFA0244436B400DC883B /* NewsListViewController.swift */; };
+		E44FB518242DC6CC001D9E3C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FB517242DC6CC001D9E3C /* ChangePasswordViewController.swift */; };
+		E44FB51A242DC6E6001D9E3C /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FB519242DC6E6001D9E3C /* ChangePasswordViewModel.swift */; };
+		E44FB51C242DC733001D9E3C /* ChangePasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FB51B242DC733001D9E3C /* ChangePasswordRequestModel.swift */; };
+		E44FB51E242DC74B001D9E3C /* ChangePasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44FB51D242DC74B001D9E3C /* ChangePasswordResponseModel.swift */; };
+		E45CB0FB243D2AC200879D4C /* UICollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45CB0FA243D2AC200879D4C /* UICollectionViewCells.swift */; };
+		E467BC742435B4E600A0DAA9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E467BC732435B4E600A0DAA9 /* ProfileViewModel.swift */; };
+		E469B0AF2446D68C0053ED09 /* NewaListPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469B0AE2446D68C0053ED09 /* NewaListPageViewModel.swift */; };
+		E49A4D082431B92200E5038B /* DashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A4D072431B92200E5038B /* DashBoardViewModel.swift */; };
 		E4A38DAF242335C20023CB6D /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DAE242335C20023CB6D /* OTPViewModel.swift */; };
 		E4A38DB1242335F40023CB6D /* OTPRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DB0242335F40023CB6D /* OTPRequestModel.swift */; };
 		E4A38DB32423360A0023CB6D /* OTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DB22423360A0023CB6D /* OTPResponseModel.swift */; };
@@ -17,6 +56,7 @@
 		E4A38DBF24237A770023CB6D /* EmailCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DBE24237A770023CB6D /* EmailCheckViewController.swift */; };
 		E4A38DC1242389490023CB6D /* EmailVerificationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DC0242389490023CB6D /* EmailVerificationResponseModel.swift */; };
 		E4A38DC3242394F90023CB6D /* EmailOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DC2242394F90023CB6D /* EmailOTPViewController.swift */; };
+		E4A91753245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A91752245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift */; };
 		E4AA65432424790B00B29271 /* ResetOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AA65422424790B00B29271 /* ResetOTPViewModel.swift */; };
 		E4AA654524248F4800B29271 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AA654424248F4800B29271 /* ResetPasswordViewModel.swift */; };
 		E4AA654724248F8200B29271 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AA654624248F8200B29271 /* ResetPasswordViewController.swift */; };
@@ -36,6 +76,7 @@
 		E4B033E52420E177007F9098 /* Definitions + Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B033E42420E177007F9098 /* Definitions + Constants.swift */; };
 		E4B033E72420E18C007F9098 /* String + Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B033E62420E18C007F9098 /* String + Constants.swift */; };
 		E4B033E92420E2D3007F9098 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B033E82420E2D3007F9098 /* UIButton + Extension.swift */; };
+		E4C77E6B24370BAC0079021B /* DirectoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C77E6A24370BAC0079021B /* DirectoryViewModel.swift */; };
 		E4C7F0BB2421D8C00072E54B /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7F0BA2421D8C00072E54B /* LoginRequestModel.swift */; };
 		E4C7F0BF2421D9510072E54B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7F0BE2421D9510072E54B /* LoginViewModel.swift */; };
 		E4C7F0C12421DC0B0072E54B /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7F0C02421DC0B0072E54B /* LoginResponseModel.swift */; };
@@ -66,6 +107,49 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13E1111FD6CDC060B1AAD33A /* Pods-NV_ORGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NV_ORGTests.debug.xcconfig"; path = "Target Support Files/Pods-NV_ORGTests/Pods-NV_ORGTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4EF9871FE0A9432FC05FF6D8 /* Pods-NV_ORG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NV_ORG.debug.xcconfig"; path = "Target Support Files/Pods-NV_ORG/Pods-NV_ORG.debug.xcconfig"; sourceTree = "<group>"; };
+		593A3AAF3B93D10614921894 /* Pods_NV_ORG_NV_ORGUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NV_ORG_NV_ORGUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89393DC52021AEA1D0399ED3 /* Pods-NV_ORG-NV_ORGUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NV_ORG-NV_ORGUITests.release.xcconfig"; path = "Target Support Files/Pods-NV_ORG-NV_ORGUITests/Pods-NV_ORG-NV_ORGUITests.release.xcconfig"; sourceTree = "<group>"; };
+		98AB05AB9BD30B088DCD1E58 /* Pods-NV_ORGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NV_ORGTests.release.xcconfig"; path = "Target Support Files/Pods-NV_ORGTests/Pods-NV_ORGTests.release.xcconfig"; sourceTree = "<group>"; };
+		A5950CF368B33146F24772D3 /* Pods-NV_ORG-NV_ORGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NV_ORG-NV_ORGUITests.debug.xcconfig"; path = "Target Support Files/Pods-NV_ORG-NV_ORGUITests/Pods-NV_ORG-NV_ORGUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BAA7EF3A9A550A287BB658E9 /* Pods_NV_ORG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NV_ORG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E433FD1624347445005D1359 /* UserDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailResponseModel.swift; sourceTree = "<group>"; };
+		E4347B352432FA420097920B /* HomeFeedSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedSettingsViewController.swift; sourceTree = "<group>"; };
+		E4347B372432FA810097920B /* HomeFeedSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedSettingsViewModel.swift; sourceTree = "<group>"; };
+		E4347B392432FF4E0097920B /* AboutUSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUSViewController.swift; sourceTree = "<group>"; };
+		E4347B3B2432FF6B0097920B /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		E4347B3D2432FFF50097920B /* AboutUsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewModel.swift; sourceTree = "<group>"; };
+		E4347B3F243303A70097920B /* PrivacyPolicyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewModel.swift; sourceTree = "<group>"; };
+		E4347B41243320FC0097920B /* NotificationSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewModel.swift; sourceTree = "<group>"; };
+		E4347B43243322B00097920B /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
+		E4347B452433463C0097920B /* LeaderShipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderShipViewController.swift; sourceTree = "<group>"; };
+		E4347B49243346BC0097920B /* LeaderShipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderShipViewModel.swift; sourceTree = "<group>"; };
+		E437726C243D9C7800C9FE25 /* DashBoardFeedRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardFeedRequestModel.swift; sourceTree = "<group>"; };
+		E437726E243DA5FE00C9FE25 /* DashBoardFeedResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardFeedResponseModel.swift; sourceTree = "<group>"; };
+		E4383E50242F0EFC0032A6AD /* SignOutResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutResponseModel.swift; sourceTree = "<group>"; };
+		E4383E52242F124E0032A6AD /* DashBoardResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardResponseModel.swift; sourceTree = "<group>"; };
+		E4383E55242F14BB0032A6AD /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
+		E4383E57242F14CB0032A6AD /* DirectoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryViewController.swift; sourceTree = "<group>"; };
+		E4383E59242F14DD0032A6AD /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		E4383E5B242F14FC0032A6AD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E4383E5D242F1E370032A6AD /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		E4383E5F242F52F90032A6AD /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		E4383E61242F614E0032A6AD /* UITableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViews.swift; sourceTree = "<group>"; };
+		E4383E63242F63500032A6AD /* MenuControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuControllerViewModel.swift; sourceTree = "<group>"; };
+		E43A18C82438633A00C90FE9 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		E43A18CB2438963700C90FE9 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		E43A6EAC2441CF9100C97FAC /* NewsListPageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListPageResponseModel.swift; sourceTree = "<group>"; };
+		E43A6EAE2441DB7B00C97FAC /* JobsListPageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListPageResponseModel.swift; sourceTree = "<group>"; };
+		E43FCFA0244436B400DC883B /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
+		E44FB517242DC6CC001D9E3C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		E44FB519242DC6E6001D9E3C /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		E44FB51B242DC733001D9E3C /* ChangePasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRequestModel.swift; sourceTree = "<group>"; };
+		E44FB51D242DC74B001D9E3C /* ChangePasswordResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponseModel.swift; sourceTree = "<group>"; };
+		E45CB0FA243D2AC200879D4C /* UICollectionViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCells.swift; sourceTree = "<group>"; };
+		E467BC732435B4E600A0DAA9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		E469B0AE2446D68C0053ED09 /* NewaListPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewaListPageViewModel.swift; sourceTree = "<group>"; };
+		E49A4D072431B92200E5038B /* DashBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewModel.swift; sourceTree = "<group>"; };
 		E4A38DAE242335C20023CB6D /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		E4A38DB0242335F40023CB6D /* OTPRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRequestModel.swift; sourceTree = "<group>"; };
 		E4A38DB22423360A0023CB6D /* OTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResponseModel.swift; sourceTree = "<group>"; };
@@ -76,6 +160,7 @@
 		E4A38DBE24237A770023CB6D /* EmailCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckViewController.swift; sourceTree = "<group>"; };
 		E4A38DC0242389490023CB6D /* EmailVerificationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationResponseModel.swift; sourceTree = "<group>"; };
 		E4A38DC2242394F90023CB6D /* EmailOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailOTPViewController.swift; sourceTree = "<group>"; };
+		E4A91752245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout + Extensions.swift"; sourceTree = "<group>"; };
 		E4AA65422424790B00B29271 /* ResetOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetOTPViewModel.swift; sourceTree = "<group>"; };
 		E4AA654424248F4800B29271 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		E4AA654624248F8200B29271 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +186,7 @@
 		E4B033E42420E177007F9098 /* Definitions + Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Definitions + Constants.swift"; sourceTree = "<group>"; };
 		E4B033E62420E18C007F9098 /* String + Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Constants.swift"; sourceTree = "<group>"; };
 		E4B033E82420E2D3007F9098 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
+		E4C77E6A24370BAC0079021B /* DirectoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryViewModel.swift; sourceTree = "<group>"; };
 		E4C7F0BA2421D8C00072E54B /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
 		E4C7F0BE2421D9510072E54B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E4C7F0C02421DC0B0072E54B /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
@@ -111,6 +197,8 @@
 		E4C7F0CA2422171B0072E54B /* UserDefaults + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extension.swift"; sourceTree = "<group>"; };
 		E4C7F0CC242235CD0072E54B /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		E4C7F0CE242243FB0072E54B /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
+		E8BB90CDEEA90F2D829A314A /* Pods_NV_ORGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NV_ORGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6900CB279A46063597E3D09 /* Pods-NV_ORG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NV_ORG.release.xcconfig"; path = "Target Support Files/Pods-NV_ORG/Pods-NV_ORG.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DAF009170FFF1161011F270 /* Pods_NV_ORG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A4DFB42D982EC5C87E3A2B /* Pods_NV_ORGTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,12 +222,127 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A8F25A42A6EAB40F948FED /* Pods_NV_ORG_NV_ORGUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05B51481BEEDB7E4A5F5E39A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAA7EF3A9A550A287BB658E9 /* Pods_NV_ORG.framework */,
+				593A3AAF3B93D10614921894 /* Pods_NV_ORG_NV_ORGUITests.framework */,
+				E8BB90CDEEA90F2D829A314A /* Pods_NV_ORGTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A41D5B133AB36A26A17ADE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EF9871FE0A9432FC05FF6D8 /* Pods-NV_ORG.debug.xcconfig */,
+				F6900CB279A46063597E3D09 /* Pods-NV_ORG.release.xcconfig */,
+				A5950CF368B33146F24772D3 /* Pods-NV_ORG-NV_ORGUITests.debug.xcconfig */,
+				89393DC52021AEA1D0399ED3 /* Pods-NV_ORG-NV_ORGUITests.release.xcconfig */,
+				13E1111FD6CDC060B1AAD33A /* Pods-NV_ORGTests.debug.xcconfig */,
+				98AB05AB9BD30B088DCD1E58 /* Pods-NV_ORGTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E4347B332432FA070097920B /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				E44FB517242DC6CC001D9E3C /* ChangePasswordViewController.swift */,
+				E4383E5F242F52F90032A6AD /* MenuViewController.swift */,
+				E4347B352432FA420097920B /* HomeFeedSettingsViewController.swift */,
+				E4347B392432FF4E0097920B /* AboutUSViewController.swift */,
+				E4347B3B2432FF6B0097920B /* PrivacyPolicyViewController.swift */,
+				E4347B43243322B00097920B /* NotificationSettingsViewController.swift */,
+				E4347B452433463C0097920B /* LeaderShipViewController.swift */,
+			);
+			path = SideBar;
+			sourceTree = "<group>";
+		};
+		E4347B342432FA1F0097920B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E4B033DA2420CA04007F9098 /* LoginViewController.swift */,
+				E4C7F0CC242235CD0072E54B /* OTPViewController.swift */,
+				E4A38DBE24237A770023CB6D /* EmailCheckViewController.swift */,
+				E4A38DC2242394F90023CB6D /* EmailOTPViewController.swift */,
+				E4AA654624248F8200B29271 /* ResetPasswordViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E4347B472433467C0097920B /* SettingsViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E44FB519242DC6E6001D9E3C /* ChangePasswordViewModel.swift */,
+				E4383E63242F63500032A6AD /* MenuControllerViewModel.swift */,
+				E4347B3D2432FFF50097920B /* AboutUsViewModel.swift */,
+				E4347B3F243303A70097920B /* PrivacyPolicyViewModel.swift */,
+				E4347B49243346BC0097920B /* LeaderShipViewModel.swift */,
+				E4347B372432FA810097920B /* HomeFeedSettingsViewModel.swift */,
+				E4347B41243320FC0097920B /* NotificationSettingsViewModel.swift */,
+			);
+			path = SettingsViewModel;
+			sourceTree = "<group>";
+		};
+		E4347B48243346910097920B /* LoginVieModel */ = {
+			isa = PBXGroup;
+			children = (
+				E4C7F0BE2421D9510072E54B /* LoginViewModel.swift */,
+				E4A38DAE242335C20023CB6D /* OTPViewModel.swift */,
+				E4A38DBC2423702B0023CB6D /* EmailVerificationViewModel.swift */,
+				E4AA65422424790B00B29271 /* ResetOTPViewModel.swift */,
+				E4AA654424248F4800B29271 /* ResetPasswordViewModel.swift */,
+			);
+			path = LoginVieModel;
+			sourceTree = "<group>";
+		};
+		E4383E54242F148B0032A6AD /* TABBAR */ = {
+			isa = PBXGroup;
+			children = (
+				E4383E55242F14BB0032A6AD /* DashBoardViewController.swift */,
+				E4383E57242F14CB0032A6AD /* DirectoryViewController.swift */,
+				E4383E59242F14DD0032A6AD /* NotificationViewController.swift */,
+				E4383E5B242F14FC0032A6AD /* ProfileViewController.swift */,
+			);
+			path = TABBAR;
+			sourceTree = "<group>";
+		};
+		E43A18CA2438960A00C90FE9 /* Internal Pages */ = {
+			isa = PBXGroup;
+			children = (
+				E43A18CB2438963700C90FE9 /* EditProfileViewController.swift */,
+				E43FCFA0244436B400DC883B /* NewsListViewController.swift */,
+			);
+			path = "Internal Pages";
+			sourceTree = "<group>";
+		};
+		E467BC722435B4C800A0DAA9 /* TabBarViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E49A4D072431B92200E5038B /* DashBoardViewModel.swift */,
+				E467BC732435B4E600A0DAA9 /* ProfileViewModel.swift */,
+				E4C77E6A24370BAC0079021B /* DirectoryViewModel.swift */,
+				E43A18C82438633A00C90FE9 /* NotificationsViewModel.swift */,
+			);
+			path = TabBarViewModel;
+			sourceTree = "<group>";
+		};
+		E469B0B02446D7FE0053ED09 /* ListPages */ = {
+			isa = PBXGroup;
+			children = (
+				E469B0AE2446D68C0053ED09 /* NewaListPageViewModel.swift */,
+			);
+			path = ListPages;
+			sourceTree = "<group>";
+		};
 		E4B0334A242088C7007F9098 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +350,8 @@
 				E4B0336C242088CD007F9098 /* NV_ORGTests */,
 				E4B03377242088CE007F9098 /* NV_ORGUITests */,
 				E4B03354242088C7007F9098 /* Products */,
+				6A41D5B133AB36A26A17ADE3 /* Pods */,
+				05B51481BEEDB7E4A5F5E39A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,10 +409,12 @@
 			isa = PBXGroup;
 			children = (
 				E4C7F0BA2421D8C00072E54B /* LoginRequestModel.swift */,
+				E437726C243D9C7800C9FE25 /* DashBoardFeedRequestModel.swift */,
 				E4A38DB0242335F40023CB6D /* OTPRequestModel.swift */,
 				E4A38DB6242361340023CB6D /* OTPResendRequestModel.swift */,
 				E4A38DBA2423700B0023CB6D /* EmailVerificationRequestModel.swift */,
 				E4AA654824249DE200B29271 /* ResetPasswordRequestModel.swift */,
+				E44FB51B242DC733001D9E3C /* ChangePasswordRequestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -213,11 +422,10 @@
 		E4B033D42420C93A007F9098 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				E4C7F0BE2421D9510072E54B /* LoginViewModel.swift */,
-				E4A38DAE242335C20023CB6D /* OTPViewModel.swift */,
-				E4A38DBC2423702B0023CB6D /* EmailVerificationViewModel.swift */,
-				E4AA65422424790B00B29271 /* ResetOTPViewModel.swift */,
-				E4AA654424248F4800B29271 /* ResetPasswordViewModel.swift */,
+				E4347B48243346910097920B /* LoginVieModel */,
+				E4347B472433467C0097920B /* SettingsViewModel */,
+				E467BC722435B4C800A0DAA9 /* TabBarViewModel */,
+				E469B0B02446D7FE0053ED09 /* ListPages */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -225,11 +433,10 @@
 		E4B033D52420C949007F9098 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E4B033DA2420CA04007F9098 /* LoginViewController.swift */,
-				E4C7F0CC242235CD0072E54B /* OTPViewController.swift */,
-				E4A38DBE24237A770023CB6D /* EmailCheckViewController.swift */,
-				E4A38DC2242394F90023CB6D /* EmailOTPViewController.swift */,
-				E4AA654624248F8200B29271 /* ResetPasswordViewController.swift */,
+				E43A18CA2438960A00C90FE9 /* Internal Pages */,
+				E4347B332432FA070097920B /* SideBar */,
+				E4383E54242F148B0032A6AD /* TABBAR */,
+				E4347B342432FA1F0097920B /* Login */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -259,6 +466,9 @@
 		E4B033D82420C9B1007F9098 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				E4383E5D242F1E370032A6AD /* MainTabBar.swift */,
+				E4383E61242F614E0032A6AD /* UITableViews.swift */,
+				E45CB0FA243D2AC200879D4C /* UICollectionViewCells.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -274,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B033DF2420CE70007F9098 /* Extensions + Protocols.swift */,
+				E4A91752245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -305,6 +516,13 @@
 				E4A38DB42423568B0023CB6D /* OTPResendResponseModel.swift */,
 				E4A38DC0242389490023CB6D /* EmailVerificationResponseModel.swift */,
 				E4AA654A24249DFC00B29271 /* ResetPasswordResponseModel.swift */,
+				E44FB51D242DC74B001D9E3C /* ChangePasswordResponseModel.swift */,
+				E4383E50242F0EFC0032A6AD /* SignOutResponseModel.swift */,
+				E4383E52242F124E0032A6AD /* DashBoardResponseModel.swift */,
+				E433FD1624347445005D1359 /* UserDetailResponseModel.swift */,
+				E437726E243DA5FE00C9FE25 /* DashBoardFeedResponseModel.swift */,
+				E43A6EAC2441CF9100C97FAC /* NewsListPageResponseModel.swift */,
+				E43A6EAE2441DB7B00C97FAC /* JobsListPageResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -316,9 +534,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4B0337D242088CE007F9098 /* Build configuration list for PBXNativeTarget "NV_ORG" */;
 			buildPhases = (
+				347072E22E3B070437395A4F /* [CP] Check Pods Manifest.lock */,
 				E4B0334F242088C7007F9098 /* Sources */,
 				E4B03350242088C7007F9098 /* Frameworks */,
 				E4B03351242088C7007F9098 /* Resources */,
+				3EB34AFD687AE42A6B05DE38 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -333,6 +553,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4B03380242088CE007F9098 /* Build configuration list for PBXNativeTarget "NV_ORGTests" */;
 			buildPhases = (
+				9CB9A6A915C16DD0D41EA633 /* [CP] Check Pods Manifest.lock */,
 				E4B03365242088CD007F9098 /* Sources */,
 				E4B03366242088CD007F9098 /* Frameworks */,
 				E4B03367242088CD007F9098 /* Resources */,
@@ -351,9 +572,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4B03383242088CE007F9098 /* Build configuration list for PBXNativeTarget "NV_ORGUITests" */;
 			buildPhases = (
+				AC0EC802121B59BC7F36127E /* [CP] Check Pods Manifest.lock */,
 				E4B03370242088CD007F9098 /* Sources */,
 				E4B03371242088CD007F9098 /* Frameworks */,
 				E4B03372242088CD007F9098 /* Resources */,
+				C9DB7DA05AB9D4A227EB3D2A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -435,32 +658,165 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		347072E22E3B070437395A4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NV_ORG-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EB34AFD687AE42A6B05DE38 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NV_ORG/Pods-NV_ORG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NV_ORG/Pods-NV_ORG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NV_ORG/Pods-NV_ORG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CB9A6A915C16DD0D41EA633 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NV_ORGTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC0EC802121B59BC7F36127E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NV_ORG-NV_ORGUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9DB7DA05AB9D4A227EB3D2A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NV_ORG-NV_ORGUITests/Pods-NV_ORG-NV_ORGUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NV_ORG-NV_ORGUITests/Pods-NV_ORG-NV_ORGUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NV_ORG-NV_ORGUITests/Pods-NV_ORG-NV_ORGUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E4B0334F242088C7007F9098 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E469B0AF2446D68C0053ED09 /* NewaListPageViewModel.swift in Sources */,
 				E4A38DAF242335C20023CB6D /* OTPViewModel.swift in Sources */,
+				E4383E51242F0EFC0032A6AD /* SignOutResponseModel.swift in Sources */,
+				E433FD1724347445005D1359 /* UserDetailResponseModel.swift in Sources */,
 				E4C7F0C12421DC0B0072E54B /* LoginResponseModel.swift in Sources */,
+				E4347B462433463C0097920B /* LeaderShipViewController.swift in Sources */,
+				E4A91753245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift in Sources */,
 				E4B033E02420CE70007F9098 /* Extensions + Protocols.swift in Sources */,
+				E4347B362432FA430097920B /* HomeFeedSettingsViewController.swift in Sources */,
 				E4C7F0CB2422171B0072E54B /* UserDefaults + Extension.swift in Sources */,
+				E4383E5A242F14DD0032A6AD /* NotificationViewController.swift in Sources */,
+				E4383E5C242F14FC0032A6AD /* ProfileViewController.swift in Sources */,
 				E4C7F0BB2421D8C00072E54B /* LoginRequestModel.swift in Sources */,
 				E4C7F0BF2421D9510072E54B /* LoginViewModel.swift in Sources */,
+				E4347B42243320FC0097920B /* NotificationSettingsViewModel.swift in Sources */,
+				E4383E53242F124E0032A6AD /* DashBoardResponseModel.swift in Sources */,
+				E43A18C92438633A00C90FE9 /* NotificationsViewModel.swift in Sources */,
 				E4AA654B24249DFC00B29271 /* ResetPasswordResponseModel.swift in Sources */,
+				E437726D243D9C7800C9FE25 /* DashBoardFeedRequestModel.swift in Sources */,
+				E43A18CC2438963700C90FE9 /* EditProfileViewController.swift in Sources */,
 				E4B033DB2420CA04007F9098 /* LoginViewController.swift in Sources */,
 				E4C7F0C32421EEF50072E54B /* UIAlerts + Extensions.swift in Sources */,
+				E4383E64242F63500032A6AD /* MenuControllerViewModel.swift in Sources */,
+				E43A6EAF2441DB7B00C97FAC /* JobsListPageResponseModel.swift in Sources */,
+				E467BC742435B4E600A0DAA9 /* ProfileViewModel.swift in Sources */,
 				E4B033E72420E18C007F9098 /* String + Constants.swift in Sources */,
 				E4B03357242088C7007F9098 /* AppDelegate.swift in Sources */,
 				E4A38DB32423360A0023CB6D /* OTPResponseModel.swift in Sources */,
+				E45CB0FB243D2AC200879D4C /* UICollectionViewCells.swift in Sources */,
 				E4C7F0C9242210710072E54B /* LoadingButton.swift in Sources */,
+				E44FB51A242DC6E6001D9E3C /* ChangePasswordViewModel.swift in Sources */,
+				E4347B3A2432FF4E0097920B /* AboutUSViewController.swift in Sources */,
+				E4383E5E242F1E370032A6AD /* MainTabBar.swift in Sources */,
+				E437726F243DA5FE00C9FE25 /* DashBoardFeedResponseModel.swift in Sources */,
+				E44FB518242DC6CC001D9E3C /* ChangePasswordViewController.swift in Sources */,
 				E4A38DB7242361340023CB6D /* OTPResendRequestModel.swift in Sources */,
 				E4B033E52420E177007F9098 /* Definitions + Constants.swift in Sources */,
 				E4B033E92420E2D3007F9098 /* UIButton + Extension.swift in Sources */,
+				E49A4D082431B92200E5038B /* DashBoardViewModel.swift in Sources */,
+				E4347B382432FA810097920B /* HomeFeedSettingsViewModel.swift in Sources */,
 				E4C7F0CF242243FB0072E54B /* LineTextField.swift in Sources */,
 				E4A38DBB2423700B0023CB6D /* EmailVerificationRequestModel.swift in Sources */,
 				E4C7F0CD242235CD0072E54B /* OTPViewController.swift in Sources */,
 				E4A38DC1242389490023CB6D /* EmailVerificationResponseModel.swift in Sources */,
+				E4383E56242F14BB0032A6AD /* DashBoardViewController.swift in Sources */,
 				E4AA654724248F8200B29271 /* ResetPasswordViewController.swift in Sources */,
+				E4347B40243303A70097920B /* PrivacyPolicyViewModel.swift in Sources */,
+				E43FCFA1244436B400DC883B /* NewsListViewController.swift in Sources */,
+				E4347B3E2432FFF50097920B /* AboutUsViewModel.swift in Sources */,
+				E44FB51C242DC733001D9E3C /* ChangePasswordRequestModel.swift in Sources */,
+				E4347B44243322B00097920B /* NotificationSettingsViewController.swift in Sources */,
 				E4A38DBD2423702B0023CB6D /* EmailVerificationViewModel.swift in Sources */,
 				E4AA654924249DE200B29271 /* ResetPasswordRequestModel.swift in Sources */,
 				E4A38DB1242335F40023CB6D /* OTPRequestModel.swift in Sources */,
@@ -470,10 +826,18 @@
 				E4C7F0C72422100C0072E54B /* WebService + POST.swift in Sources */,
 				E4A38DC3242394F90023CB6D /* EmailOTPViewController.swift in Sources */,
 				E4AA65432424790B00B29271 /* ResetOTPViewModel.swift in Sources */,
+				E43A6EAD2441CF9100C97FAC /* NewsListPageResponseModel.swift in Sources */,
 				E4AA654524248F4800B29271 /* ResetPasswordViewModel.swift in Sources */,
+				E4C77E6B24370BAC0079021B /* DirectoryViewModel.swift in Sources */,
 				E4B033DD2420CC65007F9098 /* Extensions + ViewControllers.swift in Sources */,
+				E4383E58242F14CB0032A6AD /* DirectoryViewController.swift in Sources */,
+				E44FB51E242DC74B001D9E3C /* ChangePasswordResponseModel.swift in Sources */,
 				E4A38DB52423568C0023CB6D /* OTPResendResponseModel.swift in Sources */,
+				E4383E62242F614E0032A6AD /* UITableViews.swift in Sources */,
+				E4347B3C2432FF6B0097920B /* PrivacyPolicyViewController.swift in Sources */,
 				E4B03359242088C7007F9098 /* SceneDelegate.swift in Sources */,
+				E4383E60242F52F90032A6AD /* MenuViewController.swift in Sources */,
+				E4347B4A243346BC0097920B /* LeaderShipViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +1008,7 @@
 		};
 		E4B0337E242088CE007F9098 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EF9871FE0A9432FC05FF6D8 /* Pods-NV_ORG.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -657,12 +1022,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.freelancer.NV-ORG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E4B0337F242088CE007F9098 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6900CB279A46063597E3D09 /* Pods-NV_ORG.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -676,12 +1042,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.freelancer.NV-ORG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		E4B03381242088CE007F9098 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13E1111FD6CDC060B1AAD33A /* Pods-NV_ORGTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -704,6 +1071,7 @@
 		};
 		E4B03382242088CE007F9098 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98AB05AB9BD30B088DCD1E58 /* Pods-NV_ORGTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -726,6 +1094,7 @@
 		};
 		E4B03384242088CE007F9098 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5950CF368B33146F24772D3 /* Pods-NV_ORG-NV_ORGUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -746,6 +1115,7 @@
 		};
 		E4B03385242088CE007F9098 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89393DC52021AEA1D0399ED3 /* Pods-NV_ORG-NV_ORGUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -87,6 +87,7 @@
 		E4C7F0CB2422171B0072E54B /* UserDefaults + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7F0CA2422171B0072E54B /* UserDefaults + Extension.swift */; };
 		E4C7F0CD242235CD0072E54B /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7F0CC242235CD0072E54B /* OTPViewController.swift */; };
 		E4C7F0CF242243FB0072E54B /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7F0CE242243FB0072E54B /* LineTextField.swift */; };
+		E4C9CA582452FA0B0005E07A /* extensions + UICollectionViewCels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C9CA572452FA0B0005E07A /* extensions + UICollectionViewCels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +198,7 @@
 		E4C7F0CA2422171B0072E54B /* UserDefaults + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extension.swift"; sourceTree = "<group>"; };
 		E4C7F0CC242235CD0072E54B /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		E4C7F0CE242243FB0072E54B /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
+		E4C9CA572452FA0B0005E07A /* extensions + UICollectionViewCels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extensions + UICollectionViewCels.swift"; sourceTree = "<group>"; };
 		E8BB90CDEEA90F2D829A314A /* Pods_NV_ORGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NV_ORGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6900CB279A46063597E3D09 /* Pods-NV_ORG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NV_ORG.release.xcconfig"; path = "Target Support Files/Pods-NV_ORG/Pods-NV_ORG.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -450,6 +452,7 @@
 				E4C7F0C22421EEF50072E54B /* UIAlerts + Extensions.swift */,
 				E4C7F0C8242210710072E54B /* LoadingButton.swift */,
 				E4C7F0CE242243FB0072E54B /* LineTextField.swift */,
+				E4C9CA572452FA0B0005E07A /* extensions + UICollectionViewCels.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -838,6 +841,7 @@
 				E4B03359242088C7007F9098 /* SceneDelegate.swift in Sources */,
 				E4383E60242F52F90032A6AD /* MenuViewController.swift in Sources */,
 				E4347B4A243346BC0097920B /* LeaderShipViewModel.swift in Sources */,
+				E4C9CA582452FA0B0005E07A /* extensions + UICollectionViewCels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

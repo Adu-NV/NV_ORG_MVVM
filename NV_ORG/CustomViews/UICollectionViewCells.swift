@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 
 class DashBoardCollectionViewCell : UICollectionViewCell{
-    // cell 1
-    @IBOutlet weak var newsImageView: UIImageView!
-    @IBOutlet weak var newsTitleLabel: UILabel!
-    @IBOutlet weak var newsDescriptionLabel: UILabel!
     
     // cell 2
     @IBOutlet weak var eventsImageView: UIImageView!
@@ -34,18 +30,20 @@ class DashBoardCollectionViewCell : UICollectionViewCell{
     @IBOutlet weak var wishesCallbButton: UIButton!
     @IBOutlet weak var wishesChatbButton: UIButton!
     
-//    cell 5:
+//    cell 5://rightArrowbutton
+        @IBOutlet weak var rightArrowbutton: UIButton!
     @IBOutlet weak var galleryImageView: UIImageView!
+    @IBOutlet weak var galleryVE: UIVisualEffectView!
     override func awakeFromNib() {
         
         if let _ = meetingDetailsbButton{
             self.meetingDetailsbButton.setCornerRadiusWithoutBackground(radius: 8.0)
         }
         if let _ = meetingNameLabel{
-            self.contentView.setViewCornerRadiusWithBorder(radius: 10.0, borderColor: .black, width: 0.5)
+            self.contentView.setViewCornerRadiusWithBorder(radius: 10.0, borderColor: .lightGray, width: 0.5)
         }
         if let _ = wishesChatbButton{
-            self.contentView.setViewCornerRadiusWithBorder(radius: 10.0, borderColor: .black, width: 0.5)
+            self.contentView.setViewCornerRadiusWithBorder(radius: 10.0, borderColor: .lightGray, width: 0.5)
             wishesChatbButton.setCornerRadiusWithoutBackground(radius: 8.0)
         }
         if let _ = wishesCallbButton{
@@ -55,10 +53,53 @@ class DashBoardCollectionViewCell : UICollectionViewCell{
             wishesImageView.setImageViewCornerRadius(radius: 10.0)
         }
         if let _ = eventsImageView{
+            self.contentView.setViewCornerRadiusWithBorder(radius: 10.0, borderColor: .black, width: 0.5)
             eventsImageView.setImageViewCornerRadius(radius: 10.0)
         }
-        if let _ = newsImageView{
-            newsImageView.setImageViewCornerRadius(radius: 10.0)
-        }
+
     }
+}
+
+
+class LeadershipCollectionViewCell : UICollectionViewCell{
+    @IBOutlet weak var positionLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var jobLabel: UILabel!
+    
+    @IBOutlet weak var leaderImageView: UIImageView!
+    override func awakeFromNib() {
+        if let _ = leaderImageView{
+            leaderImageView.setImageViewCornerRadiusWithBorder(radius: 30.0, borderwidth: 1.0, color: UIColor.gray)
+        }
+        
+    }
+}
+
+class LeadershipCollectionViewReusableCell : UICollectionReusableView{
+//    @IBOutlet weak var headerLabel: UILabel!
+    var headerLabel = UILabel()
+    override func awakeFromNib() {
+        
+    }
+    override init(frame: CGRect) {
+         super.init(frame: frame)
+//        headerLabel = UILabel()
+         self.myCustomInit()
+     }
+
+     required init(coder aDecoder: NSCoder) {
+         super.init(coder: aDecoder)!
+        self.myCustomInit()
+     }
+
+    func myCustomInit() {
+        print("hello there from SupView")
+        headerLabel = UILabel()
+        headerLabel.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 50)
+        headerLabel.center = CGPoint(x: self.bounds.width * 0.5, y: self.bounds.height * 0.5)
+        headerLabel.textColor = COMMITEE_MEMBER_TEXT_COLOR
+        headerLabel.textAlignment = .center
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 20.0)//UIFont(name: headerLabel.font.fontName, size: 30)//UIFont(name: "System", size: 30)
+        self.addSubview(headerLabel)
+     }
 }

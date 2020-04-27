@@ -11,10 +11,10 @@ import UIKit
 
 class LeaderShipViewModel{
     var numberofSections : Int {
-         return  1
+         return  2
      }
     func numberOfRowsInSection(_ section : Int) -> Int{
-        return 1
+        return 10
      }
     
     func heightForRow(_ row : Int) -> CGFloat{

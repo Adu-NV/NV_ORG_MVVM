@@ -10,9 +10,10 @@ import UIKit
 
 class LeaderShipViewController: UIViewController {
     let leadershipVM = LeaderShipViewModel()
-    @IBOutlet weak var leadershipTableView: UITableView!
+    @IBOutlet weak var leadershipCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -21,20 +22,48 @@ class LeaderShipViewController: UIViewController {
 
 }
 
-extension LeaderShipViewController : UITableViewDataSource,UITableViewDelegate{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           leadershipVM.numberOfRowsInSection(section)
-       }
-       func numberOfSections(in tableView: UITableView) -> Int {
-           leadershipVM.numberofSections
-       }
-       
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderShipTableViewCell", for: indexPath) as! LeaderShipTableViewCell
-//           cell.notificationLabel.text = notificationSettingsVM.NotificationAtIndex(indexPath.row)
-           return cell
-       }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        leadershipVM.heightForRow(indexPath.row)
+extension LeaderShipViewController : UICollectionViewDelegate,UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
     }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        leadershipVM.numberOfRowsInSection(section)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "LeadershipCollectionViewReusableCell", for: indexPath) as! LeadershipCollectionViewReusableCell
+            header.headerLabel.text = "MEMBERS"
+            header.backgroundColor = UIColor.clear
+             return header
+         }
+
+         abort()
+    }
+
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var cell =  LeadershipCollectionViewCell()
+        cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LeadershipCollectionViewCell", for: indexPath) as! LeadershipCollectionViewCell
+        cell.contentView.setViewCornerRadiusWithBorder(radius: 10.0, borderColor: UIColor.lightGray, width: 1.0)
+        cell.backgroundColor = .white
+        cell.setShadow(radius: 10.0)
+        return cell
+    }
+    
 }
+    extension LeaderShipViewController {
+        func setUI(){
+            //            leadershipCollectionView.backgroundColor = .lightGray
+            self.leadershipCollectionView!.register(LeadershipCollectionViewReusableCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"LeadershipCollectionViewReusableCell")
+            let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+            layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            layout.itemSize = CGSize(width: self.view.frame.width / 2 - 15, height: 180)
+            layout.minimumInteritemSpacing = 10
+            layout.minimumLineSpacing = 10
+            layout.headerReferenceSize = CGSize(width: self.view.frame.width, height: 50)
+            leadershipCollectionView!.collectionViewLayout = layout
+            leadershipCollectionView.layoutIfNeeded()
+        }
+}
+

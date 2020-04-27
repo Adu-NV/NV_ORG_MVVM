@@ -148,7 +148,7 @@ class DashBoardTableViewCell : UITableViewCell{
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     @IBOutlet weak var meetingsCollectionView: UICollectionView!
     @IBOutlet weak var WishesCollectionView: UICollectionView!
-    var layout : UICollectionViewDelegateFlowLayout!
+//    var layout : UICollectionViewDelegateFlowLayout!
     
 //    cell 0
     
@@ -167,8 +167,14 @@ class DashBoardTableViewCell : UITableViewCell{
 //    cell 6
     
     @IBOutlet weak var advertisementImageView: UIImageView!
-    
+
+    var layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     override func awakeFromNib() {
+        
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        
         if let _ = viewjobButton{
             viewjobButton.setCornerRadiusWithoutBackground(radius: 6.0)
         }
@@ -180,15 +186,35 @@ class DashBoardTableViewCell : UITableViewCell{
             galleryCollectionView.layoutIfNeeded()
         }
         if  let _ = eventsCollectionView  {
+            layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+            layout.itemSize = CGSize(width: screenWidth  - 55, height: 250)
+            layout.scrollDirection = .horizontal
+            eventsCollectionView!.collectionViewLayout = layout
             eventsCollectionView.layoutIfNeeded()
+            
         }
         if  let _ = meetingsCollectionView  {
+            layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+            layout.itemSize = CGSize(width: screenWidth  - 50, height: 100)
+            layout.scrollDirection = .horizontal
+            meetingsCollectionView!.collectionViewLayout = layout
             meetingsCollectionView.layoutIfNeeded()
         }
         if  let _ = WishesCollectionView  {
+            layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+            layout.itemSize = CGSize(width: screenWidth  - 50, height: 140)
+            layout.scrollDirection = .horizontal
+            WishesCollectionView!.collectionViewLayout = layout
             WishesCollectionView.layoutIfNeeded()
         }
-        
+        if let _ = galleryCollectionView{
+            galleryCollectionView.setViewCornerRadius(radius: 10.0)
+            layout.sectionInset  = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+            layout.scrollDirection = .horizontal
+            layout.itemSize = CGSize(width: screenWidth  / 3 - 5, height: 190)
+            galleryCollectionView!.collectionViewLayout = layout
+//            galleryCollectionView.layoutIfNeeded()
+        }
     }
 }
 

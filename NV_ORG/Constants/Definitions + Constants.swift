@@ -33,4 +33,8 @@ let USERDETAILS_URL : String                       = "user_details"
 let NEWS_LIST_URL : String                          = "news"
 let JOBS_LIST_URL : String                            = "jobs"
 
+//MARK:- DIRECTORY
+
+let DIRECTORY_LIST_URL : String                 = "directory_list"
+let DIRECTORY_FILTER_LIST : String             = "directory_filter_list"
  

@@ -160,3 +160,19 @@ public protocol NewsListPageViewModelDelegateProtocol{
 public protocol NewsListPageDelegateProtocol{
     
 }
+
+//MARK:- DirectoryViewModelDelegateProtocol
+
+public protocol DirectoryViewModelDelegateProtocol{
+    func setUpModel(model : DirectoryListResponseModel)
+}
+public protocol DirectoryViewControllerDelegateProtocol{
+}
+
+//MARK:- DirectoryFilterViewModelDelegateProtocol
+
+public protocol DirectoryFilterViewModelDelegateProtocol{
+    func skipButtontapped(view : UIViewController)
+}
+public protocol DirectoryFilterViewControllerDelegateProtocol{
+}

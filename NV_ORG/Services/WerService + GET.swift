@@ -199,5 +199,68 @@ class Webservice{
         }catch{
         }
     }
+    
+    func  getDirectoryLis(completionBlock : @escaping(DirectoryListResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + DIRECTORY_LIST_URL)
+        do {
+            let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(DirectoryListResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
+    //DIRECTORY_FILTER_LIST
+    
+    func  getDirectoryFilterList(completionBlock : @escaping(DirectoryFilterResponseModel?,String?) -> ()){
+        
+        let url = URL(string : BASE_URL + DIRECTORY_FILTER_LIST)
+        do {
+            let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(DirectoryFilterResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
 }
+
 

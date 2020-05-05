@@ -103,3 +103,41 @@ class LeadershipCollectionViewReusableCell : UICollectionReusableView{
         self.addSubview(headerLabel)
      }
 }
+
+
+class galleryCollectionViewCell : UICollectionViewCell{
+    @IBOutlet weak var galleryImages: UIImageView!
+    override class func awakeFromNib() {
+        
+    }
+}
+
+class GalleryCollectionViewReusableCell : UICollectionReusableView{
+ @IBOutlet weak var headerLabel: UILabel!
+    
+    var headerLabels = UILabel()
+    override func awakeFromNib() {
+        
+    }
+    override init(frame: CGRect) {
+         super.init(frame: frame)
+//        headerLabel = UILabel()
+         self.myCustomInit()
+     }
+
+     required init(coder aDecoder: NSCoder) {
+         super.init(coder: aDecoder)!
+        self.myCustomInit()
+     }
+
+    func myCustomInit() {
+        print("hello there from SupView")
+        headerLabels = UILabel()
+        headerLabels.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 50)
+        headerLabels.center = CGPoint(x: self.bounds.width * 0.5, y: self.bounds.height * 0.5)
+        headerLabels.textColor = COMMITEE_MEMBER_TEXT_COLOR
+        headerLabels.textAlignment = .center
+        headerLabels.font = UIFont.boldSystemFont(ofSize: 20.0)//UIFont(name: headerLabel.font.fontName, size: 30)//UIFont(name: "System", size: 30)
+        self.addSubview(headerLabels)
+     }
+}

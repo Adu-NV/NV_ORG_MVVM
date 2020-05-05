@@ -45,7 +45,9 @@
 		E45CB0FB243D2AC200879D4C /* UICollectionViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45CB0FA243D2AC200879D4C /* UICollectionViewCells.swift */; };
 		E467BC742435B4E600A0DAA9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E467BC732435B4E600A0DAA9 /* ProfileViewModel.swift */; };
 		E469B0AF2446D68C0053ED09 /* NewaListPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E469B0AE2446D68C0053ED09 /* NewaListPageViewModel.swift */; };
+		E475FEA624584244004BCEA6 /* DirectoryListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475FEA524584243004BCEA6 /* DirectoryListResponseModel.swift */; };
 		E49A4D082431B92200E5038B /* DashBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49A4D072431B92200E5038B /* DashBoardViewModel.swift */; };
+		E4A16B5E24595E040024C4D3 /* DirectoryFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A16B5D24595E040024C4D3 /* DirectoryFilterViewController.swift */; };
 		E4A38DAF242335C20023CB6D /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DAE242335C20023CB6D /* OTPViewModel.swift */; };
 		E4A38DB1242335F40023CB6D /* OTPRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DB0242335F40023CB6D /* OTPRequestModel.swift */; };
 		E4A38DB32423360A0023CB6D /* OTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DB22423360A0023CB6D /* OTPResponseModel.swift */; };
@@ -56,6 +58,8 @@
 		E4A38DBF24237A770023CB6D /* EmailCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DBE24237A770023CB6D /* EmailCheckViewController.swift */; };
 		E4A38DC1242389490023CB6D /* EmailVerificationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DC0242389490023CB6D /* EmailVerificationResponseModel.swift */; };
 		E4A38DC3242394F90023CB6D /* EmailOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A38DC2242394F90023CB6D /* EmailOTPViewController.swift */; };
+		E4A4AE84245A94810045C5A1 /* DirectoryFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4AE83245A94810045C5A1 /* DirectoryFilterViewModel.swift */; };
+		E4A4AE86245AABB00045C5A1 /* DirectoryFilterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4AE85245AABB00045C5A1 /* DirectoryFilterResponseModel.swift */; };
 		E4A91753245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A91752245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift */; };
 		E4AA65432424790B00B29271 /* ResetOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AA65422424790B00B29271 /* ResetOTPViewModel.swift */; };
 		E4AA654524248F4800B29271 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AA654424248F4800B29271 /* ResetPasswordViewModel.swift */; };
@@ -88,6 +92,14 @@
 		E4C7F0CD242235CD0072E54B /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7F0CC242235CD0072E54B /* OTPViewController.swift */; };
 		E4C7F0CF242243FB0072E54B /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7F0CE242243FB0072E54B /* LineTextField.swift */; };
 		E4C9CA582452FA0B0005E07A /* extensions + UICollectionViewCels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C9CA572452FA0B0005E07A /* extensions + UICollectionViewCels.swift */; };
+		E4CBE4AB245FD8B500EA7F0A /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CBE4AA245FD8B500EA7F0A /* GalleryViewController.swift */; };
+		E4CBE4AD245FDF6200EA7F0A /* GalleryImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CBE4AC245FDF6200EA7F0A /* GalleryImageViewController.swift */; };
+		E4CBE4AF245FDF7500EA7F0A /* GalleryVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CBE4AE245FDF7500EA7F0A /* GalleryVideoViewController.swift */; };
+		E4CC7756246122C100BFD92E /* CelebrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC7755246122C100BFD92E /* CelebrationViewController.swift */; };
+		E4CC7758246122DA00BFD92E /* JobsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC7757246122DA00BFD92E /* JobsListViewController.swift */; };
+		E4CC775A246122FB00BFD92E /* JobsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC7759246122FB00BFD92E /* JobsDetailViewController.swift */; };
+		E4CC775C2461235100BFD92E /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC775B2461235100BFD92E /* NewsDetailViewController.swift */; };
+		E4CC775E246123A600BFD92E /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC775D246123A600BFD92E /* EventsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,7 +162,9 @@
 		E45CB0FA243D2AC200879D4C /* UICollectionViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCells.swift; sourceTree = "<group>"; };
 		E467BC732435B4E600A0DAA9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		E469B0AE2446D68C0053ED09 /* NewaListPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewaListPageViewModel.swift; sourceTree = "<group>"; };
+		E475FEA524584243004BCEA6 /* DirectoryListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryListResponseModel.swift; sourceTree = "<group>"; };
 		E49A4D072431B92200E5038B /* DashBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewModel.swift; sourceTree = "<group>"; };
+		E4A16B5D24595E040024C4D3 /* DirectoryFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryFilterViewController.swift; sourceTree = "<group>"; };
 		E4A38DAE242335C20023CB6D /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		E4A38DB0242335F40023CB6D /* OTPRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPRequestModel.swift; sourceTree = "<group>"; };
 		E4A38DB22423360A0023CB6D /* OTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResponseModel.swift; sourceTree = "<group>"; };
@@ -161,6 +175,8 @@
 		E4A38DBE24237A770023CB6D /* EmailCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckViewController.swift; sourceTree = "<group>"; };
 		E4A38DC0242389490023CB6D /* EmailVerificationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationResponseModel.swift; sourceTree = "<group>"; };
 		E4A38DC2242394F90023CB6D /* EmailOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailOTPViewController.swift; sourceTree = "<group>"; };
+		E4A4AE83245A94810045C5A1 /* DirectoryFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryFilterViewModel.swift; sourceTree = "<group>"; };
+		E4A4AE85245AABB00045C5A1 /* DirectoryFilterResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryFilterResponseModel.swift; sourceTree = "<group>"; };
 		E4A91752245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout + Extensions.swift"; sourceTree = "<group>"; };
 		E4AA65422424790B00B29271 /* ResetOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetOTPViewModel.swift; sourceTree = "<group>"; };
 		E4AA654424248F4800B29271 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -199,6 +215,14 @@
 		E4C7F0CC242235CD0072E54B /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		E4C7F0CE242243FB0072E54B /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		E4C9CA572452FA0B0005E07A /* extensions + UICollectionViewCels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extensions + UICollectionViewCels.swift"; sourceTree = "<group>"; };
+		E4CBE4AA245FD8B500EA7F0A /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		E4CBE4AC245FDF6200EA7F0A /* GalleryImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageViewController.swift; sourceTree = "<group>"; };
+		E4CBE4AE245FDF7500EA7F0A /* GalleryVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryVideoViewController.swift; sourceTree = "<group>"; };
+		E4CC7755246122C100BFD92E /* CelebrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationViewController.swift; sourceTree = "<group>"; };
+		E4CC7757246122DA00BFD92E /* JobsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListViewController.swift; sourceTree = "<group>"; };
+		E4CC7759246122FB00BFD92E /* JobsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsDetailViewController.swift; sourceTree = "<group>"; };
+		E4CC775B2461235100BFD92E /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		E4CC775D246123A600BFD92E /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		E8BB90CDEEA90F2D829A314A /* Pods_NV_ORGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NV_ORGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6900CB279A46063597E3D09 /* Pods-NV_ORG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NV_ORG.release.xcconfig"; path = "Target Support Files/Pods-NV_ORG/Pods-NV_ORG.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -322,6 +346,15 @@
 			children = (
 				E43A18CB2438963700C90FE9 /* EditProfileViewController.swift */,
 				E43FCFA0244436B400DC883B /* NewsListViewController.swift */,
+				E4A16B5D24595E040024C4D3 /* DirectoryFilterViewController.swift */,
+				E4CBE4AA245FD8B500EA7F0A /* GalleryViewController.swift */,
+				E4CBE4AC245FDF6200EA7F0A /* GalleryImageViewController.swift */,
+				E4CBE4AE245FDF7500EA7F0A /* GalleryVideoViewController.swift */,
+				E4CC7755246122C100BFD92E /* CelebrationViewController.swift */,
+				E4CC7757246122DA00BFD92E /* JobsListViewController.swift */,
+				E4CC7759246122FB00BFD92E /* JobsDetailViewController.swift */,
+				E4CC775B2461235100BFD92E /* NewsDetailViewController.swift */,
+				E4CC775D246123A600BFD92E /* EventsViewController.swift */,
 			);
 			path = "Internal Pages";
 			sourceTree = "<group>";
@@ -343,6 +376,14 @@
 				E469B0AE2446D68C0053ED09 /* NewaListPageViewModel.swift */,
 			);
 			path = ListPages;
+			sourceTree = "<group>";
+		};
+		E4A4AE82245A94650045C5A1 /* InnerPages */ = {
+			isa = PBXGroup;
+			children = (
+				E4A4AE83245A94810045C5A1 /* DirectoryFilterViewModel.swift */,
+			);
+			path = InnerPages;
 			sourceTree = "<group>";
 		};
 		E4B0334A242088C7007F9098 = {
@@ -424,6 +465,7 @@
 		E4B033D42420C93A007F9098 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				E4A4AE82245A94650045C5A1 /* InnerPages */,
 				E4347B48243346910097920B /* LoginVieModel */,
 				E4347B472433467C0097920B /* SettingsViewModel */,
 				E467BC722435B4C800A0DAA9 /* TabBarViewModel */,
@@ -526,6 +568,8 @@
 				E437726E243DA5FE00C9FE25 /* DashBoardFeedResponseModel.swift */,
 				E43A6EAC2441CF9100C97FAC /* NewsListPageResponseModel.swift */,
 				E43A6EAE2441DB7B00C97FAC /* JobsListPageResponseModel.swift */,
+				E475FEA524584243004BCEA6 /* DirectoryListResponseModel.swift */,
+				E4A4AE85245AABB00045C5A1 /* DirectoryFilterResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -773,6 +817,7 @@
 				E4A38DAF242335C20023CB6D /* OTPViewModel.swift in Sources */,
 				E4383E51242F0EFC0032A6AD /* SignOutResponseModel.swift in Sources */,
 				E433FD1724347445005D1359 /* UserDetailResponseModel.swift in Sources */,
+				E4CC7756246122C100BFD92E /* CelebrationViewController.swift in Sources */,
 				E4C7F0C12421DC0B0072E54B /* LoginResponseModel.swift in Sources */,
 				E4347B462433463C0097920B /* LeaderShipViewController.swift in Sources */,
 				E4A91753245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift in Sources */,
@@ -792,6 +837,7 @@
 				E4B033DB2420CA04007F9098 /* LoginViewController.swift in Sources */,
 				E4C7F0C32421EEF50072E54B /* UIAlerts + Extensions.swift in Sources */,
 				E4383E64242F63500032A6AD /* MenuControllerViewModel.swift in Sources */,
+				E4CC775C2461235100BFD92E /* NewsDetailViewController.swift in Sources */,
 				E43A6EAF2441DB7B00C97FAC /* JobsListPageResponseModel.swift in Sources */,
 				E467BC742435B4E600A0DAA9 /* ProfileViewModel.swift in Sources */,
 				E4B033E72420E18C007F9098 /* String + Constants.swift in Sources */,
@@ -800,6 +846,7 @@
 				E45CB0FB243D2AC200879D4C /* UICollectionViewCells.swift in Sources */,
 				E4C7F0C9242210710072E54B /* LoadingButton.swift in Sources */,
 				E44FB51A242DC6E6001D9E3C /* ChangePasswordViewModel.swift in Sources */,
+				E4CC7758246122DA00BFD92E /* JobsListViewController.swift in Sources */,
 				E4347B3A2432FF4E0097920B /* AboutUSViewController.swift in Sources */,
 				E4383E5E242F1E370032A6AD /* MainTabBar.swift in Sources */,
 				E437726F243DA5FE00C9FE25 /* DashBoardFeedResponseModel.swift in Sources */,
@@ -810,14 +857,17 @@
 				E49A4D082431B92200E5038B /* DashBoardViewModel.swift in Sources */,
 				E4347B382432FA810097920B /* HomeFeedSettingsViewModel.swift in Sources */,
 				E4C7F0CF242243FB0072E54B /* LineTextField.swift in Sources */,
+				E4CC775E246123A600BFD92E /* EventsViewController.swift in Sources */,
 				E4A38DBB2423700B0023CB6D /* EmailVerificationRequestModel.swift in Sources */,
 				E4C7F0CD242235CD0072E54B /* OTPViewController.swift in Sources */,
 				E4A38DC1242389490023CB6D /* EmailVerificationResponseModel.swift in Sources */,
 				E4383E56242F14BB0032A6AD /* DashBoardViewController.swift in Sources */,
 				E4AA654724248F8200B29271 /* ResetPasswordViewController.swift in Sources */,
+				E475FEA624584244004BCEA6 /* DirectoryListResponseModel.swift in Sources */,
 				E4347B40243303A70097920B /* PrivacyPolicyViewModel.swift in Sources */,
 				E43FCFA1244436B400DC883B /* NewsListViewController.swift in Sources */,
 				E4347B3E2432FFF50097920B /* AboutUsViewModel.swift in Sources */,
+				E4CBE4AD245FDF6200EA7F0A /* GalleryImageViewController.swift in Sources */,
 				E44FB51C242DC733001D9E3C /* ChangePasswordRequestModel.swift in Sources */,
 				E4347B44243322B00097920B /* NotificationSettingsViewController.swift in Sources */,
 				E4A38DBD2423702B0023CB6D /* EmailVerificationViewModel.swift in Sources */,
@@ -825,10 +875,15 @@
 				E4A38DB1242335F40023CB6D /* OTPRequestModel.swift in Sources */,
 				E4B033E32420E165007F9098 /* Colors + Constant.swift in Sources */,
 				E4A38DBF24237A770023CB6D /* EmailCheckViewController.swift in Sources */,
+				E4CBE4AB245FD8B500EA7F0A /* GalleryViewController.swift in Sources */,
 				E4C7F0C524220FF90072E54B /* WerService + GET.swift in Sources */,
+				E4A4AE86245AABB00045C5A1 /* DirectoryFilterResponseModel.swift in Sources */,
 				E4C7F0C72422100C0072E54B /* WebService + POST.swift in Sources */,
+				E4A16B5E24595E040024C4D3 /* DirectoryFilterViewController.swift in Sources */,
+				E4A4AE84245A94810045C5A1 /* DirectoryFilterViewModel.swift in Sources */,
 				E4A38DC3242394F90023CB6D /* EmailOTPViewController.swift in Sources */,
 				E4AA65432424790B00B29271 /* ResetOTPViewModel.swift in Sources */,
+				E4CBE4AF245FDF7500EA7F0A /* GalleryVideoViewController.swift in Sources */,
 				E43A6EAD2441CF9100C97FAC /* NewsListPageResponseModel.swift in Sources */,
 				E4AA654524248F4800B29271 /* ResetPasswordViewModel.swift in Sources */,
 				E4C77E6B24370BAC0079021B /* DirectoryViewModel.swift in Sources */,
@@ -839,6 +894,7 @@
 				E4383E62242F614E0032A6AD /* UITableViews.swift in Sources */,
 				E4347B3C2432FF6B0097920B /* PrivacyPolicyViewController.swift in Sources */,
 				E4B03359242088C7007F9098 /* SceneDelegate.swift in Sources */,
+				E4CC775A246122FB00BFD92E /* JobsDetailViewController.swift in Sources */,
 				E4383E60242F52F90032A6AD /* MenuViewController.swift in Sources */,
 				E4347B4A243346BC0097920B /* LeaderShipViewModel.swift in Sources */,
 				E4C9CA582452FA0B0005E07A /* extensions + UICollectionViewCels.swift in Sources */,

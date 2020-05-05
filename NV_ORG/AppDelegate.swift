@@ -27,10 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func homeScreen(){
         DispatchQueue.main.async {
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let homeView =  storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! MainTabBar
-            homeView.setUPViewController()
-            //        self.window?.rootViewController = homeView
+//            /GalleryViewController
+            let homeView =  storyboard.instantiateViewController(withIdentifier: "GalleryViewController") as! GalleryViewController
+//            homeView.setUPViewController()
             
+//            let homeView =  storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! MainTabBar
+//                       homeView.setUPViewController()
             if #available(iOS 13.0, *) {
                 UIApplication.shared.statusBarStyle = .lightContent
                 self.navigatinController = UINavigationController(rootViewController: homeView)

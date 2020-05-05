@@ -94,7 +94,7 @@ class profileTableViewCell : UITableViewCell{
             profileImageView.layer.cornerRadius = 16.0
             profileImageView.layer.masksToBounds = true
             profileImageView.layer.borderWidth = 2.0
-            profileImageView.layer.borderColor = UIColor.lightGray.cgColor
+            profileImageView.layer.borderColor = UIColor.white.cgColor
         }
         if let _ = profileCoverView{
             profileCoverView.layer.cornerRadius = 16.0
@@ -108,6 +108,7 @@ class profileTableViewCell : UITableViewCell{
     //MARK:- DirectoryTableViewCell
 
 class DirectoryTableViewCell : UITableViewCell{
+    @IBOutlet weak var positionHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var directoryProfileImageView: UIImageView!
     @IBOutlet weak var directoryNameLabel: UILabel!
     @IBOutlet weak var directorypositionLabel: UILabel!
@@ -117,6 +118,8 @@ class DirectoryTableViewCell : UITableViewCell{
         if let _ =  directoryProfileImageView{
             directoryProfileImageView.layer.cornerRadius = 21
             directoryProfileImageView.layer.masksToBounds = true
+            directoryProfileImageView.layer.borderWidth = 1.0
+            directoryProfileImageView.layer.borderColor = UIColor.lightGray.cgColor
         }
     }
 }

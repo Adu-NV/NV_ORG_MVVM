@@ -64,7 +64,7 @@ extension DashBoardViewController : DashBoardViewModelViewControllerDelegateProt
         if let _ = dashBoardTableView{
             if self.dashBoardTableView.numberOfRows(inSection: 0) != 0{
                 newsListcount = (newsListcount == (self.dashViewModel?.dashBoardFeedModel?.data?.news_list!.count)! ? 0 : newsListcount)
-                self.dashBoardTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .left)
+                self.dashBoardTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with:.none)
             }
         }
     }
@@ -187,7 +187,7 @@ extension DashBoardViewController:UITableViewDelegate,UITableViewDataSource{
         case 3:
             heightForRow = !(self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list!.isEmpty)! ? 190 : 0
         case 4:
-            heightForRow = !(self.dashViewModel?.dashBoardFeedModel?.data?.job_vacancy_list!.isEmpty)! ? 130 : 0
+            heightForRow = !(self.dashViewModel?.dashBoardFeedModel?.data?.job_vacancy_list!.isEmpty)! ? 170 : 0
         case 5:
             heightForRow = !(self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list!.isEmpty)! ? 170 : 0
         case 6:

@@ -15,7 +15,15 @@ class MainTabBar : UITabBarController{
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-//        fatalError("init(coder:) has not been implemented")
+//        fatalError("init(coder:) has not been implemented")\
+        self.tabBar.layer.masksToBounds = true
+        self.tabBar.isTranslucent = true
+        self.tabBar.barStyle = .default
+        self.tabBar.backgroundColor = BUTTON_LOGIN_COLOR
+        self.tabBar.layer.cornerRadius   = 20.0
+        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+        self.delegate = self
+//        self.tabBar.selectedItem.h
     }
     
     func setUPViewController(){
@@ -26,6 +34,14 @@ class MainTabBar : UITabBarController{
         let profile =  mainstoryBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         viewcontroller = [dashBoard,directory,notification,profile]
         self.viewControllers = viewcontroller
+    }
+    
+}
+
+extension MainTabBar : UITabBarControllerDelegate{
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        debugPrint("\(item.title)")
+        
     }
     
 }

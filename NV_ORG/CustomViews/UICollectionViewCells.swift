@@ -141,3 +141,12 @@ class GalleryCollectionViewReusableCell : UICollectionReusableView{
         self.addSubview(headerLabels)
      }
 }
+
+class celebrationListCollectionViewCell: UICollectionViewCell{
+    @IBOutlet weak var celebrationPersonImageView: UIImageView!
+    @IBOutlet weak var celebrationPersonNameLabel: UILabel!
+    @IBOutlet weak var celbrationDateLabel: UILabel!
+    override class func awakeFromNib() {
+        
+    }
+}

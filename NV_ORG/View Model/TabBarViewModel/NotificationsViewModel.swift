@@ -13,8 +13,9 @@ class NotificationsViewModel {
     var numberofSections : Int {
          return  1
      }
+    var numberofRows : Int = 0
     func numberOfRowsInSection(_ section : Int ,_ tag : Int) -> Int{
-        return tag == 0 ? 5 : 10
+        return numberofRows
      }
     
     func heightForRow(_ row : Int) -> CGFloat{

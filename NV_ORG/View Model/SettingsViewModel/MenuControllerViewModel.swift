@@ -146,6 +146,7 @@ extension MenuControllerViewModel: MenuViewModelDelegateProtocol{
     }
     
     func skipButtontapped(view: UIViewController) {
+    
         view.removeFromParent()
     }
     

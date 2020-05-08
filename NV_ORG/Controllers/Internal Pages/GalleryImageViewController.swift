@@ -9,22 +9,25 @@
 import UIKit
 
 class GalleryImageViewController: UIViewController {
-
+var galleryId = ""
+    
+    @IBOutlet weak var galleryImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUI()
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUI(){
+        galleryImageView.sd_setImage(with: URL(string: galleryId), placeholderImage: UIImage(named: "events.png"), options: .continueInBackground, context: nil)
     }
-    */
-
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        if #available(iOS 13.0, *) {
+            if let navController = self.navigationController {
+                navController.popViewController(animated: true)
+            }
+        }else{
+            self.dismiss(animated: false, completion: nil)
+        }
+    }
 }

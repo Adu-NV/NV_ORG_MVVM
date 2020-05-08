@@ -16,19 +16,20 @@ class DashBoardViewController: UIViewController {
     var dashViewModel : DashBoardViewModel?
     internal var delegate  : DashBoardViewModelDelegateProtocol!
     var updateCellContentsTimer : Timer!
-    
     var updateAdvertisementTimer : Timer!
     var newsListcount = 0
     var advertisementListCount = 0
     var swipeLeft : UISwipeGestureRecognizer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
     }
-
+    
     @IBAction func profileButtonTapped(_ sender: Any) {
         dashViewModel!.moveToMenuPage(viewController: self, model: self.dashModel)
     }
+    
     @objc func backButton(){
         dashViewModel!.skipButtontapped(view: self)
     }
@@ -40,10 +41,9 @@ extension DashBoardViewController : DashBoardViewModelViewControllerDelegateProt
     func setUI(){
         updateCellContentsTimer = Timer.scheduledTimer(timeInterval: 7,target: self,selector: #selector(self.updateCells),userInfo: nil, repeats: true)
         updateAdvertisementTimer = Timer.scheduledTimer(timeInterval: 10,target: self,selector: #selector(self.updateAdvertisementCells),userInfo: nil, repeats: true)
-        
         dashViewModel = DashBoardViewModel()
-        let _tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backButton))
-        self.view.addGestureRecognizer(_tap)
+        //        let _tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backButton))
+        //        self.view.addGestureRecognizer(_tap)
         profileImageButton.setCornerRadius(radius: self.profileImageButton.frame.height /  2, bg_Color: .clear)
         dashViewModel?.delegate = self
         callApi()
@@ -69,21 +69,20 @@ extension DashBoardViewController : DashBoardViewModelViewControllerDelegateProt
         }
     }
     
-        @objc func updateAdvertisementCells(){
-            if let _ = dashBoardTableView{
-                if self.dashBoardTableView.numberOfRows(inSection: 0) != 0{
-                    advertisementListCount = (advertisementListCount == (self.dashViewModel?.dashBoardFeedModel?.data?.advertisement_list!.count)! ? 0 : advertisementListCount)
-                    self.dashBoardTableView.reloadRows(at: [IndexPath(row: 6, section: 0)], with: .left)
-                }
-    //advertisementListCount
+    @objc func updateAdvertisementCells(){
+        if let _ = dashBoardTableView{
+            if self.dashBoardTableView.numberOfRows(inSection: 0) != 0{
+                advertisementListCount = (advertisementListCount == (self.dashViewModel?.dashBoardFeedModel?.data?.advertisement_list!.count)! ? 0 : advertisementListCount)
+                self.dashBoardTableView.reloadRows(at: [IndexPath(row: 6, section: 0)], with: .left)
             }
         }
+    }
     
     func dashBoardFeedAPI(){
         Webservice.shared.dashBoardFeed(body: self.dashViewModel!.request!.updateDic) { (model, message) in
             if model != nil{
                 self.dashViewModel?.dashBoardFeedModel = model
-                        DispatchQueue.main.async {
+                DispatchQueue.main.async {
                     self.dashBoardTableView.reloadData()
                 }
             }
@@ -117,17 +116,13 @@ extension DashBoardViewController:UITableViewDelegate,UITableViewDataSource{
                 swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.ImageViewSwipedLeft(sender:)))
                 swipeLeft.delegate = self
                 cell.newsImageView?.addGestureRecognizer(swipeLeft)
-//                return cell
             }
-            
         case "DashBoardTableViewCell1":
             cell = tableView.dequeueReusableCell(withIdentifier: "DashBoardTableViewCell1", for: indexPath) as! DashBoardTableViewCell
             cell.eventsCollectionView.dataSource = self
             cell.eventsCollectionView.delegate = self
             cell.eventsCollectionView.tag = 1
             cell.eventsCollectionView.reloadData()
-//            return cell
-            
         case "DashBoardTableViewCell2":
             cell = tableView.dequeueReusableCell(withIdentifier: "DashBoardTableViewCell2", for: indexPath) as! DashBoardTableViewCell
             cell.meetingsCollectionView.dataSource = self
@@ -135,7 +130,6 @@ extension DashBoardViewController:UITableViewDelegate,UITableViewDataSource{
             cell.meetingsCollectionView.tag = 2
             cell.meetingsCollectionView.layoutIfNeeded()
             cell.meetingsCollectionView.reloadData()
-            
         case "DashBoardTableViewCell3":
             cell = tableView.dequeueReusableCell(withIdentifier: "DashBoardTableViewCell3", for: indexPath) as! DashBoardTableViewCell
             cell.WishesCollectionView.dataSource = self
@@ -143,26 +137,26 @@ extension DashBoardViewController:UITableViewDelegate,UITableViewDataSource{
             cell.WishesCollectionView.tag = 3
             cell.WishesCollectionView.layoutIfNeeded()
             cell.WishesCollectionView.reloadData()
-            
         case "DashBoardTableViewCell4":
             cell = tableView.dequeueReusableCell(withIdentifier: "DashBoardTableViewCell4", for: indexPath) as! DashBoardTableViewCell
-             if !(self.dashViewModel?.dashBoardFeedModel?.data?.job_vacancy_list!.isEmpty)!{
+            if !(self.dashViewModel?.dashBoardFeedModel?.data?.job_vacancy_list!.isEmpty)!{
                 cell.jobTitle.text = (self.dashViewModel?.dashBoardFeedModel?.data?.job_vacancy_list![0].job_vacancy_name)!
                 cell.jobExperienceLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.job_vacancy_list![0].job_vacancy_occasion)!
                 cell.jobSalaryLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.job_vacancy_list![0].job_vacancy_occasion)!
+                cell.viewjobButton.addTarget(self, action: #selector(viewJobs), for: .touchUpInside)
+                cell.viewAllJobsButton.addTarget(self, action: #selector(viewAllJobs), for: .touchUpInside)
             }
-            
         case "DashBoardTableViewCell5":
-             cell = tableView.dequeueReusableCell(withIdentifier: "DashBoardTableViewCell5", for: indexPath) as! DashBoardTableViewCell
+            cell = tableView.dequeueReusableCell(withIdentifier: "DashBoardTableViewCell5", for: indexPath) as! DashBoardTableViewCell
             cell.galleryCollectionView.dataSource = self
             cell.galleryCollectionView.delegate = self
             cell.galleryCollectionView.tag = 5
-             
+            
             cell.galleryCollectionView.layoutIfNeeded()
             cell.galleryCollectionView.reloadData()
         case "DashBoardTableViewCell6":
             cell = tableView.dequeueReusableCell(withIdentifier: "DashBoardTableViewCell6", for: indexPath) as! DashBoardTableViewCell
-             if !(self.dashViewModel?.dashBoardFeedModel?.data?.advertisement_list!.isEmpty)!{
+            if !(self.dashViewModel?.dashBoardFeedModel?.data?.advertisement_list!.isEmpty)!{
                 if (self.dashViewModel?.dashBoardFeedModel?.data?.advertisement_list!.count)! - 1 == advertisementListCount{
                     advertisementListCount = 0
                 }else{
@@ -179,7 +173,7 @@ extension DashBoardViewController:UITableViewDelegate,UITableViewDataSource{
         let heightForRow : CGFloat!
         switch indexPath.row {
         case 0:
-            heightForRow = !(self.dashViewModel?.dashBoardFeedModel?.data?.news_list!.isEmpty)! ? 200 : 0
+           heightForRow = !(self.dashViewModel?.dashBoardFeedModel?.data?.news_list!.isEmpty)! ? 200 : 0
         case 1:
             heightForRow = !(self.dashViewModel?.dashBoardFeedModel?.data?.event_list!.isEmpty)! ? 300 : 0
         case 2:
@@ -199,26 +193,25 @@ extension DashBoardViewController:UITableViewDelegate,UITableViewDataSource{
     }
 }
 
- 
+
 extension DashBoardViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 5{
-             return (self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list?.count)!
+            return (self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list?.count)!
         }else if collectionView.tag == 1{
-             return (self.dashViewModel?.dashBoardFeedModel?.data?.event_list?.count)!
+            return (self.dashViewModel?.dashBoardFeedModel?.data?.event_list?.count)!
         }else if collectionView.tag == 2{
-             return (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list?.count)!
+            return (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list?.count)!
         }else{
-             return (self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list?.count)!
+            return (self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list?.count)!
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = DashBoardCollectionViewCell()
         switch collectionView.tag{
-            
         case 0,4,6:
-         break
+            break
         case 1:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
             if !(self.dashViewModel?.dashBoardFeedModel?.data?.event_list!.isEmpty)!{
@@ -233,7 +226,7 @@ extension DashBoardViewController: UICollectionViewDelegate,UICollectionViewData
                 return cell
             }
         case 2:
-             cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
             if !(self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list!.isEmpty)!{
                 cell.meetingNameLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_name)!
                 cell.meetingDateLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_date)!
@@ -242,15 +235,15 @@ extension DashBoardViewController: UICollectionViewDelegate,UICollectionViewData
                 cell.setShadow(radius: 10.0)
                 return cell
             }else{
-                    return cell
-                }
+                return cell
+            }
         case 3:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
             if !(self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list!.isEmpty)!{
                 cell.wishesNameLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list![indexPath.row].celebration_name)!
                 cell.wishesTitleLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list![indexPath.row].celebration_occasion)!
                 cell.wishesImageView.sd_setImage(with: URL(string: (self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list![indexPath.row].celebration_name)!), placeholderImage:  UIImage(named: "profile.png"), options: .continueInBackground, completed: nil)
-                 cell.setShadow(radius: 10.0)
+                cell.setShadow(radius: 10.0)
                 return cell
             }else{
                 return cell
@@ -260,9 +253,10 @@ extension DashBoardViewController: UICollectionViewDelegate,UICollectionViewData
             if !(self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list!.isEmpty)!{//rightArrowbutton
                 if (self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list!.count)! - 1 == indexPath.row{
                     cell.rightArrowbutton.isHidden = false
+                    cell.rightArrowbutton.addTarget(self, action: #selector(viewAllGallery), for: .touchUpInside)
                     cell.rightArrowbutton.tintColor = .black
                     cell.galleryImageView.alpha = 0.5
-                     cell.galleryVE.alpha = 0.7
+                    cell.galleryVE.alpha = 0.7
                 }else{
                     cell.galleryVE.alpha = 0.0
                     cell.rightArrowbutton.isHidden = true
@@ -278,6 +272,47 @@ extension DashBoardViewController: UICollectionViewDelegate,UICollectionViewData
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView.tag{
+        case 1:
+            debugPrint("Events")
+        case 2:
+            debugPrint("Meeting")
+        case 3:
+            self.dashViewModel?.moveToCelebrationPage(viewController: self)
+        case 5:
+            self.dashViewModel?.moveToGalleryImage(viewController: self, id: (self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list![indexPath.row].gallery_URL)!)
+        default:
+            break
+        }
+    }
+    
+    @objc func viewAllJobs(){
+        self.dashViewModel?.moveToJobList(viewController: self)
+    }
+    
+    @objc func viewJobs(){
+        self.dashViewModel?.moveToJobPage(viewController: self, id: (self.dashViewModel?.dashBoardFeedModel?.data?.job_vacancy_list!.first?.job_vacancy_id)!)
+    }
+    
+    @objc func viewAllGallery(){
+        self.dashViewModel?.moveToGalleryList(viewController: self)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            break
+        case 4:
+            break
+        case 6:
+            self.dashViewModel?.moveToURLPage(viewController: self,id:(self.dashViewModel?.dashBoardFeedModel?.data?.advertisement_list![advertisementListCount].advertisement_URL)! )
+        default:
+            break
+        }
+    }
+    
 }
 
 extension DashBoardViewController : UIGestureRecognizerDelegate{
@@ -286,6 +321,6 @@ extension DashBoardViewController : UIGestureRecognizerDelegate{
             newsListcount += 1
             updateCells()
         }
-      print("labelSwipedLeft called")
+        print("labelSwipedLeft called")
     }
 }

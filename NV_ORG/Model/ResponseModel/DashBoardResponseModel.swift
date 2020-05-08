@@ -16,6 +16,7 @@ public struct DashBoardResponseModel : Decodable {
 
 
 public struct DashBoardResponseData : Decodable {
+    let user_state : String?
     let user_mobile_number : String?
     let user_image_url : String?
     let is_chat : Bool?

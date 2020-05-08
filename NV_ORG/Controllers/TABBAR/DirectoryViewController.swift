@@ -67,6 +67,9 @@ extension DirectoryViewController :UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         directoryVM.heightForRow(indexPath.row)
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        directoryVM.moveToProfile(id: self.directoryVM.directory[indexPath.row].id!, viewController: self)
+    }
 }
 
 extension DirectoryViewController : UISearchBarDelegate{

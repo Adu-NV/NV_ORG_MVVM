@@ -12,12 +12,13 @@ class MenuViewController: UIViewController{
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var menuTableView: UITableView!
     @IBOutlet weak var outsideVide: UIView!
-   
+    var dashModel :DashBoardViewModel!
     private var menuControllerVM : MenuControllerViewModel!
     internal var delegate  : MenuViewModelDelegateProtocol!
     var model : DashBoardResponseModel? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+       dashModel = DashBoardViewModel()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -27,13 +28,14 @@ class MenuViewController: UIViewController{
     func setUpUI(){
         self.menuControllerVM = MenuControllerViewModel(model: model)
         self.menuControllerVM.delegate = self
-        let _tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backButton))
-        self.outsideVide.addGestureRecognizer(_tap)
+//        let _tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backButton))
+//        self.view.addGestureRecognizer(_tap)
         self.menuTableView.reloadData()
     }
     
     @objc func backButton(){
-        menuControllerVM.skipButtontapped(view: self)
+        dashModel.skipButtontapped(view: self)
+//        menuControllerVM.skipButtontapped(view: self)
     }
 }
 
@@ -50,7 +52,9 @@ extension MenuViewController: UITableViewDelegate,UITableViewDataSource{
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0{
             let  cell0 = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCells0", for: indexPath) as? MenuTableViewCells
-            cell0!.selectionStyle = .none
+//            let _tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backButton))
+//            cell0!.addGestureRecognizer(_tap)
+//            cell0!.selectionStyle = .none
             return cell0!
         }else{
             let  cell1 = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCells1" , for: indexPath) as? MenuTableViewCells

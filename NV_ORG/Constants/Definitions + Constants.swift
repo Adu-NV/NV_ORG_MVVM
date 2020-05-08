@@ -12,7 +12,7 @@ import Foundation
 let NGROK_ID : String                                   = "2a4a4de9"
 let BASE_URL : String                                     = "http://134.209.157.18/api/v1/"//"http://\(NGROK_ID).ngrok.io/api/v1/"
 
-//MARK:- SPRINT - 1
+//MARK:- Login
 
 let LOGIN_URL : String                                  = "login"
 let OTP_SUBMIT_URL : String                        = "otp_submit"
@@ -28,13 +28,30 @@ let DASHBOARD_URL : String                        = "dashboard"
 let DASHBOARD_FEED_URL : String              = "dashboard_feeds"
 //MARK:- PROFILE
 
-let USERDETAILS_URL : String                       = "user_details"
+let USERDETAILS_URL : String                        = "user_details"
 //MARK:- NEWS
-let NEWS_LIST_URL : String                          = "news"
-let JOBS_LIST_URL : String                            = "jobs"
+let NEWS_LIST_URL : String                           = "news"
 
 //MARK:- DIRECTORY
 
-let DIRECTORY_LIST_URL : String                 = "directory_list"
-let DIRECTORY_FILTER_LIST : String             = "directory_filter_list"
+let DIRECTORY_LIST_URL : String                  = "directory_list"
+let DIRECTORY_FILTER_LIST : String              = "directory_filter_list"
+let DIRECTORY_MEMBER_DETAIL : String     = "member_detail"
  
+//MARK:- GALLERY
+
+let GALLERY_LIST_URL : String                      = "gallery"
+let GALLERY_DETAIL_URL : String                 = ""
+
+
+//MARK:- JOB LIST
+
+let JOB_LIST_URL : String                               = "job_list"
+let JOB_DETAIL_URL : String                          = "job_details/"//job_details/id
+
+let CELEBRATION_LIST_URL : String              = "celebration_list"
+
+//MARK:- Notification
+
+let NOTIFICATION_LIST_URL : String             = "notifications_list"
+let ANNOUNCEMENT_LIST_URL : String        = "announcement_list"

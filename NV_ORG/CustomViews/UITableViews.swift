@@ -89,7 +89,19 @@ class profileTableViewCell : UITableViewCell{
     @IBOutlet weak var userBuddyLabel: UILabel!
     @IBOutlet weak var dateofPlannedLabel: UILabel!
     
+    @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
+    
+    @IBOutlet weak var buttonHeightConstraint: NSLayoutConstraint!
+    //for directory use only
+    
     override func awakeFromNib() {
+        if let _ = callButton{
+            callButton.setCornerRadius(radius: 6.0, bg_Color: BUTTON_LOGIN_COLOR)
+        }
+        if let _ = emailButton{
+            emailButton.setCornerRadius(radius: 6.0, bg_Color: BUTTON_LOGIN_COLOR)
+        }
         if let _ = profileImageView{
             profileImageView.layer.cornerRadius = 16.0
             profileImageView.layer.masksToBounds = true
@@ -147,17 +159,18 @@ class ProfileEditTableViewCell : UITableViewCell{
 
 class DashBoardTableViewCell : UITableViewCell{
     
+    
     @IBOutlet weak var galleryCollectionView: UICollectionView!
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     @IBOutlet weak var meetingsCollectionView: UICollectionView!
     @IBOutlet weak var WishesCollectionView: UICollectionView!
-//    var layout : UICollectionViewDelegateFlowLayout!
     
 //    cell 0
     
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsDescriptionLabel: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
+    
     //    cell 4
     
     @IBOutlet weak var jobTitle: UILabel!
@@ -170,10 +183,9 @@ class DashBoardTableViewCell : UITableViewCell{
 //    cell 6
     
     @IBOutlet weak var advertisementImageView: UIImageView!
-
     var layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    
     override func awakeFromNib() {
-        
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
@@ -181,21 +193,23 @@ class DashBoardTableViewCell : UITableViewCell{
         if let _ = viewjobButton{
             viewjobButton.setCornerRadiusWithoutBackground(radius: 6.0)
         }
+        
         if let _ = viewAllJobsButton{
             viewAllJobsButton.setCornerRadiusWithoutBackground(radius: 6.0)
         }
+        
         if let _ = galleryCollectionView{
-
             galleryCollectionView.layoutIfNeeded()
         }
+        
         if  let _ = eventsCollectionView  {
             layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
             layout.itemSize = CGSize(width: screenWidth  - 55, height: 250)
             layout.scrollDirection = .horizontal
             eventsCollectionView!.collectionViewLayout = layout
             eventsCollectionView.layoutIfNeeded()
-            
         }
+        
         if  let _ = meetingsCollectionView  {
             layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
             layout.itemSize = CGSize(width: screenWidth  - 50, height: 100)
@@ -203,6 +217,7 @@ class DashBoardTableViewCell : UITableViewCell{
             meetingsCollectionView!.collectionViewLayout = layout
             meetingsCollectionView.layoutIfNeeded()
         }
+        
         if  let _ = WishesCollectionView  {
             layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
             layout.itemSize = CGSize(width: screenWidth  - 50, height: 140)
@@ -210,27 +225,85 @@ class DashBoardTableViewCell : UITableViewCell{
             WishesCollectionView!.collectionViewLayout = layout
             WishesCollectionView.layoutIfNeeded()
         }
+        
         if let _ = galleryCollectionView{
             galleryCollectionView.setViewCornerRadius(radius: 10.0)
             layout.sectionInset  = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
             layout.scrollDirection = .horizontal
             layout.itemSize = CGSize(width: screenWidth  / 3 - 5, height: 190)
             galleryCollectionView!.collectionViewLayout = layout
-//            galleryCollectionView.layoutIfNeeded()
         }
     }
+
 }
 
 class NewsListPageTableViewCell : UITableViewCell{
-       @IBOutlet weak var newsListTitleLabel: UILabel!
-       @IBOutlet weak var newsUpdationLabel: UILabel!
-       @IBOutlet weak var newsPublishedLabel: UILabel!
-       @IBOutlet weak var notificationTitleLabel: UIImageView!
+    @IBOutlet weak var newsListTitleLabel: UILabel!
+    @IBOutlet weak var newsUpdationLabel: UILabel!
+    @IBOutlet weak var newsPublishedLabel: UILabel!
+    @IBOutlet weak var notificationTitleLabel: UIImageView!
     override func awakeFromNib() {
         
     }
     
 }
 
+class JobListTableViewCell : UITableViewCell{
+    @IBOutlet weak var jobImage: UIImageView!
+    @IBOutlet weak var jobTitleLabel: UILabel!
+    @IBOutlet weak var jobCompanyLabel: UILabel!
+    @IBOutlet weak var jobUpdatedLabel: UILabel!
+    @IBOutlet weak var jobLocationLabel: UILabel!
+    @IBOutlet weak var jobExperinceLabel: UILabel!
+    override func awakeFromNib() {
+        
+    }
+}
+
+class JobDetailTableViewCell : UITableViewCell{
+    @IBOutlet weak var jobCompanyLogo: UIImageView!
+    @IBOutlet weak var jobTitleLabel: UILabel!
+    @IBOutlet weak var jobCompanyNameLabel: UILabel!
+    @IBOutlet weak var jobLocationLabel: UILabel!
+    @IBOutlet weak var jobPriceLAbel: UILabel!
+    @IBOutlet weak var jobUpdatedLabel: UILabel!
+    @IBOutlet weak var jobRequirementLabel: UILabel!
+    @IBOutlet weak var jobExperienceLabel: UILabel!
+    @IBOutlet weak var jobDescriptionLabel: UILabel!
+    
+    @IBOutlet weak var jobApplyButton: UIButton!
+    
+    @IBOutlet weak var relatedView: UIView!
+    
+    override func awakeFromNib() {
+        if let _ = jobApplyButton{
+            jobApplyButton.setCornerRadius(radius: 6.0, bg_Color: BUTTON_LOGIN_COLOR)
+        }
+        
+    }
+}
+
+
+class CelebrationListTableViewCell : UITableViewCell{
+    @IBOutlet weak var celebrationImageView: UIImageView!
+    @IBOutlet weak var celebrationNameLabel: UILabel!
+    @IBOutlet weak var celebrationYearlabel: UILabel!
+    @IBOutlet weak var celebrationTitle: UILabel!
+    
+    @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var chatButton: UIButton!
+    
+    @IBOutlet weak var celebrationUpcomingLabel: UILabel!
+    @IBOutlet weak var celebrationCollectionView: UICollectionView!
+    
+   override func awakeFromNib() {
+        if let _ = callButton{
+            callButton.setCornerRadius(radius: 6.0, bg_Color: BUTTON_LOGIN_COLOR)
+        }
+        if let _ = chatButton{
+            chatButton.setCornerRadius(radius: 6.0, bg_Color: BUTTON_LOGIN_COLOR)
+        }
+    }
+}
 
 

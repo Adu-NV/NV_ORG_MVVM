@@ -90,6 +90,7 @@ class Webservice{
                         let otp = try? jsonDecoder.decode(DashBoardResponseModel.self,from: data)
                         if otp?.data != nil{
                             if  (otp?.code)! == 200{
+                                UserDefaults.standard.set((otp?.data?.user_state)!, forKey: "state")
                                 completionBlock(otp, nil)
                             }else{
                                 completionBlock(nil, otp?.message)
@@ -168,37 +169,7 @@ class Webservice{
         }catch{
         }
     }
-    //JOBS_LIST_URL
-    //MARK: Job List
-    func jobsList(completionBlock : @escaping(JobsPageListResponseModel?,String?) -> ()){
-        let url = URL(string : BASE_URL + JOBS_LIST_URL)
-        do {
-            let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                let jsonDecoder = JSONDecoder()
-                do{
-                    if let error = error{
-                        debugPrint(error.localizedDescription)
-                        completionBlock(nil, "internet error")
-                    }else if let data = data{
-                        let user = try? jsonDecoder.decode(JobsPageListResponseModel.self,from: data)
-                        if user?.data != nil{
-                            if  (user?.code)! == 200{
-                                completionBlock(user, nil)
-                            }else{
-                                completionBlock(nil, user?.message)
-                            }
-                        }else{
-                            completionBlock(nil,"internet error")
-                        }
-                    }
-                }catch{
-                }
-            }
-            task.resume()
-        }catch{
-        }
-    }
+    
     
     func  getDirectoryLis(completionBlock : @escaping(DirectoryListResponseModel?,String?) -> ()){
         let url = URL(string : BASE_URL + DIRECTORY_LIST_URL)
@@ -261,6 +232,134 @@ class Webservice{
         }catch{
         }
     }
+    //GALLERY_LIST_URL
+    
+    func  getGalleryList(completionBlock : @escaping(GalleryListResponseModel?,String?) -> ()){
+        
+        let url = URL(string : BASE_URL + GALLERY_LIST_URL)
+        do {
+            let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(GalleryListResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
+    
+        //GALLERY_LIST_URL
+    //NotificationListResponseModel
+    
+    func  getNotificationList(tag : Int ,completionBlock : @escaping(NotificationListResponseModel?,String?) -> ()){
+        let urlSubString = tag == 0 ? NOTIFICATION_LIST_URL : ANNOUNCEMENT_LIST_URL
+        let url = URL(string : BASE_URL + urlSubString)
+        do {
+            let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(NotificationListResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
+    
+    func  getJobDetail(id : String ,completionBlock : @escaping(JobDetailResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + JOB_DETAIL_URL + id)
+        do {
+            let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(JobDetailResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
+    
+    
+    //CELEBRATION_LIST_URL
+    func  getCelebrationList(completionBlock : @escaping(JobDetailResponseModel?,String?) -> ()){
+          let url = URL(string : BASE_URL + CELEBRATION_LIST_URL)
+          do {
+              let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
+              let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                  let jsonDecoder = JSONDecoder()
+                  do{
+                      if let error = error{
+                          debugPrint(error.localizedDescription)
+                          completionBlock(nil, "internet error")
+                      }else if let data = data{
+                          let user = try? jsonDecoder.decode(JobDetailResponseModel.self,from: data)
+                          if user?.data != nil{
+                              if  (user?.code)! == 200{
+                                  completionBlock(user, nil)
+                              }else{
+                                  completionBlock(nil, user?.message)
+                              }
+                          }else{
+                              completionBlock(nil,"internet error")
+                          }
+                      }
+                  }catch{
+                  }
+              }
+              task.resume()
+          }catch{
+          }
+      }
 }
 
 

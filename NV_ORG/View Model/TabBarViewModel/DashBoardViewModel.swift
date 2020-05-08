@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 struct DashBoardViewModel{
-    
+    let mainStory =  UIStoryboard.init(name: "Main", bundle: nil)
     public var delegate : DashBoardViewModelViewControllerDelegateProtocol?
      let main =  UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
     public var mainCell: [String] = [String]()
@@ -42,7 +42,6 @@ extension DashBoardViewModel : DashBoardViewModelDelegateProtocol{
         if model.is_advertisment!{
             self.mainCell.append("DashBoardTableViewCell6")
         }
-        
         request = DashBoardFeedRequestModel(dashBoard: model)
     }
     
@@ -60,6 +59,7 @@ extension DashBoardViewModel : DashBoardViewModelDelegateProtocol{
     var numberofSections : Int {
          return  1
      }
+    
     func numberOfRowsInSection(_ section : Int) -> Int{
         return self.mainCell.count
      }
@@ -68,4 +68,69 @@ extension DashBoardViewModel : DashBoardViewModelDelegateProtocol{
         return UITableView.automaticDimension
     }
 
+    func moveToGalleryList(viewController: UIViewController) {
+        let gallery = mainStory.instantiateViewController(withIdentifier: "GalleryViewController") as! GalleryViewController
+        if #available(iOS 13.0, *) {
+            viewController.navigationController?.pushViewController(gallery, animated: false)
+        }else{
+            viewController.present(gallery, animated: false, completion: nil)
+        }
+    }
+    
+    func moveToGalleryImage(viewController: UIViewController ,id : String) {
+        let galleryImage = mainStory.instantiateViewController(withIdentifier: "GalleryImageViewController") as! GalleryImageViewController
+        galleryImage.galleryId = id
+        if #available(iOS 13.0, *) {
+            viewController.navigationController?.pushViewController(galleryImage, animated: false)
+        }else{
+            viewController.present(galleryImage, animated: false, completion: nil)
+        }
+    }
+    
+    func moveToURLPage(viewController: UIViewController ,id : String) {
+//        let urlPage = mainStory.instantiateViewController(withIdentifier: "URLViewController") as! URLViewController
+//        urlPage.urlString = id
+//        if #available(iOS 13.0, *) {
+//            viewController.navigationController?.pushViewController(urlPage, animated: false)
+//        }else{
+//            viewController.present(urlPage, animated: false, completion: nil)
+//        }
+        guard let url = URL(string:id) else {
+          return //be safe
+        }
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
+    func moveToJobList(viewController: UIViewController) {
+        let jobs = mainStory.instantiateViewController(withIdentifier: "JobsListViewController") as! JobsListViewController
+        if #available(iOS 13.0, *) {
+            viewController.navigationController?.pushViewController(jobs, animated: false)
+        }else{
+            viewController.present(jobs, animated: false, completion: nil)
+        }
+    }
+    
+    func moveToJobPage(viewController: UIViewController,id: String) {
+        let jobDetail = mainStory.instantiateViewController(withIdentifier: "JobsDetailViewController") as! JobsDetailViewController
+        jobDetail.jobId = id
+        if #available(iOS 13.0, *) {
+            viewController.navigationController?.pushViewController(jobDetail, animated: false)
+        }else{
+            viewController.present(jobDetail, animated: false, completion: nil)
+        }
+    }
+    
+    func moveToCelebrationPage(viewController: UIViewController) {
+        let jobDetail = mainStory.instantiateViewController(withIdentifier: "CelebrationViewController") as! CelebrationViewController
+        if #available(iOS 13.0, *) {
+            viewController.navigationController?.pushViewController(jobDetail, animated: false)
+        }else{
+            viewController.present(jobDetail, animated: false, completion: nil)
+        }
+    }
+    //CelebrationViewController
 }

@@ -63,6 +63,7 @@ extension ProfileViewController : UITableViewDelegate,UITableViewDataSource{
             cell = tableView.dequeueReusableCell(withIdentifier: "profileTableViewCell0", for: indexPath) as! profileTableViewCell
             if let _ = model{
                 //SplashScreen.pn
+//                cell.buttonHeightConstraint.constant = 0
                 cell.profileImageView!.sd_setImage(with: URL(string: (self.model?.profileImage!)!), placeholderImage:  UIImage(named: "profile.png"), options: .continueInBackground, completed: nil)
                 cell.coverImageView!.sd_setImage(with: URL(string: (self.model?.coverImage!)!), placeholderImage:  UIImage(named: "SplashScreen.png"), options: .continueInBackground, completed: nil)
                 cell.profileName.text = self.model?.name!

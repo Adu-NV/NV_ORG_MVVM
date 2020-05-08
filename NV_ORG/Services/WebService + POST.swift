@@ -241,4 +241,66 @@ extension Webservice{
         }catch{
         }
     }
+    
+    //JOBS_LIST_URL//search_word=web developer,job_type=freelance,state=Kerala
+    //MARK: Job List
+    func jobsList(body : Dictionary<String,String>,completionBlock : @escaping(JobsPageListResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + JOB_LIST_URL)
+        do {
+            let request  = getRequest(url: url!, method: .post, auth: true, accept: .json, Content_Type: .json, body: body)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(JobsPageListResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
+    //DIRECTORY_MEMBER_DETAIL
+    func directoryProfile(body : Dictionary<String,String>,completionBlock : @escaping(DirectoryProfileResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + DIRECTORY_MEMBER_DETAIL)
+        do {
+            let request  = getRequest(url: url!, method: .post, auth: true, accept: .json, Content_Type: .json, body: body)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(DirectoryProfileResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
 }

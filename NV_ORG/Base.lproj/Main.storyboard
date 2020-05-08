@@ -1231,14 +1231,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileTableViewCell0" id="sH1-bt-IdA" customClass="profileTableViewCell" customModule="NV_ORG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="469"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="468.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sH1-bt-IdA" id="KRV-la-27F">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="469"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="468.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ig-AU-nva">
-                                                    <rect key="frame" x="15" y="11" width="290" height="447"/>
+                                                    <rect key="frame" x="15" y="11" width="290" height="446.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="4b0-SN-SGW">
                                                             <rect key="frame" x="0.0" y="0.0" width="290" height="140"/>
@@ -1272,73 +1272,73 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of joining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGj-Hc-ODe">
-                                                            <rect key="frame" x="10" y="416.5" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="10" y="416" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12-10-2020" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="es3-Pl-lA2">
-                                                            <rect key="frame" x="147.5" y="416.5" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="147.5" y="416" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Team 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1r9-TD-Vtt">
-                                                            <rect key="frame" x="147.5" y="386" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="147.5" y="385.5" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Member ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SI1-g1-ZiE">
-                                                            <rect key="frame" x="10" y="227" width="132.5" height="21.5"/>
+                                                            <rect key="frame" x="10" y="227" width="132.5" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile No." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmK-qL-uLU">
-                                                            <rect key="frame" x="10" y="258.5" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="10" y="258" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXW-ZN-7Al">
-                                                            <rect key="frame" x="10" y="289" width="132.5" height="36"/>
+                                                            <rect key="frame" x="10" y="288.5" width="132.5" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="748" text="position in the Society" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLx-0z-ZY7">
-                                                            <rect key="frame" x="10" y="335" width="132.5" height="41"/>
+                                                            <rect key="frame" x="10" y="334.5" width="132.5" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Belongs to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dO6-zY-zqB">
-                                                            <rect key="frame" x="10" y="386" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="10" y="385.5" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWd-IP-TNN">
-                                                            <rect key="frame" x="147.5" y="227" width="132.5" height="21.5"/>
+                                                            <rect key="frame" x="147.5" y="227" width="132.5" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91-9544359699" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SMa-6V-JxU">
-                                                            <rect key="frame" x="147.5" y="258.5" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="147.5" y="258" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kcadarsh18@gmail.com" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gPy-9M-VOq">
-                                                            <rect key="frame" x="147.5" y="289" width="132.5" height="36"/>
+                                                            <rect key="frame" x="147.5" y="288.5" width="132.5" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="high" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6n-1z-IvY">
-                                                            <rect key="frame" x="147.5" y="335" width="132.5" height="41"/>
+                                                            <rect key="frame" x="147.5" y="334.5" width="132.5" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -1428,7 +1428,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileTableViewCell1" id="BlR-28-OiH" customClass="profileTableViewCell" customModule="NV_ORG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="497" width="320" height="823"/>
+                                        <rect key="frame" x="0.0" y="496.5" width="320" height="823"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BlR-28-OiH" id="QZl-Bx-LQC">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="823"/>
@@ -2306,14 +2306,14 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuTableViewCells1" id="SQ1-FF-ni8" customClass="MenuTableViewCells" customModule="NV_ORG" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="108" width="213.5" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="108" width="213.5" height="43"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SQ1-FF-ni8" id="0cz-LG-xfg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="213.5" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="213.5" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYK-kZ-AQF">
-                                                            <rect key="frame" x="15" y="11" width="183.5" height="21.5"/>
+                                                            <rect key="frame" x="15" y="11" width="183.5" height="21"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5277,14 +5277,14 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CelebrationListTableViewCell" id="YAo-Hm-B08" customClass="CelebrationListTableViewCell" customModule="NV_ORG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YAo-Hm-B08" id="C5A-xp-tcy">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday's Today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayf-xO-PWz">
-                                                    <rect key="frame" x="25" y="11" width="270" height="21.5"/>
+                                                    <rect key="frame" x="25" y="11" width="270" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -5301,7 +5301,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                                         <inset key="separatorInset" minX="1000000000" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CelebrationListTableViewCell1" rowHeight="159" id="pCq-qX-mMK" customClass="CelebrationListTableViewCell" customModule="NV_ORG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="71.5" width="320" height="159"/>
+                                        <rect key="frame" x="0.0" y="71" width="320" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pCq-qX-mMK" id="Gwa-V0-lMr">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
@@ -5406,7 +5406,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CelebrationListTableViewCell2" rowHeight="220" id="3Ox-hn-THb" customClass="CelebrationListTableViewCell" customModule="NV_ORG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="230.5" width="320" height="220"/>
+                                        <rect key="frame" x="0.0" y="230" width="320" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Ox-hn-THb" id="CDb-g1-IRk">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
@@ -5517,6 +5517,9 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mVj-dd-YVF"/>
                     </view>
+                    <connections>
+                        <outlet property="celebrationListTableView" destination="H1t-A6-XTM" id="tug-MZ-z0M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wxI-kl-WQp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -5811,14 +5814,14 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileTableViewCell0" id="cSa-eq-vOs" customClass="profileTableViewCell" customModule="NV_ORG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="489"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="488.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cSa-eq-vOs" id="0S3-oc-AFP">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="489"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="488.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQ4-J8-uPM">
-                                                    <rect key="frame" x="15" y="11" width="290" height="467"/>
+                                                    <rect key="frame" x="15" y="11" width="290" height="466.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="dEg-g8-QK1">
                                                             <rect key="frame" x="0.0" y="0.0" width="290" height="140"/>
@@ -5852,73 +5855,73 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of joining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFQ-3Q-BDH">
-                                                            <rect key="frame" x="10" y="436.5" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="10" y="436" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12-10-2020" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgA-mx-gAl">
-                                                            <rect key="frame" x="147.5" y="436.5" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="147.5" y="436" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Team 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUI-zT-bzf">
-                                                            <rect key="frame" x="147.5" y="406" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="147.5" y="405.5" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Member ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paF-nS-CBX">
-                                                            <rect key="frame" x="10" y="247" width="132.5" height="21.5"/>
+                                                            <rect key="frame" x="10" y="247" width="132.5" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile No." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rN-8e-c9U">
-                                                            <rect key="frame" x="10" y="278.5" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="10" y="278" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOV-hq-xar">
-                                                            <rect key="frame" x="10" y="309" width="132.5" height="36"/>
+                                                            <rect key="frame" x="10" y="308.5" width="132.5" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="748" text="position in the Society" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEe-bo-sQN">
-                                                            <rect key="frame" x="10" y="355" width="132.5" height="41"/>
+                                                            <rect key="frame" x="10" y="354.5" width="132.5" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Belongs to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syM-4Y-Rdb">
-                                                            <rect key="frame" x="10" y="406" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="10" y="405.5" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkN-3v-BIb">
-                                                            <rect key="frame" x="147.5" y="247" width="132.5" height="21.5"/>
+                                                            <rect key="frame" x="147.5" y="247" width="132.5" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91-9544359699" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ybs-76-Ufa">
-                                                            <rect key="frame" x="147.5" y="278.5" width="132.5" height="20.5"/>
+                                                            <rect key="frame" x="147.5" y="278" width="132.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kcadarsh18@gmail.com" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9PG-Nc-VE8">
-                                                            <rect key="frame" x="147.5" y="309" width="132.5" height="36"/>
+                                                            <rect key="frame" x="147.5" y="308.5" width="132.5" height="36"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="high" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCI-cX-X5I">
-                                                            <rect key="frame" x="147.5" y="355" width="132.5" height="41"/>
+                                                            <rect key="frame" x="147.5" y="354.5" width="132.5" height="41"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -6037,7 +6040,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileTableViewCell1" id="Jrp-1s-rEL" customClass="profileTableViewCell" customModule="NV_ORG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="517" width="320" height="823"/>
+                                        <rect key="frame" x="0.0" y="516.5" width="320" height="823"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jrp-1s-rEL" id="7UR-zf-qvo">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="823"/>

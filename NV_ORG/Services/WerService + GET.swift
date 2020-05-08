@@ -331,7 +331,7 @@ class Webservice{
     
     
     //CELEBRATION_LIST_URL
-    func  getCelebrationList(completionBlock : @escaping(JobDetailResponseModel?,String?) -> ()){
+    func  getCelebrationList(completionBlock : @escaping(CelebrationListResponseModel?,String?) -> ()){
           let url = URL(string : BASE_URL + CELEBRATION_LIST_URL)
           do {
               let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
@@ -342,7 +342,7 @@ class Webservice{
                           debugPrint(error.localizedDescription)
                           completionBlock(nil, "internet error")
                       }else if let data = data{
-                          let user = try? jsonDecoder.decode(JobDetailResponseModel.self,from: data)
+                          let user = try? jsonDecoder.decode(CelebrationListResponseModel.self,from: data)
                           if user?.data != nil{
                               if  (user?.code)! == 200{
                                   completionBlock(user, nil)

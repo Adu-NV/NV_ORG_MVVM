@@ -69,6 +69,7 @@
 		E4AB5CA72465703600BF734C /* DirectoryProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB5CA62465703600BF734C /* DirectoryProfileViewController.swift */; };
 		E4AB5CA92465729300BF734C /* DirectoryProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB5CA82465729300BF734C /* DirectoryProfileResponseModel.swift */; };
 		E4AB5CAB246572BF00BF734C /* DirectoryProfileRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB5CAA246572BF00BF734C /* DirectoryProfileRequestModel.swift */; };
+		E4AB5CAD2465958300BF734C /* CelebrationListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AB5CAC2465958300BF734C /* CelebrationListResponseModel.swift */; };
 		E4B03357242088C7007F9098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B03356242088C7007F9098 /* AppDelegate.swift */; };
 		E4B03359242088C7007F9098 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B03358242088C7007F9098 /* SceneDelegate.swift */; };
 		E4B0335E242088C7007F9098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B0335C242088C7007F9098 /* Main.storyboard */; };
@@ -201,6 +202,7 @@
 		E4AB5CA62465703600BF734C /* DirectoryProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryProfileViewController.swift; sourceTree = "<group>"; };
 		E4AB5CA82465729300BF734C /* DirectoryProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryProfileResponseModel.swift; sourceTree = "<group>"; };
 		E4AB5CAA246572BF00BF734C /* DirectoryProfileRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryProfileRequestModel.swift; sourceTree = "<group>"; };
+		E4AB5CAC2465958300BF734C /* CelebrationListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationListResponseModel.swift; sourceTree = "<group>"; };
 		E4B03353242088C7007F9098 /* NV_ORG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NV_ORG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B03356242088C7007F9098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4B03358242088C7007F9098 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -624,6 +626,7 @@
 				E4B92C462463DB9D004B7EF7 /* NotificationListResponseModel.swift */,
 				E4B92C5624644546004B7EF7 /* JobDetailResponseModel.swift */,
 				E4AB5CA82465729300BF734C /* DirectoryProfileResponseModel.swift */,
+				E4AB5CAC2465958300BF734C /* CelebrationListResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -936,6 +939,7 @@
 				E4C6EE822462CEE4009B4EDF /* URLViewController.swift in Sources */,
 				E4AA654924249DE200B29271 /* ResetPasswordRequestModel.swift in Sources */,
 				E4A38DB1242335F40023CB6D /* OTPRequestModel.swift in Sources */,
+				E4AB5CAD2465958300BF734C /* CelebrationListResponseModel.swift in Sources */,
 				E4B92C5524642093004B7EF7 /* JobListRequestModel.swift in Sources */,
 				E4B033E32420E165007F9098 /* Colors + Constant.swift in Sources */,
 				E4A38DBF24237A770023CB6D /* EmailCheckViewController.swift in Sources */,

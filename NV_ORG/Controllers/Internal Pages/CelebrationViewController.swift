@@ -11,6 +11,7 @@ import UIKit
 class CelebrationViewController: UIViewController {
 //celebrationListCollectionViewCell
     //CelebrationListTableViewCell2
+    var celebrationListModel : CelebrationListResponseModel? = nil
     var layout = UICollectionViewFlowLayout()
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
@@ -36,7 +37,7 @@ class CelebrationViewController: UIViewController {
     func getList(){
         Webservice.shared.getCelebrationList { (model, error) in
             if let _ = model{
-                
+                self.celebrationListModel = model
             }else{
                 
             }
@@ -57,10 +58,16 @@ class CelebrationViewController: UIViewController {
 
 extension CelebrationViewController :UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        let count = (self.celebrationListModel?.data?.birthday_today_list!.count)! + (self.celebrationListModel?.data?.anniversary_today_list!.count)!  + (self.celebrationListModel?.data?.upcoming_birthday_today_list!.isEmpty)! ? 0 : 1
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //CelebrationListTableViewCell2
+        //CelebrationListTableViewCell1
+        //CelebrationListTableViewCell
+        
+        var cell = CelebrationListTableViewCell()
         return UITableViewCell()
     }
     
@@ -69,10 +76,11 @@ extension CelebrationViewController :UITableViewDelegate,UITableViewDataSource{
 
 extension CelebrationViewController : UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return (self.celebrationListModel?.data?.upcoming_birthday_today_list!.isEmpty)! ? 0 : 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //celebrationListCollectionViewCell
         return UICollectionViewCell()
     }
     

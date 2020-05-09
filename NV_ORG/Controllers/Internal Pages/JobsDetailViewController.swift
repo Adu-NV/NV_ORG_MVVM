@@ -11,6 +11,7 @@ import UIKit
 class JobsDetailViewController: UIViewController {
     var jobId : String = ""
     var jobDetail : JobDetailResponseModel? = nil
+    var activitiIndicatorView = UIView()
     @IBOutlet weak var jobDetailTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,9 @@ class JobsDetailViewController: UIViewController {
     }
 
     func getDetails(){
+        activitiIndicatorView = self.showActivityIndicator(_message: "Please wait...")
         Webservice.shared.getJobDetail(id: jobId) { (model, error) in
+            self.hideActivityIndicator(uiView: self.activitiIndicatorView)
             if let _ = model{
                 self.jobDetail  = model
             }

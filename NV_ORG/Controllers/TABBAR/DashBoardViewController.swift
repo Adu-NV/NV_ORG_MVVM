@@ -20,7 +20,7 @@ class DashBoardViewController: UIViewController {
     var newsListcount = 0
     var advertisementListCount = 0
     var swipeLeft : UISwipeGestureRecognizer!
-    
+    var activitiIndicatorView = UIView()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -50,7 +50,9 @@ extension DashBoardViewController : DashBoardViewModelViewControllerDelegateProt
     }
     
     func callApi(){
+        activitiIndicatorView = self.showActivityIndicator(_message: "Please wait...")
         Webservice.shared.dsashBoardRequest { (model, erroe) in
+            self.hideActivityIndicator(uiView: self.activitiIndicatorView)
             debugPrint(model)
             if model != nil {
                 self.dashModel = model

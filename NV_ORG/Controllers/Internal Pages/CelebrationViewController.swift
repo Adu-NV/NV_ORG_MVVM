@@ -9,14 +9,13 @@
 import UIKit
 
 class CelebrationViewController: UIViewController {
-//celebrationListCollectionViewCell
-    //CelebrationListTableViewCell2
     var count = 0
     var celebrationListModel : CelebrationListResponseModel? = nil
     var layout = UICollectionViewFlowLayout()
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     var row = 0
+    var activitiIndicatorView = UIView()
     
     @IBOutlet weak var celebrationListTableView: UITableView!
     
@@ -32,7 +31,9 @@ class CelebrationViewController: UIViewController {
     }
     
     func getList(){
+        activitiIndicatorView = self.showActivityIndicator(_message: "Please wait...")
         Webservice.shared.getCelebrationList { (model, error) in
+            self.hideActivityIndicator(uiView: self.activitiIndicatorView)
             if let _ = model{
                 self.celebrationListModel = model
             }else{
@@ -125,7 +126,6 @@ extension CelebrationViewController : UICollectionViewDelegate,UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //celebrationListCollectionViewCell
         var cell = celebrationListCollectionViewCell()
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: "celebrationListCollectionViewCell", for: indexPath) as! celebrationListCollectionViewCell
         cell.celebrationPersonImageView.sd_setImage(with: URL(string: (self.celebrationListModel?.data?.upcoming_birthday_today_list![indexPath.row].user_celebration_profile_picture)!), placeholderImage: nil, options: .continueInBackground, context: nil)

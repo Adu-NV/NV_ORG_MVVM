@@ -14,6 +14,7 @@ class NotificationViewController: UIViewController {
     var tag = 0
     var not_Model : NotificationListResponseModel? = nil
     var rowCount = 0
+    var activitiIndicatorView = UIView()
     
     @IBOutlet weak var notificationsTableView: UITableView!
     @IBOutlet weak var anouncementView: UIView!
@@ -54,8 +55,9 @@ class NotificationViewController: UIViewController {
     }
     
     func getList(){
-        
+        activitiIndicatorView = self.showActivityIndicator(_message: "Please wait...")
         Webservice.shared.getNotificationList(tag: tag) { (model, error) in
+            self.hideActivityIndicator(uiView: self.activitiIndicatorView)
             if let _ = model{
                 self.not_Model = model
                 self.rowCount = (self.tag == 0 ? (self.not_Model?.data?.notifications_list != nil ? (model?.data!.notifications_list!.count)! : 0) :  ((self.not_Model?.data?.announcement_list != nil ? (model?.data!.announcement_list!.count)! : 0)))
@@ -81,13 +83,13 @@ extension NotificationViewController : UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if notificationsVM.numberofRows == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "EmptyTableViewCell", for: indexPath) as! EmptyTableViewCell
-//            cell.noDataImageView.image = UIImage(named: "nodatafound.png")
+            //            cell.noDataImageView.image = UIImage(named: "nodatafound.png")
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.text = "No Data Available"
             return cell
         }
         if tag == 0{
-           let cell1 = tableView.dequeueReusableCell(withIdentifier: "NotificationsTableViewCell", for: indexPath) as! NotificationsTableViewCell
+            let cell1 = tableView.dequeueReusableCell(withIdentifier: "NotificationsTableViewCell", for: indexPath) as! NotificationsTableViewCell
             cell1.notificationTitleLabel.text = (self.not_Model?.data?.notifications_list![indexPath.row].notification_brief)!
             return cell1
         }else{

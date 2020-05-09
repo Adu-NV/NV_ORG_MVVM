@@ -9,12 +9,12 @@
 import UIKit
 
 class JobsListViewController: UIViewController {
-
+    var activitiIndicatorView = UIView()
     var jobList : JobsPageListResponseModel? = nil
     var jobRequest = JobListRequestModel()
     var search_Key = ""
     var job_Type = ""
-     let mainStory =  UIStoryboard.init(name: "Main", bundle: nil)
+    let mainStory =  UIStoryboard.init(name: "Main", bundle: nil)
     
     @IBOutlet weak var jobSearch: UISearchBar!
     @IBOutlet weak var jobSegment: UISegmentedControl!
@@ -34,8 +34,9 @@ class JobsListViewController: UIViewController {
     }
     
     func getList(){
-        
+        activitiIndicatorView = self.showActivityIndicator(_message: "Please wait...")
         Webservice.shared.jobsList(body: jobRequest.updateDic) { (model, error) in
+            self.hideActivityIndicator(uiView: self.activitiIndicatorView)
             if let _ = model{
                 self.jobList = model
                 DispatchQueue.main.async {
@@ -44,7 +45,7 @@ class JobsListViewController: UIViewController {
             }
         }
     }
-
+    
     @IBAction func jobsSegmentTapped(_ sender: UISegmentedControl) {
         if sender.tag == 1{
             jobRequest = JobListRequestModel(_state: UserDefaults.standard.value(forKey: "state") as! String, _search_word: search_Key, _job_type: job_Type)
@@ -76,9 +77,9 @@ extension JobsListViewController : UITableViewDelegate,UITableViewDataSource{
         var cell = JobListTableViewCell()
         cell = tableView.dequeueReusableCell(withIdentifier: "JobListTableViewCell", for: indexPath) as! JobListTableViewCell
         cell.jobCompanyLabel.text = (self.jobList?.data?.job_vacancy_list![indexPath.row].job_vacancy_company_name)!
-         cell.jobLocationLabel.text = (self.jobList?.data?.job_vacancy_list![indexPath.row].job_vacancy_location)!
-         cell.jobTitleLabel.text = (self.jobList?.data?.job_vacancy_list![indexPath.row].job_vacancy_name)!
-         cell.jobUpdatedLabel.text = (self.jobList?.data?.job_vacancy_list![indexPath.row].job_posted_date)!
+        cell.jobLocationLabel.text = (self.jobList?.data?.job_vacancy_list![indexPath.row].job_vacancy_location)!
+        cell.jobTitleLabel.text = (self.jobList?.data?.job_vacancy_list![indexPath.row].job_vacancy_name)!
+        cell.jobUpdatedLabel.text = (self.jobList?.data?.job_vacancy_list![indexPath.row].job_posted_date)!
         cell.jobExperinceLabel.text = (self.jobList?.data?.job_vacancy_list![indexPath.row].job_vacancy_package)!
         cell.jobImage.sd_setImage(with: URL(string: (self.jobList?.data?.job_vacancy_list![indexPath.row].job_vacancy_company_logo)!) , placeholderImage: UIImage(named: "netventure.png"), options: .continueInBackground, completed: nil)
         cell.selectionStyle = .none

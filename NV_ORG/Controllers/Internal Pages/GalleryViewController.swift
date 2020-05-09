@@ -13,6 +13,7 @@ class GalleryViewController: UIViewController {
 
     @IBOutlet weak var galleryCollectionView: UICollectionView!
     var galleryList : GalleryListResponseData? = nil
+    var activitiIndicatorView = UIView()
     let mainStory =  UIStoryboard.init(name: "Main", bundle: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +44,9 @@ class GalleryViewController: UIViewController {
     }
 
     func getGaleryList(){
+        activitiIndicatorView = self.showActivityIndicator(_message: "Please wait...")
         Webservice.shared.getGalleryList { (model, error) in
-            debugPrint(model)
+            self.hideActivityIndicator(uiView: self.activitiIndicatorView)
             if let _ = model{
                 self.galleryList = model?.data
                 DispatchQueue.main.async {

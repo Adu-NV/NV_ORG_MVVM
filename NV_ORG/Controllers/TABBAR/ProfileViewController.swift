@@ -12,6 +12,7 @@ import SDWebImage
 class ProfileViewController: UIViewController {
     var model : Profile?
     let profileVM = ProfileViewModel()
+    var activitiIndicatorView = UIView()
     @IBOutlet weak var profileTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,9 @@ class ProfileViewController: UIViewController {
     }
     
     func callWebservice(){
+        activitiIndicatorView = self.showActivityIndicator(_message: "Please wait...")
         Webservice.shared.profileRequest { (model, erroe) in
-            debugPrint(model)
+            self.hideActivityIndicator(uiView: self.activitiIndicatorView)
             if model != nil{
                 self.profileVM.setProfileModel(model: model!)
                 self.model = self.profileVM.getProfile()

@@ -16,6 +16,7 @@ class DirectoryProfileViewController: UIViewController {
     let profileVM = ProfileViewModel()
     var directory = DirectoryProfileRequestModel()
     var id = ""
+    var activitiIndicatorView = UIView()
     @IBOutlet weak var directoryProfileTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +32,9 @@ class DirectoryProfileViewController: UIViewController {
     
     func callWebservice(){
         directory = DirectoryProfileRequestModel(_id: id)
+        activitiIndicatorView = self.showActivityIndicator(_message: "Please wait...")
         Webservice.shared.directoryProfile(body: directory.updateDic, completionBlock: { (model, errorString) in
-            
+            self.hideActivityIndicator(uiView: self.activitiIndicatorView)
             debugPrint(model)
             if model != nil{
                 self.model = model

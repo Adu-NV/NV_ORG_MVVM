@@ -10,7 +10,8 @@ import UIKit
 import SDWebImage
 
 class DirectoryViewController: UIViewController {
-let directoryVM = DirectoryViewModel()
+    var activitiIndicatorView = UIView()
+    let directoryVM = DirectoryViewModel()
     @IBOutlet weak var directorySearchBar: UISearchBar!
     @IBOutlet weak var directoryTableView: UITableView!
     override func viewDidLoad() {
@@ -21,7 +22,9 @@ let directoryVM = DirectoryViewModel()
         setUI()
     }
     func setUI(){
+        activitiIndicatorView = self.showActivityIndicator(_message: "Please wait...")
         Webservice.shared.getDirectoryLis { (model, message) in
+            self.hideActivityIndicator(uiView: self.activitiIndicatorView)
             if let _ = model{
                 debugPrint(model)
                 self.directoryVM.setUpModel(model: model!)

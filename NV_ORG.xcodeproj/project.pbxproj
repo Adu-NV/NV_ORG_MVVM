@@ -61,6 +61,7 @@
 		E4A4AE84245A94810045C5A1 /* DirectoryFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4AE83245A94810045C5A1 /* DirectoryFilterViewModel.swift */; };
 		E4A4AE86245AABB00045C5A1 /* DirectoryFilterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4AE85245AABB00045C5A1 /* DirectoryFilterResponseModel.swift */; };
 		E4A62C812466B38F00961513 /* UICollectionViewLayout + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A62C802466B38F00961513 /* UICollectionViewLayout + Extension.swift */; };
+		E4A62C832466C7D300961513 /* UIActivityIndicator + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A62C822466C7D200961513 /* UIActivityIndicator + Extension.swift */; };
 		E4A91753245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A91752245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift */; };
 		E4AA65432424790B00B29271 /* ResetOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AA65422424790B00B29271 /* ResetOTPViewModel.swift */; };
 		E4AA654524248F4800B29271 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AA654424248F4800B29271 /* ResetPasswordViewModel.swift */; };
@@ -195,6 +196,7 @@
 		E4A4AE83245A94810045C5A1 /* DirectoryFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryFilterViewModel.swift; sourceTree = "<group>"; };
 		E4A4AE85245AABB00045C5A1 /* DirectoryFilterResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryFilterResponseModel.swift; sourceTree = "<group>"; };
 		E4A62C802466B38F00961513 /* UICollectionViewLayout + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewLayout + Extension.swift"; sourceTree = "<group>"; };
+		E4A62C822466C7D200961513 /* UIActivityIndicator + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicator + Extension.swift"; sourceTree = "<group>"; };
 		E4A91752245189C500E0841C /* UICollectionViewFlowLayout + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout + Extensions.swift"; sourceTree = "<group>"; };
 		E4AA65422424790B00B29271 /* ResetOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetOTPViewModel.swift; sourceTree = "<group>"; };
 		E4AA654424248F4800B29271 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 		E4B033D62420C952007F9098 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E4A62C822466C7D200961513 /* UIActivityIndicator + Extension.swift */,
 				E4B92C5024640DEC004B7EF7 /* ERProgressHud.swift */,
 				E4B033DC2420CC65007F9098 /* Extensions + ViewControllers.swift */,
 				E4C7F0CA2422171B0072E54B /* UserDefaults + Extension.swift */,
@@ -907,6 +910,7 @@
 				E4B03357242088C7007F9098 /* AppDelegate.swift in Sources */,
 				E4A38DB32423360A0023CB6D /* OTPResponseModel.swift in Sources */,
 				E4B92C5324641114004B7EF7 /* NoInternetViewController.swift in Sources */,
+				E4A62C832466C7D300961513 /* UIActivityIndicator + Extension.swift in Sources */,
 				E45CB0FB243D2AC200879D4C /* UICollectionViewCells.swift in Sources */,
 				E4B92C4A2463F433004B7EF7 /* EmptyTableViewCell.swift in Sources */,
 				E4C7F0C9242210710072E54B /* LoadingButton.swift in Sources */,

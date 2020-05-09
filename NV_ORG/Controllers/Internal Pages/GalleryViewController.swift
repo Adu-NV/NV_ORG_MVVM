@@ -33,12 +33,12 @@ class GalleryViewController: UIViewController {
         getGaleryList()
         self.galleryCollectionView!.register(GalleryCollectionViewReusableCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"GalleryCollectionViewReusableCell")
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-        layout.itemSize = CGSize(width: self.view.frame.width / 3 - 2, height: 140)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        layout.headerReferenceSize = CGSize(width: self.view.frame.width, height: 50)
-        galleryCollectionView!.collectionViewLayout = layout
+//        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+//        layout.itemSize = CGSize(width: self.view.frame.width / 3 - 2, height: 140)
+//        layout.minimumInteritemSpacing = 0
+//        layout.minimumLineSpacing = 0
+//        layout.headerReferenceSize = CGSize(width: self.view.frame.width, height: 50)
+        galleryCollectionView!.collectionViewLayout = layout.getLayoutWithEdgeAndSpacing(scrollDirection: .vertical, itemWidth:  self.view.frame.width / 3 - 2, itemHeight: 140, edge: UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1), lineSpace: 0, itemSpace: 0, headerSize: CGSize(width: self.view.frame.width, height: 50))
         galleryCollectionView.layoutIfNeeded()
     }
 

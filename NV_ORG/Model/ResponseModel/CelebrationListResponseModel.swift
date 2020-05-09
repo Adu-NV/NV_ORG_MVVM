@@ -14,12 +14,12 @@ struct CelebrationListResponseModel : Decodable {
 }
 
 struct CelebrationListResponseData : Decodable {
-    let birthday_today_list : [Birthday_today_list]?
-    let upcoming_birthday_today_list : [Upcoming_birthday_today_list]?
-    let anniversary_today_list : [Anniversary_today_list]?
+    let birthday_today_list : [CelebrationData]?
+    let upcoming_birthday_today_list : [CelebrationData]?
+    let anniversary_today_list : [CelebrationData]?
 }
 
-struct Birthday_today_list : Decodable {
+struct CelebrationData : Decodable{
     let user_celebration_id : Int?
     let user_celebration_profile_picture : String?
     let user_celebration_name : String?
@@ -27,22 +27,30 @@ struct Birthday_today_list : Decodable {
     let user_celebration_email : String?
     let user_celebration_mobile_number : String?
 }
-
-struct Anniversary_today_list : Decodable {
-    let user_celebration_id : Int?
-    let user_celebration_profile_picture : String?
-    let user_celebration_name : String?
-    let user_celebration_age : Int?
-    let user_celebration_email : String?
-    let user_celebration_mobile_number : String?
-}
-
-
-struct Upcoming_birthday_today_list : Decodable {
-    let user_celebration_id : Int?
-    let user_celebration_profile_picture : String?
-    let user_celebration_name : String?
-    let user_celebration_age : Int?
-    let user_celebration_email : String?
-    let user_celebration_mobile_number : String?
-}
+//struct Birthday_today_list : Decodable {
+//    let user_celebration_id : Int?
+//    let user_celebration_profile_picture : String?
+//    let user_celebration_name : String?
+//    let user_celebration_age : Int?
+//    let user_celebration_email : String?
+//    let user_celebration_mobile_number : String?
+//}
+//
+//struct Anniversary_today_list : Decodable {
+//    let user_celebration_id : Int?
+//    let user_celebration_profile_picture : String?
+//    let user_celebration_name : String?
+//    let user_celebration_age : Int?
+//    let user_celebration_email : String?
+//    let user_celebration_mobile_number : String?
+//}
+//
+//
+//struct Upcoming_birthday_today_list : Decodable {
+//    let user_celebration_id : Int?
+//    let user_celebration_profile_picture : String?
+//    let user_celebration_name : String?
+//    let user_celebration_age : Int?
+//    let user_celebration_email : String?
+//    let user_celebration_mobile_number : String?
+//}

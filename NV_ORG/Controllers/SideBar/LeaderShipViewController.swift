@@ -57,12 +57,12 @@ extension LeaderShipViewController : UICollectionViewDelegate,UICollectionViewDa
             //            leadershipCollectionView.backgroundColor = .lightGray
             self.leadershipCollectionView!.register(LeadershipCollectionViewReusableCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:"LeadershipCollectionViewReusableCell")
             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-            layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-            layout.itemSize = CGSize(width: self.view.frame.width / 2 - 15, height: 180)
-            layout.minimumInteritemSpacing = 10
-            layout.minimumLineSpacing = 10
-            layout.headerReferenceSize = CGSize(width: self.view.frame.width, height: 50)
-            leadershipCollectionView!.collectionViewLayout = layout
+//            layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//            layout.itemSize = CGSize(width: self.view.frame.width / 2 - 15, height: 180)
+//            layout.minimumInteritemSpacing = 10
+//            layout.minimumLineSpacing = 10
+//            layout.headerReferenceSize = CGSize(width: self.view.frame.width, height: 50)
+            leadershipCollectionView!.collectionViewLayout = layout.getLayoutWithEdgeAndSpacing(scrollDirection: .vertical, itemWidth:  self.view.frame.width / 2 - 15, itemHeight: 180, edge: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10), lineSpace: 10, itemSpace: 10, headerSize: CGSize(width: self.view.frame.width, height: 50))
             leadershipCollectionView.layoutIfNeeded()
         }
 }

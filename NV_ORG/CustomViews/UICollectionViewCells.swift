@@ -147,6 +147,9 @@ class celebrationListCollectionViewCell: UICollectionViewCell{
     @IBOutlet weak var celebrationPersonNameLabel: UILabel!
     @IBOutlet weak var celbrationDateLabel: UILabel!
     override class func awakeFromNib() {
-        
+//        if let _ = celebrationPersonImageView{
+//            self.contentView.setViewCornerRadiusWithBorder(radius: 10.0, borderColor: .lightGray, width: 0.5)
+//        }
+//        self.setViewCornerRadiusWithBorder(radius: 10.0, borderColor: .black, width: 0.5)
     }
 }

@@ -301,17 +301,3 @@ class CelebrationListTableViewCell : UITableViewCell{
 
 
 
-//Expanded Cell
-class meetingsTableExpandedTableViewCell : ExpandableCell{
-    @IBOutlet weak var venueDetailsLabel: UILabel!
-    @IBOutlet weak var venueDescriptionLabel: UILabel!
-    @IBOutlet weak var viewMoreButton: UIButton!
-    @IBOutlet weak var isAttendingSwitch: UISwitch!
-    @IBOutlet weak var isAttendingLabel: UILabel!
-    @IBOutlet weak var minutesButton: UIButton!
-    override func awakeFromNib() {
-        if let _ = minutesButton{
-            minutesButton.setCornerRadius(radius: 6.0, bg_Color: BUTTON_SELECTED_COLOR)
-        }
-    }
-}

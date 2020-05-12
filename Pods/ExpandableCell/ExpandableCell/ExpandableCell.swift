@@ -9,12 +9,9 @@
 import UIKit
 import Foundation
 
-
 open class ExpandableCell: UITableViewCell {
-
-    
     open var arrowImageView: UIImageView!
-    open var rightMargin: CGFloat = 16
+    open var rightMargin: CGFloat = 30
     open var highlightAnimation = HighlightAnimation.animated
     private var isOpen = false
     private var initialExpansionAllowed = true
@@ -43,11 +40,9 @@ open class ExpandableCell: UITableViewCell {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-
         let width = self.bounds.width
         let height = self.bounds.height
-
-        arrowImageView.frame = CGRect(x: width - rightMargin, y: (height - 11)/2, width: 22, height: 11)
+        arrowImageView.frame = CGRect(x: width - 50, y: (height)/2, width: 22, height: 22)
     }
 
     func open() {

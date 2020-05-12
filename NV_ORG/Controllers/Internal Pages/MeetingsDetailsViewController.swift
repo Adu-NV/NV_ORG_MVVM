@@ -24,6 +24,16 @@ class MeetingsDetailsViewController: UIViewController {
         self.getMeetings(id: id)
     }
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        if #available(iOS 13.0, *) {
+            if let navController = self.navigationController {
+                navController.popViewController(animated: true)
+            }
+        }else{
+            self.dismiss(animated: false, completion: nil)
+        }
+    }
+    
     func getMeetings(id: String){
         activitiIndicatorView = self.showActivityIndicator(_message: "Please wait...")
         Webservice.shared.getMeetingsDetails(id: id) { (model, error) in
@@ -40,6 +50,7 @@ class MeetingsDetailsViewController: UIViewController {
     func setUI(){
         DispatchQueue.main.async {
             self.mingsTableView.expandableDelegate = self
+//            self.mingsTableView.dataSource = self
             self.mingsTableView.animation = .automatic
             self.mingsTableView.expansionStyle = .single
             self.mingsTableView.reloadData()
@@ -48,16 +59,12 @@ class MeetingsDetailsViewController: UIViewController {
 }
 
 extension  MeetingsDetailsViewController : ExpandableDelegate{
+    func numberOfSections(in tableView: ExpandableTableView) -> Int {
+          return 1
+    }
+    
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightsForExpandedRowAt indexPath: IndexPath) -> [CGFloat]? {
         return [UITableView.automaticDimension]
-    }
-    
-    func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
-        return [UITableViewCell()]
-    }
-    
-    func expandableTableView(_ expandableTableView: ExpandableTableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,6 +78,28 @@ extension  MeetingsDetailsViewController : ExpandableDelegate{
         }
         return rowCount
     }
+    
+    func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
+        var cell1 = expandableTableView.dequeueReusableCell(withIdentifier: ExpandedCell.ID) as! ExpandedCell
+        if tag == 0{
+            cell1.venueDescriptionLabel.text = (self.meetingsDetailModel?.data?.previous_meeting_list![indexPath.row - 2].meeting_brief)!
+            cell1.isAttendingLabel.isHidden = true
+            cell1.isAttendingSwitch.isHidden = true
+             cell1.minutesButtonWidth.constant = 70
+        }else{
+            cell1.venueDescriptionLabel.text = (self.meetingsDetailModel?.data?.upcoming_meeting_list![indexPath.row - 2].meeting_brief)!
+            cell1.minutesButtonWidth.constant = 0
+            cell1.minutesButton.isHidden = true
+        }
+        
+        return [cell1]
+    }
+    
+    func expandableTableView(_ expandableTableView: ExpandableTableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = NormalCell()
@@ -108,5 +137,13 @@ extension  MeetingsDetailsViewController : ExpandableDelegate{
         }
         return UITableViewCell()
     }
+    func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCell: UITableViewCell, didSelectExpandedRowAt indexPath: IndexPath) {
+        if let cell = expandedCell as? ExpandedCell {
+            print("\(cell.venueDescriptionLabel.text ?? "")")
+        }
+    }
+        func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectRowAt indexPath: IndexPath) {
+       print("didSelectRow:\(indexPath)")
+        }
 }
 

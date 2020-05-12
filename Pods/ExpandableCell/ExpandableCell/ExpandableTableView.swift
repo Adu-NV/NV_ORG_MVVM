@@ -100,8 +100,8 @@ extension ExpandableTableView: UITableViewDataSource, UITableViewDelegate {
     }
     
     open override func layoutSubviews() {
-        
         super.layoutSubviews()
+        
         //Intially expanded rows can only be expanded on the first load of the
         //cell into the table view, after that they are ignored
         self.openAllInitiallyExpanded()

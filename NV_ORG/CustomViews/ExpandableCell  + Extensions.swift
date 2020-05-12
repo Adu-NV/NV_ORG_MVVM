@@ -64,15 +64,29 @@ class ExpandableCell2: ExpandableCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    override func awakeFromNib() {
-    }
+//    override func awakeFromNib() {
+//    }
     static let ID = "ExpandableCell"
 }
 
 
 
 class ExpandedCell: UITableViewCell {
+    @IBOutlet weak var minutesButtonWidth: NSLayoutConstraint!
     static let ID = "ExpandedCell"
-    
-    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet weak var venueDetailsLabel: UILabel!
+    @IBOutlet weak var venueDescriptionLabel: UILabel!
+    @IBOutlet weak var viewMoreButton: UIButton!
+    @IBOutlet weak var isAttendingSwitch: UISwitch!
+    @IBOutlet weak var isAttendingLabel: UILabel!
+    @IBOutlet weak var minutesButton: UIButton!
+    override func awakeFromNib() {
+        if let _ = minutesButton{
+            minutesButton.setCornerRadius(radius: 6.0, bg_Color: BUTTON_SELECTED_COLOR)
+            
+        }
+        if let _ = viewMoreButton{
+            viewMoreButton.setCornerRadius(radius: 6.0, bg_Color: BUTTON_SELECTED_COLOR)
+        }
+    }
 }

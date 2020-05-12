@@ -16,16 +16,16 @@ struct DirectoryFilterViewModel{
     
     mutating func setModel(model : DirectoryFilterResponseModel){
         if let _data = model.data{
-            if let _ = _data.country_list,_data.country_list!.count > 0{
-                setCountries(country :_data.country_list!)
+            if let _ = _data.Country_list,_data.Country_list!.count > 0{
+                setCountries(country :_data.Country_list!)
             }
             
-            if let _ = _data.current_Location_list,_data.current_Location_list!.count > 0{
-                setLocation(location :_data.current_Location_list!)
+            if let _ = _data.Current_Location_list,_data.Current_Location_list!.count > 0{
+                setLocation(location :_data.Current_Location_list!)
             }
             
-            if let _ = _data.position_in_Society_list,_data.position_in_Society_list!.count > 0{
-                setPositions(position: _data.position_in_Society_list!)
+            if let _ = _data.Position_in_Society_list,_data.Position_in_Society_list!.count > 0{
+                setPositions(position: _data.Position_in_Society_list!)
             }
         }  
     }
@@ -84,17 +84,17 @@ public struct dataList {
     }
     
     init(country : Country_list) {
-        country_id = country.country_id!
-        country_name = country.country_name!
+        country_id = country.Country_id!
+        country_name = country.Country_name!
     }
     
     init(position : Position_in_Society_list) {
-        position_id = position.position_in_Society_id!
-        position_name = position.position_in_Society_name!
+        position_id = position.Position_in_Society_id!
+        position_name = position.Position_in_Society_name!
     }
     
     init(location : Current_Location_list) {
-        current_id = location.current_Location_id!
-        current_name = location.current_Location_name!
+        current_id = location.Current_Location_id!
+        current_name = location.Current_Location_name!
     }
 }

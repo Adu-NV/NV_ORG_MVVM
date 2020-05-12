@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import ExpandableCell
+
 class MenuTableViewCells : UITableViewCell{
     @IBOutlet weak var buttonProfile: UIButton!
     @IBOutlet weak var namLabel: UILabel!
@@ -156,32 +158,25 @@ class ProfileEditTableViewCell : UITableViewCell{
     }
 }
 
-
 class DashBoardTableViewCell : UITableViewCell{
-    
-    
     @IBOutlet weak var galleryCollectionView: UICollectionView!
     @IBOutlet weak var eventsCollectionView: UICollectionView!
     @IBOutlet weak var meetingsCollectionView: UICollectionView!
     @IBOutlet weak var WishesCollectionView: UICollectionView!
     
 //    cell 0
-    
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsDescriptionLabel: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
     
     //    cell 4
-    
     @IBOutlet weak var jobTitle: UILabel!
     @IBOutlet weak var jobExperienceLabel: UILabel!
     @IBOutlet weak var jobSalaryLabel: UILabel!
-    
     @IBOutlet weak var viewjobButton: UIButton!
     @IBOutlet weak var viewAllJobsButton: UIButton!
     
 //    cell 6
-    
     @IBOutlet weak var advertisementImageView: UIImageView!
     var layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     
@@ -202,35 +197,22 @@ class DashBoardTableViewCell : UITableViewCell{
         }
         
         if  let _ = eventsCollectionView  {
-//            layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//            layout.itemSize = CGSize(width: screenWidth  - 55, height: 250)
-//            layout.scrollDirection = .horizontal
             eventsCollectionView!.collectionViewLayout = layout.getLayout(scrollDirection: .horizontal, itemWidth: screenWidth  - 55, itemHeight: 250)
             eventsCollectionView.layoutIfNeeded()
         }
         
         if  let _ = meetingsCollectionView  {
-//            layout.getLayout(scrollDirection: .horizontal, itemWidth: screenWidth  - 50, itemHeight: 100)
-//            layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//            layout.itemSize = CGSize(width: screenWidth  - 50, height: 100)
-//            layout.scrollDirection = .horizontal
             meetingsCollectionView!.collectionViewLayout = layout.getLayout(scrollDirection: .horizontal, itemWidth: screenWidth  - 50, itemHeight: 100)
             meetingsCollectionView.layoutIfNeeded()
         }
         
         if  let _ = WishesCollectionView  {
-//            layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//            layout.itemSize = CGSize(width: screenWidth  - 50, height: 140)
-//            layout.scrollDirection = .horizontal
             WishesCollectionView!.collectionViewLayout = layout.getLayout(scrollDirection: .horizontal, itemWidth: screenWidth  - 50, itemHeight: 140)
             WishesCollectionView.layoutIfNeeded()
         }
         
         if let _ = galleryCollectionView{
             galleryCollectionView.setViewCornerRadius(radius: 10.0)
-//            layout.sectionInset  = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-//            layout.scrollDirection = .horizontal
-//            layout.itemSize = CGSize(width: screenWidth  / 3 - 5, height: 190)
             galleryCollectionView!.collectionViewLayout = layout.getLayout(scrollDirection: .horizontal, itemWidth: screenWidth  / 3 - 5, itemHeight: 190)
         }
     }
@@ -243,9 +225,7 @@ class NewsListPageTableViewCell : UITableViewCell{
     @IBOutlet weak var newsPublishedLabel: UILabel!
     @IBOutlet weak var notificationTitleLabel: UIImageView!
     override func awakeFromNib() {
-        
-    }
-    
+        }
 }
 
 class JobListTableViewCell : UITableViewCell{
@@ -256,7 +236,6 @@ class JobListTableViewCell : UITableViewCell{
     @IBOutlet weak var jobLocationLabel: UILabel!
     @IBOutlet weak var jobExperinceLabel: UILabel!
     override func awakeFromNib() {
-        
     }
 }
 
@@ -270,16 +249,13 @@ class JobDetailTableViewCell : UITableViewCell{
     @IBOutlet weak var jobRequirementLabel: UILabel!
     @IBOutlet weak var jobExperienceLabel: UILabel!
     @IBOutlet weak var jobDescriptionLabel: UILabel!
-    
     @IBOutlet weak var jobApplyButton: UIButton!
-    
     @IBOutlet weak var relatedView: UIView!
     
     override func awakeFromNib() {
         if let _ = jobApplyButton{
             jobApplyButton.setCornerRadius(radius: 6.0, bg_Color: BUTTON_LOGIN_COLOR)
         }
-        
     }
 }
 
@@ -314,18 +290,28 @@ class CelebrationListTableViewCell : UITableViewCell{
         }
         if let _ = celebrationView{
             celebrationView.setViewCornerRadius(radius: 5.0)
-           
         }
         if let _ = celebrationCollectionView{
-            
-            layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-            layout.itemSize = CGSize(width: screenWidth / 3, height: 175)
-            layout.scrollDirection = .horizontal
-            celebrationCollectionView!.collectionViewLayout = layout
+            celebrationCollectionView!.collectionViewLayout = layout.getLayout(scrollDirection: .horizontal, itemWidth: screenWidth / 3, itemHeight: 175)
             celebrationCollectionView.layoutIfNeeded()
         }
-        
     }
 }
 
 
+
+
+//Expanded Cell
+class meetingsTableExpandedTableViewCell : ExpandableCell{
+    @IBOutlet weak var venueDetailsLabel: UILabel!
+    @IBOutlet weak var venueDescriptionLabel: UILabel!
+    @IBOutlet weak var viewMoreButton: UIButton!
+    @IBOutlet weak var isAttendingSwitch: UISwitch!
+    @IBOutlet weak var isAttendingLabel: UILabel!
+    @IBOutlet weak var minutesButton: UIButton!
+    override func awakeFromNib() {
+        if let _ = minutesButton{
+            minutesButton.setCornerRadius(radius: 6.0, bg_Color: BUTTON_SELECTED_COLOR)
+        }
+    }
+}

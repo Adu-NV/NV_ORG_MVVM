@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReachabilitySwift
 
 
 @UIApplicationMain
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//         checkNetworkRechability()
         if let _ = UserDefaults.standard.value(forKey: "token"){
             homeScreen()
         }else{
@@ -74,7 +76,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return topVC!
     }
+    
+    func checkNetworkRechability() {
+        do {
+            Network.reachability = try ReachabilityManager(hostname: "www.google.com")
+            try Network.reachability?.start()
+            NotificationCenter.default.addObserver(self, selector: #selector(statusManager), name: .flagsChanged, object: Network.reachability)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func updateUserInterface() {
+        guard let status = Network.reachability?.status else { return }
+        switch status {
+        case .unreachable:
+            AlertBar.show(type: .warning, message: "Offline", duration: 10)
+            self.showNoWifiView()
+        case .wifi:
+            AlertBar.show(type: .success, message: "Online", duration: 5)
+            AlertBar.hide()
+            self.homeScreen()
+        case .wwan:
+            AlertBar.show(type: .success, message: "Online", duration: 5)
+            self.homeScreen()
+        }
+    }
+    
+    @objc func statusManager(_ notification: Notification) {
+        updateUserInterface()
+    }
 
+    
+    func showNoWifiView(){
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let nowifi =  storyboard.instantiateViewController(withIdentifier: "NoInternetViewController") as! NoInternetViewController
+        DispatchQueue.main.async {
+            if #available(iOS 13.0, *) {
+                           UIApplication.shared.statusBarStyle = .lightContent
+                           self.navigatinController = UINavigationController(rootViewController: nowifi)
+                           self.navigatinController.isNavigationBarHidden = true
+                           self.window?.rootViewController = self.navigatinController
+                           self.window?.makeKeyAndVisible()
+                       }else{
+                           self.window?.rootViewController = nowifi
+                       }
+            
+        }
+    }
     // MARK: UISceneSession Lifecycle
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

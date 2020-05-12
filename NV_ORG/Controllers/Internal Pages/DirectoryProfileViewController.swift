@@ -35,11 +35,8 @@ class DirectoryProfileViewController: UIViewController {
         activitiIndicatorView = self.showActivityIndicator(_message: "Please wait...")
         Webservice.shared.directoryProfile(body: directory.updateDic, completionBlock: { (model, errorString) in
             self.hideActivityIndicator(uiView: self.activitiIndicatorView)
-            debugPrint(model)
             if model != nil{
                 self.model = model
-//                self.profileVM.setProfileModel(model: model!)
-//                self.model = self.profileVM.getProfile()
             }else{
                  self.model = nil
             }

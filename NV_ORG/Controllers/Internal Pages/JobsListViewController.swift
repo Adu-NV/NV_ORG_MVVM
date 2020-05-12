@@ -10,11 +10,14 @@ import UIKit
 
 class JobsListViewController: UIViewController {
     var activitiIndicatorView = UIView()
+    var jobTypes : JobTypeResponseModel? = nil
     var jobList : JobsPageListResponseModel? = nil
     var jobRequest = JobListRequestModel()
     var search_Key = ""
     var job_Type = ""
     let mainStory =  UIStoryboard.init(name: "Main", bundle: nil)
+    var toolBar = UIToolbar()
+    var picker  = UIPickerView()
     
     @IBOutlet weak var jobSearch: UISearchBar!
     @IBOutlet weak var jobSegment: UISegmentedControl!
@@ -54,6 +57,7 @@ class JobsListViewController: UIViewController {
         }
         self.getList()
     }
+    
     @IBAction func backButtonTapped(_ sender: Any) {
         if #available(iOS 13.0, *) {
             if let navController = self.navigationController {
@@ -65,6 +69,41 @@ class JobsListViewController: UIViewController {
     }
     
     @IBAction func filterTapped(_ sender: Any) {
+        self.getTypes()
+    }
+    
+    func setJobTypesPicker(){
+        picker = UIPickerView.init()
+        picker.delegate = self
+        picker.backgroundColor = PICKER_BACKGROUND
+        picker.setValue(UIColor.black, forKey: "textColor")
+        picker.autoresizingMask = .flexibleWidth
+        picker.contentMode = .center
+        picker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 200, width: UIScreen.main.bounds.size.width, height: 200)
+        self.view.addSubview(picker)
+        
+        toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 200, width: UIScreen.main.bounds.size.width, height: 50))
+        toolBar.barStyle = .default
+        toolBar.items = [UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))]
+        self.view.addSubview(toolBar)
+    }
+    
+    @objc func onDoneButtonTapped() {
+        jobRequest = JobListRequestModel(_state: UserDefaults.standard.value(forKey: "state") as! String, _search_word: search_Key, _job_type: job_Type)
+        toolBar.removeFromSuperview()
+        picker.removeFromSuperview()
+        self.getList()
+    }
+    
+    func getTypes(){
+        Webservice.shared.getJobTypesList { (model, errorMessage) in
+            if let _ = model{
+                DispatchQueue.main.async {
+                    self.jobTypes = model
+                    self.setJobTypesPicker()
+                }
+            }
+        }
     }
 }
 
@@ -99,5 +138,22 @@ extension JobsListViewController : UITableViewDelegate,UITableViewDataSource{
     }
 }
 
-
+extension JobsListViewController : UIPickerViewDelegate,UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return (self.jobTypes?.data?.count)!
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return (self.jobTypes?.data![row].name)!
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        debugPrint(self.jobTypes?.data![row].name)
+        job_Type = (self.jobTypes?.data![row].name)!
+    }
+}
 

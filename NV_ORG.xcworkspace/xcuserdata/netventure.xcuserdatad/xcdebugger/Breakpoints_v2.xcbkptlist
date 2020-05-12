@@ -5,34 +5,39 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            uuid = "98F8498C-FD06-4625-84CC-BE0ED9A90698"
-            shouldBeEnabled = "No"
+            uuid = "732A1526-3293-4928-85A9-EF48F41D08EC"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NV_ORG/Services/WerService + GET.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "345"
-            endingLineNumber = "345"
-            landmarkName = "getCelebrationList(completionBlock:)"
-            landmarkType = "7">
+            breakpointStackSelectionBehavior = "1"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
+         <BreakpointContent
+            uuid = "F76D955B-57AC-4682-88E4-39428BDFB62D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C73AF7C7-BC6D-4F90-874F-31970F789020"
-            shouldBeEnabled = "No"
+            uuid = "10E96278-F0C1-4964-A53B-56AB29FD6817"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NV_ORG/Controllers/Internal Pages/CelebrationViewController.swift"
+            filePath = "NV_ORG/Controllers/Internal Pages/MeetingsDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "expandableTableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

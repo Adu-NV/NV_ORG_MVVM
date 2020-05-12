@@ -48,8 +48,11 @@ let GALLERY_DETAIL_URL : String                 = ""
 
 let JOB_LIST_URL : String                               = "job_list"
 let JOB_DETAIL_URL : String                          = "job_details/"//job_details/id
+let JOB_TYPES_URL : String                            = "job_types_list"
 
 let CELEBRATION_LIST_URL : String              = "celebration_list"
+
+let MEETINGS_LIST_URL : String                    = "meeting_details/"//meeting_details/f8934ba0-8148-11ea-b1ab-a1a7eec7b352
 
 //MARK:- Notification
 

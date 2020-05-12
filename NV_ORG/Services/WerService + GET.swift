@@ -360,6 +360,69 @@ class Webservice{
           }catch{
           }
       }
+        
+    //JOBtypes
+    func  getJobTypesList(completionBlock : @escaping(JobTypeResponseModel?,String?) -> ()){
+          let url = URL(string : BASE_URL + JOB_TYPES_URL)
+          do {
+              let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
+              let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                  let jsonDecoder = JSONDecoder()
+                  do{
+                      if let error = error{
+                          debugPrint(error.localizedDescription)
+                          completionBlock(nil, "internet error")
+                      }else if let data = data{
+                          let user = try? jsonDecoder.decode(JobTypeResponseModel.self,from: data)
+                          if user?.data != nil{
+                              if  (user?.code)! == 200{
+                                  completionBlock(user, nil)
+                              }else{
+                                  completionBlock(nil, user?.message)
+                              }
+                          }else{
+                              completionBlock(nil,"internet error")
+                          }
+                      }
+                  }catch{
+                  }
+              }
+              task.resume()
+          }catch{
+          }
+      }
+    
+    //MEETINGS_LIST_URL
+    
+    func  getMeetingsDetails(id : String ,completionBlock : @escaping(MeetingsDetailsResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + MEETINGS_LIST_URL + id)
+        do {
+            let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(MeetingsDetailsResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
 }
 
 

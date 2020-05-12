@@ -77,7 +77,7 @@ extension CelebrationViewController :UITableViewDelegate,UITableViewDataSource{
                  cell = tableView.dequeueReusableCell(withIdentifier: "CelebrationListTableViewCell1", for: indexPath) as! CelebrationListTableViewCell
                 cell.celebrationNameLabel.text = (self.celebrationListModel?.data?.birthday_today_list![indexPath.row - 1].user_celebration_name)!
                 cell.celebrationYearlabel.text = "\((self.celebrationListModel?.data?.birthday_today_list![indexPath.row - 1].user_celebration_age)!) years"
-                cell.celebrationTitle.text = (self.celebrationListModel?.data?.birthday_today_list![indexPath.row - 1].user_celebration_mobile_number)!
+                cell.celebrationTitle.text = "Greet with"
                 cell.imageView?.sd_setImage(with: URL(string: (self.celebrationListModel?.data?.birthday_today_list![indexPath.row - 1].user_celebration_profile_picture)!), placeholderImage: UIImage(named: "profile.png"), options: .continueInBackground, context: nil)
             }
             return cell
@@ -98,8 +98,8 @@ extension CelebrationViewController :UITableViewDelegate,UITableViewDataSource{
             }else{
                 cell = tableView.dequeueReusableCell(withIdentifier: "CelebrationListTableViewCell1", for: indexPath) as! CelebrationListTableViewCell
                 cell.celebrationNameLabel.text = (self.celebrationListModel?.data?.anniversary_today_list![row - 1].user_celebration_name)!
-                cell.celebrationYearlabel.text = "\((self.celebrationListModel?.data?.anniversary_today_list![row - 1].user_celebration_age)!) years"
-                cell.celebrationTitle.text = (self.celebrationListModel?.data?.anniversary_today_list![row - 1].user_celebration_mobile_number)!
+                cell.celebrationYearlabel.text = "Celebrating \((self.celebrationListModel?.data?.anniversary_today_list![row - 1].user_celebration_age)!) years "
+                cell.celebrationTitle.text = "Greet with"
                 cell.imageView?.sd_setImage(with: URL(string: (self.celebrationListModel?.data?.anniversary_today_list![row - 1].user_celebration_profile_picture)!), placeholderImage: UIImage(named: "profile.png"), options: .continueInBackground, context: nil)
             }
             return cell

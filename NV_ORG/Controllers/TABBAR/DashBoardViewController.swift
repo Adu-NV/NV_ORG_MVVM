@@ -280,7 +280,8 @@ extension DashBoardViewController: UICollectionViewDelegate,UICollectionViewData
         case 1:
             debugPrint("Events")
         case 2:
-            debugPrint("Meeting")
+             self.dashViewModel?.moveToMeetingsPage(id: (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_id)!, viewController: self)
+//            self.dashViewModel?.getMeetings(id: (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_id)!)
         case 3:
             self.dashViewModel?.moveToCelebrationPage(viewController: self)
         case 5:

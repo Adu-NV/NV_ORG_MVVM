@@ -279,6 +279,7 @@ extension DashBoardViewController: UICollectionViewDelegate,UICollectionViewData
         switch collectionView.tag{
         case 1:
             debugPrint("Events")
+            self.dashViewModel?.moveToEventsPage(id: (self.dashViewModel?.dashBoardFeedModel?.data?.event_list![indexPath.row].event_id)!, viewController: self)
         case 2:
              self.dashViewModel?.moveToMeetingsPage(id: (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_id)!, viewController: self)
 //            self.dashViewModel?.getMeetings(id: (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_id)!)

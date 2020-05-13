@@ -13,6 +13,8 @@ import ExpandableCell
 
 class NormalCell: UITableViewCell {
     
+    var Clickdelegate : TableViewButtonTapped?
+    //meetings
      static let ID = "NormalCell"
      static let ID1 = "NormalCell1"
      @IBOutlet weak open var meetingsTitleLabel: UILabel!
@@ -46,21 +48,83 @@ class NormalCell: UITableViewCell {
              meetingsShowMoreButton.layer.masksToBounds = true
              meetingsShowMoreButton.backgroundColor =  UIColor(red: 13  / 255, green: 158 / 255, blue: 59 / 255, alpha: 1)
          }
+        if let _ = buttonEventsPrevious{
+            buttonEventsPrevious.layer.cornerRadius = 6.0
+            buttonEventsPrevious.layer.masksToBounds = true
+            buttonEventsUpcoming.backgroundColor =  UIColor(red: 170  / 255, green: 170 / 255, blue: 170 / 255, alpha: 1)
+        }
+        if let _ = buttonEventsUpcoming{
+            buttonEventsUpcoming.layer.cornerRadius = 6.0
+            buttonEventsUpcoming.layer.masksToBounds = true
+            buttonEventsUpcoming.backgroundColor =  UIColor(red: 13  / 255, green: 158 / 255, blue: 59 / 255, alpha: 1)
+        }
+        if let _ = buttonRegister{
+            buttonRegister.layer.cornerRadius = 6.0
+            buttonRegister.layer.masksToBounds = true
+            buttonRegister.backgroundColor =  UIColor(red: 13  / 255, green: 158 / 255, blue: 59 / 255, alpha: 1)
+        }
+        if let _  = eventsLogoImageView{
+            eventsLogoImageView.setImageViewCornerRadiusWithBorder(radius: 6.0, borderwidth: 1.0, color: BUTTON_UNSELECTED_COLOR)
+        }
+        if let _  = eventsImageView{
+            eventsImageView.setImageViewCornerRadiusWithBorder(radius: 10.0, borderwidth: 0.5, color: BUTTON_UNSELECTED_COLOR)
+        }
      }
      
-     @IBAction func buttonPreviousTapped(_ sender: Any) {
+     @IBAction func buttonPreviousTapped(_ sender: UIButton) {
+        Clickdelegate?.buttonTapped(sender: sender)
          buttonPrevious.backgroundColor = UIColor(red: 13  / 255, green: 158 / 255, blue: 59 / 255, alpha: 1)
          buttonUpcoming.backgroundColor = UIColor(red: 170  / 255, green: 170 / 255, blue: 170 / 255, alpha: 1)
      }
      
-     @IBAction func buttonUpcomingTapped(_ sender: Any) {
+     @IBAction func buttonUpcomingTapped(_ sender: UIButton) {
+        Clickdelegate?.buttonTapped(sender: sender)
          buttonPrevious.backgroundColor = UIColor(red: 170  / 255, green: 170 / 255, blue: 170 / 255, alpha: 1)
          buttonUpcoming.backgroundColor = UIColor(red: 13  / 255, green: 158 / 255, blue: 59 / 255, alpha: 1)
      }
+    
+    //events
+    static let ID2 = "NormalCell2"
+    static let ID3 = "NormalCell3"
+    @IBOutlet weak var eventsLogoImageView: UIImageView!
+    @IBOutlet weak var eventsNameLabel: UILabel!
+    @IBOutlet weak var eventsDateTimeLabel: UILabel!
+    @IBOutlet weak var eventsLocationLabel: UILabel!
+    @IBOutlet weak var eventsImageView: UIImageView!
+    @IBOutlet weak var eventsImageViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var evntsAddressLabel: UILabel!
+    @IBOutlet weak var eventPriceLabel: UILabel!
+    
+    @IBOutlet weak var eventEmailLabel: UILabel!
+    @IBOutlet weak var eventPhoneLabel: UILabel!
+    @IBOutlet weak var eventReferenceLabel: UILabel!
+    @IBOutlet weak var buttonRegister: UIButton!
+    @IBOutlet weak var eventDescriptionLabel: UILabel!
+    
+    
+    @IBAction func buttonRegister(_ sender: Any) {
+    }
+    @IBOutlet weak open var buttonEventsPrevious: UIButton!
+    @IBOutlet weak open var buttonEventsUpcoming: UIButton!
+    
+    @IBAction func buttonEventsPreviousButtonTapped(_ sender: UIButton!) {
+        Clickdelegate?.buttonTapped(sender: sender)
+        buttonEventsPrevious.backgroundColor = UIColor(red: 13  / 255, green: 158 / 255, blue: 59 / 255, alpha: 1)
+        buttonEventsUpcoming.backgroundColor = UIColor(red: 170  / 255, green: 170 / 255, blue: 170 / 255, alpha: 1)
+    }
+    
+    @IBAction func buttonEventsUpcomingTapped(_ sender: UIButton!) {
+        Clickdelegate?.buttonTapped(sender: sender)
+        buttonEventsPrevious.backgroundColor = UIColor(red: 170  / 255, green: 170 / 255, blue: 170 / 255, alpha: 1)
+        buttonEventsUpcoming.backgroundColor = UIColor(red: 13  / 255, green: 158 / 255, blue: 59 / 255, alpha: 1)
+    }
+    
 }
 
 
 class ExpandableCell2: ExpandableCell {
+    
+//    meetings
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -69,9 +133,22 @@ class ExpandableCell2: ExpandableCell {
     static let ID = "ExpandableCell"
 }
 
+class ExpandableCell3 : ExpandableCell{
+    //    events
+    static let ID1 = "ExpandableCell1"
+    @IBOutlet weak var eventsLogoImageView: UIImageView!
+    @IBOutlet weak var eventsTitleLabel: UILabel!
+    @IBOutlet weak var eventsDateLabel: UILabel!
+    @IBOutlet weak var eventsLocationLabel: UILabel!
+    override func awakeFromNib() {
+        
+    }
+}
+
 
 
 class ExpandedCell: UITableViewCell {
+    //    meetings
     @IBOutlet weak var minutesButtonWidth: NSLayoutConstraint!
     static let ID = "ExpandedCell"
     @IBOutlet weak var venueDetailsLabel: UILabel!
@@ -89,4 +166,6 @@ class ExpandedCell: UITableViewCell {
             viewMoreButton.setCornerRadius(radius: 6.0, bg_Color: BUTTON_SELECTED_COLOR)
         }
     }
+    //    events
+    static let ID1 = "ExpandedCell1"
 }

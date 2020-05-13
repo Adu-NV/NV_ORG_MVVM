@@ -103,6 +103,8 @@
 		E4B92C5324641114004B7EF7 /* NoInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B92C5224641114004B7EF7 /* NoInternetViewController.swift */; };
 		E4B92C5524642093004B7EF7 /* JobListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B92C5424642093004B7EF7 /* JobListRequestModel.swift */; };
 		E4B92C5724644546004B7EF7 /* JobDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B92C5624644546004B7EF7 /* JobDetailResponseModel.swift */; };
+		E4BB3E7E246BC679000052C6 /* String + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB3E7D246BC679000052C6 /* String + extensions.swift */; };
+		E4BB3E80246BCD7E000052C6 /* EventDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB3E7F246BCD7E000052C6 /* EventDetailResponseModel.swift */; };
 		E4C6EE7F2462AE75009B4EDF /* GalleryListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6EE7E2462AE74009B4EDF /* GalleryListResponseModel.swift */; };
 		E4C6EE822462CEE4009B4EDF /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6EE812462CEE3009B4EDF /* URLViewController.swift */; };
 		E4C6EE842462DB2B009B4EDF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6EE832462DB2B009B4EDF /* WebKit.framework */; };
@@ -253,6 +255,8 @@
 		E4B92C5224641114004B7EF7 /* NoInternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetViewController.swift; sourceTree = "<group>"; };
 		E4B92C5424642093004B7EF7 /* JobListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListRequestModel.swift; sourceTree = "<group>"; };
 		E4B92C5624644546004B7EF7 /* JobDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailResponseModel.swift; sourceTree = "<group>"; };
+		E4BB3E7D246BC679000052C6 /* String + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extensions.swift"; sourceTree = "<group>"; };
+		E4BB3E7F246BCD7E000052C6 /* EventDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailResponseModel.swift; sourceTree = "<group>"; };
 		E4C6EE7E2462AE74009B4EDF /* GalleryListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListResponseModel.swift; sourceTree = "<group>"; };
 		E4C6EE812462CEE3009B4EDF /* URLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLViewController.swift; sourceTree = "<group>"; };
 		E4C6EE832462DB2B009B4EDF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -564,6 +568,7 @@
 				E4C7F0C8242210710072E54B /* LoadingButton.swift */,
 				E4C7F0CE242243FB0072E54B /* LineTextField.swift */,
 				E4C9CA572452FA0B0005E07A /* extensions + UICollectionViewCels.swift */,
+				E4BB3E7D246BC679000052C6 /* String + extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -659,6 +664,7 @@
 				E4AB5CAC2465958300BF734C /* CelebrationListResponseModel.swift */,
 				E46A406A2467F970001EB14C /* JobTypeResponseModel.swift */,
 				E4A931EF2469699E00D557C6 /* MeetingsDetailsResponseModel.swift */,
+				E4BB3E7F246BCD7E000052C6 /* EventDetailResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -976,6 +982,7 @@
 				E4C6EE822462CEE4009B4EDF /* URLViewController.swift in Sources */,
 				E4AA654924249DE200B29271 /* ResetPasswordRequestModel.swift in Sources */,
 				E4A38DB1242335F40023CB6D /* OTPRequestModel.swift in Sources */,
+				E4BB3E7E246BC679000052C6 /* String + extensions.swift in Sources */,
 				E4AB5CAD2465958300BF734C /* CelebrationListResponseModel.swift in Sources */,
 				E4B92C5524642093004B7EF7 /* JobListRequestModel.swift in Sources */,
 				E4B033E32420E165007F9098 /* Colors + Constant.swift in Sources */,
@@ -987,6 +994,7 @@
 				E4B31F9C2466D1130092F756 /* UIColor+Extensions.swift in Sources */,
 				E46A406B2467F970001EB14C /* JobTypeResponseModel.swift in Sources */,
 				E4C7F0C72422100C0072E54B /* WebService + POST.swift in Sources */,
+				E4BB3E80246BCD7E000052C6 /* EventDetailResponseModel.swift in Sources */,
 				E4A16B5E24595E040024C4D3 /* DirectoryFilterViewController.swift in Sources */,
 				E4A4AE84245A94810045C5A1 /* DirectoryFilterViewModel.swift in Sources */,
 				E4B92C5724644546004B7EF7 /* JobDetailResponseModel.swift in Sources */,

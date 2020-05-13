@@ -145,13 +145,14 @@ extension DashBoardViewModel : DashBoardViewModelDelegateProtocol{
         }
     }
     //
-//    getMeetingsDetails
-    
-    func getMeetings(id: String){
-        Webservice.shared.getMeetingsDetails(id: id) { (model, error) in
-            if let _ = model{
-                debugPrint("meetings : ",model)
-            }
+//EventsViewController
+    func  moveToEventsPage(id: String, viewController: UIViewController){
+        let events = mainStory.instantiateViewController(withIdentifier: "EventsViewController") as! EventsViewController
+        events.id = id
+        if #available(iOS 13.0, *) {
+            viewController.navigationController?.pushViewController(events, animated: false)
+        }else{
+            viewController.present(events, animated: false, completion: nil)
         }
     }
 }

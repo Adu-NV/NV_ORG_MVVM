@@ -89,6 +89,7 @@ extension  MeetingsDetailsViewController : ExpandableDelegate{
         }else{
             cell1.venueDescriptionLabel.text = (self.meetingsDetailModel?.data?.upcoming_meeting_list![indexPath.row - 2].meeting_brief)!
             cell1.minutesButtonWidth.constant = 0
+            cell1.isAttendingSwitch.isOn = (self.meetingsDetailModel?.data?.upcoming_meeting_list![indexPath.row - 2].is_attending)!.boolValue
             cell1.minutesButton.isHidden = true
         }
         
@@ -111,11 +112,12 @@ extension  MeetingsDetailsViewController : ExpandableDelegate{
                 cell.meetingsDateLabel.text = (self.meetingsDetailModel?.data?.current_meeting?.meeting_date)!
                 cell.meetingTimeLabel.text = (self.meetingsDetailModel?.data?.current_meeting?.meeting_time)!
                 cell.meetingsShortDescription.text = (self.meetingsDetailModel?.data?.current_meeting?.meeting_brief)!
-//                cell.meetingsAttendingSwitch.isOn = (self.meetingsDetailModel?.data?.current_meeting?.is_attending! as! Bool)
+                cell.meetingsAttendingSwitch.isOn = (self.meetingsDetailModel?.data?.current_meeting?.is_attending)!.boolValue
                 return cell
             }
             if indexPath.row == 1{
                 cell = expandableTableView.dequeueReusableCell(withIdentifier: NormalCell.ID1) as! NormalCell
+                cell.Clickdelegate = self
                  return cell
             }
             if  indexPath.row > 1 {
@@ -147,3 +149,13 @@ extension  MeetingsDetailsViewController : ExpandableDelegate{
         }
 }
 
+extension MeetingsDetailsViewController:  TableViewButtonTapped{
+    func buttonTapped(sender: UIButton) {
+        if sender.tag == 0{
+            tag = sender.tag
+        }else {
+            tag = sender.tag
+        }
+        self.mingsTableView.reloadData()
+    }
+}

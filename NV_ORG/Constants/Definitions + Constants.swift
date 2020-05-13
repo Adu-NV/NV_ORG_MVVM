@@ -58,3 +58,6 @@ let MEETINGS_LIST_URL : String                    = "meeting_details/"//meeting_
 
 let NOTIFICATION_LIST_URL : String             = "notifications_list"
 let ANNOUNCEMENT_LIST_URL : String        = "announcement_list"
+
+
+let EVENT_DETAILS_URL : String                     = "event_details"

@@ -176,3 +176,10 @@ public protocol DirectoryFilterViewModelDelegateProtocol{
 }
 public protocol DirectoryFilterViewControllerDelegateProtocol{
 }
+
+
+//MARK:- TableViewButtonDelegate
+
+public protocol TableViewButtonTapped{
+    func buttonTapped(sender : UIButton)
+}

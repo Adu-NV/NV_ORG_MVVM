@@ -303,4 +303,34 @@ extension Webservice{
         }catch{
         }
     }
+    
+    func EventsList(body : Dictionary<String,String>,completionBlock : @escaping(EventsDetailsResponeModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + EVENT_DETAILS_URL)
+        do {
+            let request  = getRequest(url: url!, method: .post, auth: true, accept: .json, Content_Type: .json, body: body)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(EventsDetailsResponeModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
 }

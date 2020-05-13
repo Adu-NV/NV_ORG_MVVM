@@ -29,7 +29,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1FA2B7F7-B5CB-41D0-BFF3-0A037585749E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NV_ORG/Controllers/Internal Pages/MeetingsDetailsViewController.swift"
@@ -51,9 +51,9 @@
             filePath = "NV_ORG/Controllers/Internal Pages/MeetingsDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "expandableTableView(_:didSelectRowAt:)"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "expandableTableView(_:expandedCell:didSelectExpandedRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -69,7 +69,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
             endingLineNumber = "67"
-            landmarkName = "expandableTableView(_:numberOfRowsInSection:)"
+            landmarkName = "expandableTableView(_:heightsForExpandedRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -83,8 +83,24 @@
             filePath = "NV_ORG/Controllers/Internal Pages/MeetingsDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "expandableTableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D33B2AF-F54E-46D1-ACDB-5A592CC22BB9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NV_ORG/Controllers/Internal Pages/EventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>

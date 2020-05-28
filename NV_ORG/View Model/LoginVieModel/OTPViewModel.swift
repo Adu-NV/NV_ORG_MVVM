@@ -22,13 +22,7 @@ class OTPViewModel{
 
 extension OTPViewModel: OTPViewModelDelegateProtocol{
     func backButtontapped(view : UIViewController) {
-        if #available(iOS 13.0, *) {
-            if let navController = view.navigationController {
-                navController.popViewController(animated: true)
-            }
-        }else{
-            view.dismiss(animated: false, completion: nil)
-        }
+        view.dismiss(animated: false, completion: nil)
     }
     
     func sendOTP(from otpField1: String?, otpField2: String?, otpField3: String?, otpField4: String?, otpField5: String?, otpField6: String?) {
@@ -46,10 +40,8 @@ extension OTPViewModel: OTPViewModelDelegateProtocol{
         let main =  storyboardValue.instantiateViewController(withIdentifier: "MainTabBar") as! MainTabBar
         main.setUPViewController()
         if #available(iOS 13.0, *) {
-                            let aObjNavi = UINavigationController(rootViewController: main)
-            aObjNavi.isNavigationBarHidden = true
-                             viewController.present(aObjNavi, animated: false, completion: nil)
-//            viewController.navigationController?.pushViewController(main, animated: false)
+         main.modalPresentationStyle = .fullScreen
+         viewController.present(main, animated: true)
         }else{
             viewController.present(main, animated: false, completion: nil)
         }

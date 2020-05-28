@@ -24,13 +24,7 @@ class AboutUsViewModel{
 
 extension AboutUsViewModel: AboutViewModelDelegateProtocol{
     func skipButtontapped(view: UIViewController) {
-                if #available(iOS 13.0, *) {
-            if let navController = view.navigationController {
-                navController.popViewController(animated: true)
-            }
-        }else{
-            view.dismiss(animated: false, completion: nil)
-        }
+          view.dismiss(animated: false, completion: nil)
     }
     
     

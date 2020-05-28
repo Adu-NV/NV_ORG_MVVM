@@ -13,6 +13,7 @@ class DirectoryViewModel{
     var number_row = 0
      let mainStory =  UIStoryboard.init(name: "Main", bundle: nil)
     var directory : [DirectoryData] = []
+    var templist  : [DirectoryData] = []
     var numberofSections : Int {
          return  1
      }
@@ -27,18 +28,22 @@ class DirectoryViewModel{
 
 extension DirectoryViewModel : DirectoryViewModelDelegateProtocol{
     func setUpModel(model: DirectoryListResponseModel) {
+        templist.removeAll()
+        directory.removeAll()
         number_row = (model.data?.count)!
         for i in 0 ..< number_row{
             var new_Directory = DirectoryData(model.data![i])
             directory.append(new_Directory)
         }
+        templist = directory
     }
     
     func moveToProfile(id :String ,viewController : UIViewController){
         let directoryProfile = mainStory.instantiateViewController(withIdentifier: "DirectoryProfileViewController") as! DirectoryProfileViewController
         directoryProfile.id = id
         if #available(iOS 13.0, *) {
-            viewController.navigationController?.pushViewController(directoryProfile, animated: false)
+            directoryProfile.modalPresentationStyle = .fullScreen
+            viewController.present(directoryProfile, animated: true)
         }else{
             viewController.present(directoryProfile, animated: false, completion: nil)
         }

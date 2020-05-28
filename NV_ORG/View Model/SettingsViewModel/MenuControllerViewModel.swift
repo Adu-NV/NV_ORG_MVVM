@@ -16,7 +16,7 @@ class MenuControllerViewModel{
     var viewC = UIViewController()
     let menu : [MenuItems] = []
     var menus = [String]()
-    let menuItems : [String] = ["Home Feed Settings","Notification Settings","Change Password","Leadership","Privacy","About Us","Logout"]
+    let menuItems : [String] = ["Change Password","Privacy Policy","About Us","Logout"]//["Home Feed Settings","Notification Settings","Change Password","Leadership","Privacy","About Us","Logout"]
     var numberofSections : Int {
         return  1
     }
@@ -77,8 +77,15 @@ extension MenuControllerViewModel: MenuViewModelDelegateProtocol{
         UserDefaults.standard.synchronize()
         print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
         DispatchQueue.main.async {
-            let delegates = (UIApplication.shared.delegate as! AppDelegate)
-            delegates.loginScreen()
+            if #available(iOS 13.0, *) {
+                 var windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                let sceneDelegate = windowScene!.delegate as? SceneDelegate
+                sceneDelegate!.loginScreen()
+            }else{
+                let delegates = (UIApplication.shared.delegate as! AppDelegate)
+                delegates.loginScreen()
+            }
+            
         }
 
     }
@@ -139,7 +146,8 @@ extension MenuControllerViewModel: MenuViewModelDelegateProtocol{
     
     func movedToNextPage(from viewController : UIViewController){
         if #available(iOS 13.0, *) {
-            viewController.navigationController?.pushViewController(viewC, animated: false)
+            viewC.modalPresentationStyle = .fullScreen
+            viewController.present(viewC, animated: true)
         }else{
             viewController.present(viewC, animated: false, completion: nil)
         }

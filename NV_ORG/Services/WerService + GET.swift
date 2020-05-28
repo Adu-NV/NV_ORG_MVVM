@@ -423,6 +423,69 @@ class Webservice{
         }catch{
         }
     }
+    
+    //NEWS_DATES_URL
+    func  getNewsDates(completionBlock : @escaping(NewsDateListResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + NEWS_DATES_URL)
+        do {
+            let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(NewsDateListResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
+    
+    
+    //NEWS_DATES_URL
+    func  getEventsDates(completionBlock : @escaping(NewsDateListResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + EVENTS_DATES_URL)
+        do {
+            let request  = getRequest(url: url!, method: .get, auth: true, accept: .json, Content_Type: .json, body: nil)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(NewsDateListResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
 }
 
 

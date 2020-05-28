@@ -10,10 +10,22 @@ import UIKit
 import SDWebImage
 
 class ProfileViewController: UIViewController {
+    var uploadDictionary : Dictionary<String,String> = [:]
+    var encoded: String = ""
+    var base64Image:String  = ""
+    var profileImage: UIImage?
+    var imageData : Data?
+    var profileImg : UIImage?
+     var profileimageurl = ""
+    var imagePicker = UIImagePickerController()
+    var imageType : String = ""
+    
     var model : Profile?
     let profileVM = ProfileViewModel()
     var activitiIndicatorView = UIView()
+    
     @IBOutlet weak var profileTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -23,6 +35,7 @@ class ProfileViewController: UIViewController {
     }
     
     func setUI(){
+        imagePicker.delegate = self
         callWebservice()
     }
     
@@ -77,6 +90,9 @@ extension ProfileViewController : UITableViewDelegate,UITableViewDataSource{
                 cell.userSocietyLabel.text = self.model?.position!
                 cell.userTeamLabel.text = self.model?.belong!
                 cell.userJoiningLabel.text = self.model?.dateOfJoin!
+                cell.profileImageCameraButton.addTarget(self, action: #selector(profileImagButtontapped), for: .touchUpInside)
+                cell.coverImageButton.addTarget(self, action: #selector(coverImageButtontapped), for: .touchUpInside)
+                
             }
         
         }else{
@@ -99,5 +115,12 @@ extension ProfileViewController : UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     
-    
+    @objc func profileImagButtontapped(){
+        imageType = "Profile"
+        self.profileImageClicked(view: self )
+    }
+    @objc func coverImageButtontapped(){
+        imageType = "Cover"
+        self.coverImageClicked(view: self )
+    }
 }

@@ -29,14 +29,15 @@ let DASHBOARD_FEED_URL : String              = "dashboard_feeds"
 //MARK:- PROFILE
 
 let USERDETAILS_URL : String                        = "user_details"
-//MARK:- NEWS
-let NEWS_LIST_URL : String                           = "news"
+let PROFILE_EDIT_URL : String                       = "user_profile_edit"
+
 
 //MARK:- DIRECTORY
 
 let DIRECTORY_LIST_URL : String                  = "directory_list"
 let DIRECTORY_FILTER_LIST : String              = "directory_filter_list"
 let DIRECTORY_MEMBER_DETAIL : String     = "member_detail"
+let DIRECTORY_SEARCH_URL : String           = "search_directory"
  
 //MARK:- GALLERY
 
@@ -53,7 +54,7 @@ let JOB_TYPES_URL : String                            = "job_types_list"
 let CELEBRATION_LIST_URL : String              = "celebration_list"
 
 let MEETINGS_LIST_URL : String                    = "meeting_details/"//meeting_details/f8934ba0-8148-11ea-b1ab-a1a7eec7b352
-
+let MEETINGS_ATTENDING_URL : String      = "meeting_attending"
 //MARK:- Notification
 
 let NOTIFICATION_LIST_URL : String             = "notifications_list"
@@ -61,3 +62,9 @@ let ANNOUNCEMENT_LIST_URL : String        = "announcement_list"
 
 
 let EVENT_DETAILS_URL : String                     = "event_details"
+let EVENTS_DATES_URL : String                      = "event_dates"
+
+//MARK:- NEWS
+let NEWS_LIST_URL : String                             = "news"
+let NEWS_DETAILS_URL : String                      = "news_details"
+let NEWS_DATES_URL : String                         = "news_dates"

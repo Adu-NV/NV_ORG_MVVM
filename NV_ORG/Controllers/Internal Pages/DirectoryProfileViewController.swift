@@ -43,20 +43,12 @@ class DirectoryProfileViewController: UIViewController {
             DispatchQueue.main.async {
                 self.directoryProfileTableView.reloadData()
             }
-            
         })
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
-        if #available(iOS 13.0, *) {
-            if let navController = self.navigationController {
-                navController.popViewController(animated: true)
-            }
-        }else{
-            self.dismiss(animated: false, completion: nil)
-        }
+        self.dismiss(animated: false, completion: nil)
     }
-
 }
 
 extension DirectoryProfileViewController : UITableViewDelegate,UITableViewDataSource{
@@ -77,7 +69,6 @@ extension DirectoryProfileViewController : UITableViewDelegate,UITableViewDataSo
         if indexPath.row == 0{
             cell = tableView.dequeueReusableCell(withIdentifier: "profileTableViewCell0", for: indexPath) as! profileTableViewCell
             if let _ = model{
-                //SplashScreen.pn
                 cell.buttonHeightConstraint.constant = 30
                 cell.profileImageView!.sd_setImage(with: URL(string: (self.model?.data?.member_picture)!), placeholderImage:  UIImage(named: "profile.png"), options: .continueInBackground, completed: nil)
                 cell.coverImageView!.sd_setImage(with: URL(string: (self.model?.data?.member_cover_picture!)!), placeholderImage:  UIImage(named: "SplashScreen.png"), options: .continueInBackground, completed: nil)
@@ -85,13 +76,15 @@ extension DirectoryProfileViewController : UITableViewDelegate,UITableViewDataSo
                 cell.userPositionLabel.text = self.model?.data?.member_designation
                 cell.userMobileNumberLabel.text = self.model?.data?.member_phone!
                 cell.userIDLabel.text = "\((self.model?.data?.member_id!)!)"
-                
                 cell.userEmailLabel.text = self.model?.data?.member_email!
                 cell.userSocietyLabel.text = self.model?.data?.member_position_society!
                 cell.userTeamLabel.text = self.model?.data?.member_group!
                 cell.userJoiningLabel.text = self.model?.data?.member_date_of_joining!
+//                cell.callButton.isHidden = true
+//                cell.emailButton.isHidden = true
+                cell.callButton.addTarget(self, action: #selector(didCallButtonTapped), for: .touchUpInside)
+                cell.emailButton.addTarget(self, action: #selector(didEmailButtonTapped), for: .touchUpInside)
             }
-        
         }else{
             cell = tableView.dequeueReusableCell(withIdentifier: "profileTableViewCell1", for: indexPath) as! profileTableViewCell
              if let _ = model{
@@ -99,7 +92,6 @@ extension DirectoryProfileViewController : UITableViewDelegate,UITableViewDataSo
                 cell.userEducationLabel.text = self.model?.data?.member_education!
                 cell.userJobExperienceLabel.text = self.model?.data?.member_job_experience!
                 cell.userCareerlabel.text = self.model?.data?.member_career_profile!
-                
                 cell.userMartialLabel.text = self.model?.data?.member_martial_status!
                 cell.userSpouseLabel.text = self.model?.data?.member_spouse_name != nil ?  self.model?.data?.member_spouse_name : ""
                 cell.usersLocationLabel.text = self.model?.data?.member_state!
@@ -112,5 +104,17 @@ extension DirectoryProfileViewController : UITableViewDelegate,UITableViewDataSo
         return cell
     }
     
-    
+    @objc func didCallButtonTapped(){
+        debugPrint((self.model?.data?.member_phone)!)
+        if let phoneCallURL = URL(string: "tel://\(self.model?.data?.member_phone!.replacingOccurrences(of: " ", with: ""))") {
+            
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    @objc func  didEmailButtonTapped(){
+        
+    }
 }

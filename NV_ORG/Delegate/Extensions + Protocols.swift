@@ -173,6 +173,7 @@ public protocol DirectoryViewControllerDelegateProtocol{
 
 public protocol DirectoryFilterViewModelDelegateProtocol{
     func skipButtontapped(view : UIViewController)
+    func filterButtonTapped(view : UIViewController , location : String,country : String , position: String)
 }
 public protocol DirectoryFilterViewControllerDelegateProtocol{
 }
@@ -182,4 +183,19 @@ public protocol DirectoryFilterViewControllerDelegateProtocol{
 
 public protocol TableViewButtonTapped{
     func buttonTapped(sender : UIButton)
+}
+public protocol TableViewTouchDelegate{
+    func touchInitiated(row : Int)
+}
+
+
+public protocol DirectoryFilterDelegate{
+    func didSelect(_dic : Dictionary<String,String> ,viewController : UIViewController)
+}
+public protocol DateDelegate{
+    func didSelect(date: String)
+}
+
+public protocol NewsListProtocol{
+    func didSelectNews(news_dates : String ,viewController : UIViewController)
 }

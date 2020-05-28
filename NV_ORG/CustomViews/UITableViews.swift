@@ -64,6 +64,8 @@ class LeaderShipTableViewCell : UITableViewCell{
     //MARK:- ProfileTableViewCell
 class profileTableViewCell : UITableViewCell{
 
+    @IBOutlet weak var coverImageButton: UIButton!
+    @IBOutlet weak var profileImageCameraButton: UIButton!
     //profileCoverView
     @IBOutlet weak var profileCoverView: UIView!
     @IBOutlet weak var coverImageView: UIImageView!
@@ -225,6 +227,9 @@ class NewsListPageTableViewCell : UITableViewCell{
     @IBOutlet weak var newsPublishedLabel: UILabel!
     @IBOutlet weak var notificationTitleLabel: UIImageView!
     override func awakeFromNib() {
+        if let _ = notificationTitleLabel{
+            notificationTitleLabel.setImageViewCornerRadiusWithBorder(radius: 6.0, borderwidth: 0.5, color: BUTTON_UNSELECTED_COLOR)
+        }
         }
 }
 
@@ -297,7 +302,38 @@ class CelebrationListTableViewCell : UITableViewCell{
         }
     }
 }
+class NewsDetailTableViewCell : UITableViewCell{
+    @IBOutlet weak var newsTitleLabel: UILabel!
+    @IBOutlet weak var newsUpdatedLabel: UILabel!
+    @IBOutlet weak var publishedAuthorLabel: UILabel!
+    @IBOutlet weak var newImageView: UIImageView!
+    @IBOutlet weak var newsDescriptionLabel: UILabel!
+    @IBOutlet weak var imageViewheight: NSLayoutConstraint!
+    @IBOutlet weak var newsBackGroundView: UIView!
+    
+    override class func awakeFromNib() {
+    }
+}
 
 
+extension UITableView{
 
+    func hasRowAtIndexPath(indexPath: IndexPath) -> Bool {
+        var boolValue = false
+        DispatchQueue.main.async {
+            boolValue =  indexPath.section < self.numberOfSections && indexPath.row < self.numberOfRows(inSection: indexPath.section)
+        }
+        return boolValue
+    }
+
+    func scrollToTop(_ animated: Bool = false) {
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: 0, section: 0)
+            if self.hasRowAtIndexPath(indexPath: indexPath) {
+                self.scrollToRow(at: indexPath, at: .top, animated: animated)
+            }
+        }
+    }
+
+}
 

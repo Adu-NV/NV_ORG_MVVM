@@ -15,38 +15,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
     var navigatinController = UINavigationController()
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//         checkNetworkRechability()
+        //         checkNetworkRechability()
         if let _ = UserDefaults.standard.value(forKey: "token"){
             homeScreen()
+            return true
         }else{
             loginScreen()
+            return true
         }
-        return true
     }
+
     
     func homeScreen(){
         DispatchQueue.main.async {
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-//            /GalleryViewController
-//            let homeView =  storyboard.instantiateViewController(withIdentifier: "GalleryViewController") as! GalleryViewController
-//            homeView.setUPViewController()
-            
             let homeView =  storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! MainTabBar
-                       homeView.setUPViewController()
+            homeView.setUPViewController()
             if #available(iOS 13.0, *) {
                 UIApplication.shared.statusBarStyle = .lightContent
+                
                 self.navigatinController = UINavigationController(rootViewController: homeView)
+                
                 self.navigatinController.isNavigationBarHidden = true
                 self.window?.rootViewController = self.navigatinController
-//                self.window?.makeKeyAndVisible()
+                self.window?.makeKeyAndVisible()
             }else{
                 self.window?.rootViewController = homeView
             }
         }
-        
     }
+    
     func loginScreen(){
         DispatchQueue.main.async {
                     let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -61,8 +60,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.rootViewController = homeView
             }
         }
-
     }
+    
     func currentTopViewController() -> UIViewController {
         var topVC: UIViewController?
         if #available(iOS 13.0, *){
@@ -106,7 +105,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @objc func statusManager(_ notification: Notification) {
         updateUserInterface()
     }
-
     
     func showNoWifiView(){
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)

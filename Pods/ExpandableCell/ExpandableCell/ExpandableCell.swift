@@ -10,6 +10,15 @@ import UIKit
 import Foundation
 
 open class ExpandableCell: UITableViewCell {
+        @IBOutlet weak public var titleLabel: UILabel!
+        @IBOutlet weak public var timeLabel: UILabel!
+        @IBOutlet weak public var dateLabel: UILabel!
+    //    override func awakeFromNib() {
+    //    }
+    public static let ID = "ExpandableCell"
+    
+    
+    
     open var arrowImageView: UIImageView!
     open var rightMargin: CGFloat = 30
     open var highlightAnimation = HighlightAnimation.animated
@@ -42,7 +51,7 @@ open class ExpandableCell: UITableViewCell {
         super.layoutSubviews()
         let width = self.bounds.width
         let height = self.bounds.height
-        arrowImageView.frame = CGRect(x: width - 50, y: (height)/2, width: 22, height: 22)
+        arrowImageView.frame = CGRect(x: width - 50, y: (height)/2, width: 22, height: 11)
     }
 
     func open() {

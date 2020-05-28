@@ -22,12 +22,6 @@ var galleryId = ""
         galleryImageView.sd_setImage(with: URL(string: galleryId), placeholderImage: UIImage(named: "events.png"), options: .continueInBackground, context: nil)
     }
     @IBAction func closeButtonTapped(_ sender: Any) {
-        if #available(iOS 13.0, *) {
-            if let navController = self.navigationController {
-                navController.popViewController(animated: true)
-            }
-        }else{
-            self.dismiss(animated: false, completion: nil)
-        }
+       self.dismiss(animated: false, completion: nil)
     }
 }

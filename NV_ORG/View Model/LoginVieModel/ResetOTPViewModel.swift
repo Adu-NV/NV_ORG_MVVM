@@ -17,13 +17,7 @@ class ResetOTPViewModel{
 
 extension ResetOTPViewModel: ResetOTPViewModelDelegateProtocol{
     func backButtontapped(view : UIViewController) {
-        if #available(iOS 13.0, *) {
-            if let navController = view.navigationController {
-                navController.popViewController(animated: true)
-            }
-        }else{
-            view.dismiss(animated: false, completion: nil)
-        }
+        view.dismiss(animated: false, completion: nil)
     }
     
     func sendOTP(from otpField1: String?, otpField2: String?, otpField3: String?, otpField4: String?, otpField5: String?, otpField6: String? ,otp :String) {
@@ -45,11 +39,11 @@ extension ResetOTPViewModel: ResetOTPViewModelDelegateProtocol{
             let storyboardValue = UIStoryboard.init(name: "Main", bundle: nil)
             let email =  storyboardValue.instantiateViewController(withIdentifier: "ResetPasswordViewController") as! ResetPasswordViewController
             if #available(iOS 13.0, *) {
-                viewController.navigationController?.pushViewController(email, animated: false)
+                email.modalPresentationStyle = .fullScreen
+                viewController.present(email, animated: true)
             }else{
                 viewController.present(email, animated: false, completion: nil)
             }
         }
-        debugPrint("reset OTP Page")
     }
 }

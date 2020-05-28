@@ -8,11 +8,12 @@
 
 import Foundation
 import UIKit
-
+//DirectoryFilterDelegate
 struct DirectoryFilterViewModel{
     var countryList : [dataList] = []
     var positionList : [dataList] = []
     var locationsList : [dataList] = []
+   
     
     mutating func setModel(model : DirectoryFilterResponseModel){
         if let _data = model.data{
@@ -47,15 +48,16 @@ struct DirectoryFilterViewModel{
         }
     }
 }
-
+//"search_string":"search_data", "position_in_society":"position 1","country":"India","location":"haripad"
 
 extension DirectoryFilterViewModel : DirectoryFilterViewModelDelegateProtocol{
-    func skipButtontapped(view: UIViewController) {
-        if let navController = view.navigationController {
-            navController.popViewController(animated: true)
-        }else{
-            view.dismiss(animated: false, completion: nil)
+    func filterButtonTapped(view: UIViewController, location: String, country: String, position: String) {
+        
+             view.dismiss(animated: false, completion: nil)
         }
+    
+    func skipButtontapped(view: UIViewController) {
+       view.dismiss(animated: false, completion: nil)
     }
 }
 

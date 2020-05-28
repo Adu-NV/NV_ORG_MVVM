@@ -42,8 +42,6 @@ extension DashBoardViewController : DashBoardViewModelViewControllerDelegateProt
         updateCellContentsTimer = Timer.scheduledTimer(timeInterval: 7,target: self,selector: #selector(self.updateCells),userInfo: nil, repeats: true)
         updateAdvertisementTimer = Timer.scheduledTimer(timeInterval: 10,target: self,selector: #selector(self.updateAdvertisementCells),userInfo: nil, repeats: true)
         dashViewModel = DashBoardViewModel()
-        //        let _tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backButton))
-        //        self.view.addGestureRecognizer(_tap)
         profileImageButton.setCornerRadius(radius: self.profileImageButton.frame.height /  2, bg_Color: .clear)
         dashViewModel?.delegate = self
         callApi()
@@ -179,7 +177,7 @@ extension DashBoardViewController:UITableViewDelegate,UITableViewDataSource{
         case 1:
             heightForRow = !(self.dashViewModel?.dashBoardFeedModel?.data?.event_list!.isEmpty)! ? 300 : 0
         case 2:
-            heightForRow = !(self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list!.isEmpty)! ? 150 : 0
+            heightForRow = !(self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list!.isEmpty)! ? 180 : 0
         case 3:
             heightForRow = !(self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list!.isEmpty)! ? 190 : 0
         case 4:
@@ -211,78 +209,81 @@ extension DashBoardViewController: UICollectionViewDelegate,UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = DashBoardCollectionViewCell()
-        switch collectionView.tag{
-        case 0,4,6:
-            break
-        case 1:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
-            if !(self.dashViewModel?.dashBoardFeedModel?.data?.event_list!.isEmpty)!{
-                cell.eventNameLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.event_list![indexPath.row].event_name)!
-                cell.eventOrganiserLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.event_list![indexPath.row].event_brief)!
-                cell.eventDateLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.event_list![indexPath.row].event_date)!
-                cell.eventsImageView.sd_setImage(with: URL(string: (self.dashViewModel?.dashBoardFeedModel?.data?.event_list![indexPath.row].event_url)!), placeholderImage:  UIImage(named: "events.png"), options: .continueInBackground, completed: nil)
-                cell.backgroundColor = .white
-                cell.setShadow(radius: 10.0)
-                return cell
-            }else{
-                return cell
-            }
-        case 2:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
-            if !(self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list!.isEmpty)!{
-                cell.meetingNameLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_name)!
-                cell.meetingDateLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_date)!
-                cell.meetingTimeLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_city)!
-                cell.backgroundColor = .white
-                cell.setShadow(radius: 10.0)
-                return cell
-            }else{
-                return cell
-            }
-        case 3:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
-            if !(self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list!.isEmpty)!{
-                cell.wishesNameLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list![indexPath.row].celebration_name)!
-                cell.wishesTitleLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list![indexPath.row].celebration_occasion)!
-                cell.wishesImageView.sd_setImage(with: URL(string: (self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list![indexPath.row].celebration_name)!), placeholderImage:  UIImage(named: "profile.png"), options: .continueInBackground, completed: nil)
-                cell.setShadow(radius: 10.0)
-                return cell
-            }else{
-                return cell
-            }
-        case 5:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
-            if !(self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list!.isEmpty)!{//rightArrowbutton
-                if (self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list!.count)! - 1 == indexPath.row{
-                    cell.rightArrowbutton.isHidden = false
-                    cell.rightArrowbutton.addTarget(self, action: #selector(viewAllGallery), for: .touchUpInside)
-                    cell.rightArrowbutton.tintColor = .black
-                    cell.galleryImageView.alpha = 0.5
-                    cell.galleryVE.alpha = 0.7
-                }else{
-                    cell.galleryVE.alpha = 0.0
-                    cell.rightArrowbutton.isHidden = true
-                    cell.galleryImageView.alpha = 1.0
-                }
-                cell.galleryImageView.sd_setImage(with: URL(string: (self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list![indexPath.row].gallery_URL)!), placeholderImage:  UIImage(named: "events.png"), options: .continueInBackground, completed: nil)
-                return cell
-            }else{
-                return cell
-            }
-        default :
-            return cell
+        if let _ = self.dashViewModel{
+            switch collectionView.tag{
+                  case 0,4,6:
+                      break
+                  case 1:
+                      cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
+                      if !(self.dashViewModel?.dashBoardFeedModel?.data?.event_list!.isEmpty)!{
+                          cell.eventNameLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.event_list![indexPath.row].event_name)!
+                          cell.eventOrganiserLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.event_list![indexPath.row].event_brief)!
+                          cell.eventDateLabel.text = self.dashViewModel?.dashBoardFeedModel?.data?.event_list![indexPath.row].event_date != "" ? (self.dashViewModel?.dashBoardFeedModel?.data?.event_list![indexPath.row].event_date)!.setTime(format: "dd MMM YYYY") : ""
+                          cell.eventsImageView.sd_setImage(with: URL(string: (self.dashViewModel?.dashBoardFeedModel?.data?.event_list![indexPath.row].event_url)!), placeholderImage:  UIImage(named: "events.png"), options: .continueInBackground, completed: nil)
+                          cell.backgroundColor = .white
+                          cell.setShadow(radius: 10.0)
+                          return cell
+                      }else{
+                          return cell
+                      }
+                  case 2:
+                      cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
+                      if !(self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list!.isEmpty)!{
+                          cell.meetingNameLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_name)!
+                          cell.meetingDateLabel.text = self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_date !=  "" ? (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_date)!.setTime(format: "dd MMM YYYY")  : ""
+                          cell.meetingTimeLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_city)!
+                          cell.meetingDetailsbButton.tag = indexPath.row
+                          cell.meetingDetailsbButton.addTarget(self, action: #selector(moveToMeetingsPage(sender:)), for: .touchUpInside)
+                          cell.backgroundColor = .white
+                          cell.setShadow(radius: 10.0)
+                          return cell
+                      }else{
+                          return cell
+                      }
+                  case 3:
+                      cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
+                      if !(self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list!.isEmpty)!{
+                          cell.wishesNameLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list![indexPath.row].celebration_name)!
+                          cell.wishesTitleLabel.text = (self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list![indexPath.row].celebration_occasion)!
+                          cell.wishesImageView.sd_setImage(with: URL(string: (self.dashViewModel?.dashBoardFeedModel?.data?.celebration_list![indexPath.row].celebration_profile_picture)!), placeholderImage:  UIImage(named: "profile.png"), options: .continueInBackground, completed: nil)
+                          cell.setShadow(radius: 10.0)
+                          return cell
+                      }else{
+                          return cell
+                      }
+                  case 5:
+                      cell = collectionView.dequeueReusableCell(withReuseIdentifier:"DashBoardCollectionViewCell" , for: indexPath) as! DashBoardCollectionViewCell
+                      if !(self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list!.isEmpty)!{
+                          if (self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list!.count)! - 1 == indexPath.row{
+                              cell.rightArrowbutton.isHidden = false
+                              cell.rightArrowbutton.addTarget(self, action: #selector(viewAllGallery), for: .touchUpInside)
+                              cell.rightArrowbutton.tintColor = .black
+                              cell.galleryImageView.alpha = 0.5
+                              cell.galleryVE.alpha = 0.7
+                          }else{
+                              cell.galleryVE.alpha = 0.0
+                              cell.rightArrowbutton.isHidden = true
+                              cell.galleryImageView.alpha = 1.0
+                          }
+                          cell.galleryImageView.sd_setImage(with: URL(string: (self.dashViewModel?.dashBoardFeedModel?.data?.gallery_list![indexPath.row].gallery_URL)!), placeholderImage:  UIImage(named: "events.png"), options: .continueInBackground, completed: nil)
+                          return cell
+                      }else{
+                          return cell
+                      }
+                  default :
+                      return cell
+                  }
         }
+      
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView.tag{
         case 1:
-            debugPrint("Events")
             self.dashViewModel?.moveToEventsPage(id: (self.dashViewModel?.dashBoardFeedModel?.data?.event_list![indexPath.row].event_id)!, viewController: self)
         case 2:
              self.dashViewModel?.moveToMeetingsPage(id: (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_id)!, viewController: self)
-//            self.dashViewModel?.getMeetings(id: (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![indexPath.row].meeting_id)!)
         case 3:
             self.dashViewModel?.moveToCelebrationPage(viewController: self)
         case 5:
@@ -307,7 +308,7 @@ extension DashBoardViewController: UICollectionViewDelegate,UICollectionViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            break
+            self.dashViewModel?.moveToNewsDetailPage(id:(self.dashViewModel?.dashBoardFeedModel?.data?.news_list![newsListcount].news_date)! ,viewController: self)
         case 4:
             break
         case 6:
@@ -325,6 +326,9 @@ extension DashBoardViewController : UIGestureRecognizerDelegate{
             newsListcount += 1
             updateCells()
         }
-        print("labelSwipedLeft called")
     }
+    
+    @objc func moveToMeetingsPage(sender: UIButton){
+        self.dashViewModel?.moveToMeetingsPage(id: (self.dashViewModel?.dashBoardFeedModel?.data?.meetings_list![sender.tag].meeting_id)!, viewController: self)
+      }
 }

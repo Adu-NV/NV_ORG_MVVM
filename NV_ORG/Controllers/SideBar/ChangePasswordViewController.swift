@@ -72,11 +72,16 @@ extension ChangePasswordViewController: ChangePasswordViewControllerDelegateProt
     func sendInformationBack(success: Bool, message: String?, model: Dictionary<String, String>?) {
         if success{
             Webservice.shared.changePassword(body: model!) { (model, error) in
-                if (model?.message)! == SUCCESS_STRING{
-                    self.changeViewmodel.moveToSuccessPage(viewController: self)
+                if let _ = model{
+                    if (model?.message)! == SUCCESS_STRING{
+                          self.changeViewmodel.moveToSuccessPage(viewController: self)
+                      }else{
+                          self.showAlert((model?.message)!)
+                      }
                 }else{
-                    self.showAlert((model?.message)!)
+                    self.showAlert(PASSWORD_ERROR)
                 }
+  
             }
         }else{
             self.showAlert(message!)
@@ -85,6 +90,9 @@ extension ChangePasswordViewController: ChangePasswordViewControllerDelegateProt
     
     func showAlert(_ message:String){
         let alertController = UIAlertController()
+        if #available(iOS 13, *){
+            self.addChild(alertController)
+        }
         alertController.simpAler(title: APPLICATION_NAME, message: message, isOkButton: true, isCancelButton: false, okButtonText: OK_TEXT, cancelbuttonText: nil, preferredStyle: .alert)
     }
 }

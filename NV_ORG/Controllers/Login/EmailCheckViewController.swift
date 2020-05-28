@@ -97,6 +97,9 @@ extension EmailCheckViewController : EmailCheckViewControllerDelegateProtocol{
     
     func showAlert(_ message:String){
         let alertController = UIAlertController()
+        if #available(iOS 13, *){
+            self.addChild(alertController)
+        }
         alertController.simpAler(title: APPLICATION_NAME, message: message, isOkButton: true, isCancelButton: false, okButtonText: OK_TEXT, cancelbuttonText: nil, preferredStyle: .alert)
     }
     
@@ -106,7 +109,6 @@ extension EmailCheckViewController : EmailCheckViewControllerDelegateProtocol{
             Webservice.shared.EmailVerification(body: self.model) { (model, error) in
                 self.checkButton.hideLoading()
                 if model != nil{
-                    debugPrint(model!)
                     DispatchQueue.main.async {
                         UserDefaults.standard.set(self.emailTextField.text!, forKey: "reset_email")
                     }

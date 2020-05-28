@@ -8,39 +8,46 @@
 
 import Foundation
 
-let APPLICATION_NAME : String            = "NV_ORG"
-let DEVICE_TYPE : String                        = "ios"
+let APPLICATION_NAME : String                   = "GREENS"
+let DEVICE_TYPE : String                                = "ios"
 
 //MARK:- Login Page
 
-let INVALID_LOGIN : String                   = "Please fill all fields"
-let INVALID_USER : String                      = "Please fill email field"
-let INVALID_PASSWORD : String           = "Please fill passsword field"
-let INVALID_LOGIN_MESSAGE : String = "You have some network issue please check it or you have entered an invalid username or passord"
-let LOGIN_ERROR_MESSAGE: String     = "You have entered an invalid username or password. Please try again."
+let INVALID_LOGIN : String                          = "Please fill all fields"
+let INVALID_USER : String                             = "Please fill email field"
+let INVALID_PASSWORD : String                  = "Please fill passsword field"
+let INVALID_LOGIN_MESSAGE : String        = "You have some network issue please check it or you have entered an invalid username or passord"
+let LOGIN_ERROR_MESSAGE: String            = "You have entered an invalid username or password. Please try again."
 
 //MARK:- OTP Page
 
-let INVALID_OTP: String     = "Please Fill fields to continue.."
-let OTP_ERROR_MESSAGE: String     = "This otp is invalid."
-let INVALID_OTP_INCORRECT: String     = "Mismatch otp please enter again"
-let PASSWORD_INCORRECT: String     = "Passwords are mismatching please type again and continue."
+let INVALID_OTP: String                                 = "Please Fill fields to continue.."
+let OTP_ERROR_MESSAGE: String                   = "This otp is invalid."
+let INVALID_OTP_INCORRECT: String           = "Mismatch otp please enter again"
+let PASSWORD_INCORRECT: String               = "Passwords are mismatching please type again and continue."
 
 //MARK:- Forgot Password
 
-let INVALID_EMAIL: String     = "Email field is empty"
-let EMAIL_ERROR_MESSAGE: String     = "This email that you enter is invalid."
-let EMAIL_SUCCESS_MESSAGE : String = "We have e-mailed your password reset link!"
+let INVALID_EMAIL: String                              = "Email field is empty"
+let EMAIL_ERROR_MESSAGE: String                = "This email that you enter is invalid."
+let EMAIL_SUCCESS_MESSAGE : String           = "We have e-mailed your password reset link!"
 //MARK:- CHANGE Password
 
-let INVALID: String     = "Fill all field to continue"
-let PASSWORD_MISMATCH : String = "Passwords are mismatching please type again and continue."
-let SUCCESS_STRING : String = "Successful"
+let INVALID: String                                           = "Fill all field to continue"
+let PASSWORD_MISMATCH : String                = "Passwords are mismatching please type again and continue."
+let SUCCESS_STRING : String                          = "Successful"
 
 //MARK:- ButtonString
 
-let OK_TEXT : String  = "OK"
-let CANCEL_TEXT : String = "CANCEL"
-let DELETE_TEXT : String    = "DELETE"
-let TRY_TEXT : String           = "TRY AGAIN"
+let OK_TEXT : String                                        = "OK"
+let CANCEL_TEXT : String                                = "CANCEL"
+let DELETE_TEXT : String                                  = "DELETE"
+let TRY_TEXT : String                                       = "TRY AGAIN"
 let DO_YOU_WANNA_CONTINTUE : String = "Do you want to continue.?"
+
+let SUCCESS: String                                         = "Successful"
+let ATTENDING_CONFIRMATION : String     = "Are you sure?"
+let YES_TEXT : String                                       = "OK"
+let NO_TEXT : String                                        = "CANCEL"
+
+let PASSWORD_ERROR : String                         = "Password not updated"

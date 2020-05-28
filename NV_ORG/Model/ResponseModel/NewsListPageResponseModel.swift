@@ -18,9 +18,10 @@ public struct NewsListpageResponseData :Decodable {
 }
 
 public struct News_list_Page : Decodable {
-    let news_id : String?
+   let news_id : String?
     let news_name : String?
+    let news_author_name : String?
     let news_date : String?
-    let news_url : String?
+    let news_picture : String?
     let news_brief : String?
 }

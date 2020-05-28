@@ -24,48 +24,49 @@ struct DashBoardFeedResponseData : Decodable {
 }
 
 struct Event_list : Decodable {
-let event_id : String?
-let event_name : String?
-let event_date : String?
-let event_url : String?
-let event_brief : String?
+    let event_id : String?
+    let event_name : String?
+    let event_date : String?
+    let event_url : String?
+    let event_brief : String?
 }
 
 struct News_list : Decodable {
-let news_id : String?
-let news_name : String?
-let news_date : String?
-let news_url : String?
-let news_brief : String?
-
+    let news_id : String?
+    let news_name : String?
+    let news_date : String?
+    let news_url : String?
+    let news_brief : String?
+    
 }
 
 struct Meetings_list : Decodable {
-let meeting_id : String?
-let meeting_name : String?
-let meeting_date : String?
-let meeting_at : String?
-let meeting_address : String?
-let meeting_city : String?
+    let meeting_id : String?
+    let meeting_name : String?
+    let meeting_date : String?
+    let meeting_at : String?
+    let meeting_address : String?
+    let meeting_city : String?
 }
 
 struct Celebration_list : Decodable {
-let celebration_id : Int?
-let celebration_name : String?
-let celebration_occasion : String?
+    let celebration_id : Int?
+    let celebration_name : String?
+    let celebration_occasion : String?
+    let celebration_profile_picture : String?
 }
 struct Job_vacancy_list : Decodable {
-let job_vacancy_id : String?
-let job_vacancy_name : String?
-let job_vacancy_occasion : String?
+    let job_vacancy_id : String?
+    let job_vacancy_name : String?
+    let job_vacancy_occasion : String?
 }
 struct Advertisement_list : Decodable {
-let advertisement_id : String?
-let advertisement_image_url : String?
-let advertisement_URL : String?
+    let advertisement_id : String?
+    let advertisement_image_url : String?
+    let advertisement_URL : String?
 }
 
 struct Gallery_list : Decodable {
-let gallery_id : String?
-let gallery_URL : String?
+    let gallery_id : String?
+    let gallery_URL : String?
 }

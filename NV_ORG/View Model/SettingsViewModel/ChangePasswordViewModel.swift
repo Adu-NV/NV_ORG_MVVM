@@ -37,17 +37,11 @@ extension ChangePasswordViewModel : ChangePasswordViewModelDelegateProtocol{
     
     func moveToSuccessPage(viewController: UIViewController) {
         //do coding here
-        debugPrint("Sucess")
+        
     }
     
     func skipButtontapped(view: UIViewController) {
-        if #available(iOS 13.0, *) {
-            if let navController = view.navigationController {
-                navController.popViewController(animated: true)
-            }
-        }else{
-            view.dismiss(animated: false, completion: nil)
-        }
+        view.dismiss(animated: false, completion: nil)
     }
     
     

@@ -44,9 +44,7 @@ extension HomeFeedSettingsViewController : UITableViewDelegate,UITableViewDataSo
                     self.homeFeedVM.setdashBoardFeedModel(model: model!)
                     self.homeFeedTableView.reloadData()
                 }
-                
-            }
-            debugPrint(model)
+             }
         }
     }
 }

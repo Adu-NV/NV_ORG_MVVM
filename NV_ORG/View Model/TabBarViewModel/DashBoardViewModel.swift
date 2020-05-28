@@ -71,7 +71,8 @@ extension DashBoardViewModel : DashBoardViewModelDelegateProtocol{
     func moveToGalleryList(viewController: UIViewController) {
         let gallery = mainStory.instantiateViewController(withIdentifier: "GalleryViewController") as! GalleryViewController
         if #available(iOS 13.0, *) {
-            viewController.navigationController?.pushViewController(gallery, animated: false)
+                            gallery.modalPresentationStyle = .fullScreen
+            viewController.present(gallery, animated: true)
         }else{
             viewController.present(gallery, animated: false, completion: nil)
         }
@@ -81,20 +82,14 @@ extension DashBoardViewModel : DashBoardViewModelDelegateProtocol{
         let galleryImage = mainStory.instantiateViewController(withIdentifier: "GalleryImageViewController") as! GalleryImageViewController
         galleryImage.galleryId = id
         if #available(iOS 13.0, *) {
-            viewController.navigationController?.pushViewController(galleryImage, animated: false)
+                            galleryImage.modalPresentationStyle = .fullScreen
+            viewController.present(galleryImage, animated: true)
         }else{
             viewController.present(galleryImage, animated: false, completion: nil)
         }
     }
     
     func moveToURLPage(viewController: UIViewController ,id : String) {
-//        let urlPage = mainStory.instantiateViewController(withIdentifier: "URLViewController") as! URLViewController
-//        urlPage.urlString = id
-//        if #available(iOS 13.0, *) {
-//            viewController.navigationController?.pushViewController(urlPage, animated: false)
-//        }else{
-//            viewController.present(urlPage, animated: false, completion: nil)
-//        }
         guard let url = URL(string:id) else {
           return //be safe
         }
@@ -108,7 +103,8 @@ extension DashBoardViewModel : DashBoardViewModelDelegateProtocol{
     func moveToJobList(viewController: UIViewController) {
         let jobs = mainStory.instantiateViewController(withIdentifier: "JobsListViewController") as! JobsListViewController
         if #available(iOS 13.0, *) {
-            viewController.navigationController?.pushViewController(jobs, animated: false)
+                            jobs.modalPresentationStyle = .fullScreen
+            viewController.present(jobs, animated: true)
         }else{
             viewController.present(jobs, animated: false, completion: nil)
         }
@@ -118,16 +114,20 @@ extension DashBoardViewModel : DashBoardViewModelDelegateProtocol{
         let jobDetail = mainStory.instantiateViewController(withIdentifier: "JobsDetailViewController") as! JobsDetailViewController
         jobDetail.jobId = id
         if #available(iOS 13.0, *) {
-            viewController.navigationController?.pushViewController(jobDetail, animated: false)
+                            jobDetail.modalPresentationStyle = .fullScreen
+            viewController.present(jobDetail, animated: true)
         }else{
             viewController.present(jobDetail, animated: false, completion: nil)
         }
     }
     
+    
+  
     func moveToCelebrationPage(viewController: UIViewController) {
         let jobDetail = mainStory.instantiateViewController(withIdentifier: "CelebrationViewController") as! CelebrationViewController
         if #available(iOS 13.0, *) {
-            viewController.navigationController?.pushViewController(jobDetail, animated: false)
+                            jobDetail.modalPresentationStyle = .fullScreen
+            viewController.present(jobDetail, animated: true)
         }else{
             viewController.present(jobDetail, animated: false, completion: nil)
         }
@@ -139,7 +139,8 @@ extension DashBoardViewModel : DashBoardViewModelDelegateProtocol{
         let meetings = mainStory.instantiateViewController(withIdentifier: "MeetingsDetailsViewController") as! MeetingsDetailsViewController
         meetings.id = id
         if #available(iOS 13.0, *) {
-            viewController.navigationController?.pushViewController(meetings, animated: false)
+                            meetings.modalPresentationStyle = .fullScreen
+            viewController.present(meetings, animated: true)
         }else{
             viewController.present(meetings, animated: false, completion: nil)
         }
@@ -150,9 +151,22 @@ extension DashBoardViewModel : DashBoardViewModelDelegateProtocol{
         let events = mainStory.instantiateViewController(withIdentifier: "EventsViewController") as! EventsViewController
         events.id = id
         if #available(iOS 13.0, *) {
-            viewController.navigationController?.pushViewController(events, animated: false)
+                            events.modalPresentationStyle = .fullScreen
+            viewController.present(events, animated: true)
         }else{
             viewController.present(events, animated: false, completion: nil)
+        }
+    }
+    
+    //NewsDetailViewController
+    func moveToNewsDetailPage(id: String, viewController: UIViewController){
+        let newsDetail = mainStory.instantiateViewController(withIdentifier: "NewsDetailViewController") as! NewsDetailViewController
+        newsDetail.news_date = id.setTime(format: "YYYY-MM-dd")
+        if #available(iOS 13.0, *) {
+                            newsDetail.modalPresentationStyle = .fullScreen
+            viewController.present(newsDetail, animated: true)
+        }else{
+            viewController.present(newsDetail, animated: false, completion: nil)
         }
     }
 }

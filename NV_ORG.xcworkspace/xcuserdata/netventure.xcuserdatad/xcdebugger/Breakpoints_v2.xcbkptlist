@@ -5,104 +5,99 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            uuid = "732A1526-3293-4928-85A9-EF48F41D08EC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            breakpointStackSelectionBehavior = "1"
-            scope = "1"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
-         <BreakpointContent
-            uuid = "F76D955B-57AC-4682-88E4-39428BDFB62D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1FA2B7F7-B5CB-41D0-BFF3-0A037585749E"
+            uuid = "CCA3C03A-64D8-489C-8DD7-A7199E004202"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NV_ORG/Controllers/Internal Pages/MeetingsDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "expandableTableView(_:expandedCellsForRowAt:)"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "expandableTableView(_:cellForRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CCA3C03A-64D8-489C-8DD7-A7199E004202 - fadc57800e6c0ddd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NV_ORG.MeetingsDetailsViewController.expandableTableView(_: ExpandableCell.ExpandableTableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "NV_ORG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/netventure/Documents/Projects/NV_ORG/NV_ORG/Controllers/Internal%20Pages/MeetingsDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "48892">
+               </Location>
+               <Location
+                  uuid = "CCA3C03A-64D8-489C-8DD7-A7199E004202 - fadc57800e6c0ddd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NV_ORG.MeetingsDetailsViewController.expandableTableView(_: ExpandableCell.ExpandableTableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "NV_ORG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/netventure/Documents/Projects/NV_ORG/NV_ORG/Controllers/Internal%20Pages/MeetingsDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "62434">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1E0F7409-5F0E-452A-A59E-1DC34C66F302"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NV_ORG/Controllers/Internal Pages/MeetingsDetailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "expandableTableView(_:expandedCell:didSelectExpandedRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "836B4704-4CF0-49AD-A557-505167508DF3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NV_ORG/Controllers/Internal Pages/MeetingsDetailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "expandableTableView(_:heightsForExpandedRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D1820D4B-25F2-48F3-9F7A-654BCB3F8500"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NV_ORG/Controllers/Internal Pages/MeetingsDetailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "expandableTableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8D33B2AF-F54E-46D1-ACDB-5A592CC22BB9"
+            uuid = "D9B48F87-0528-4636-9B4A-AF474EA37EF4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NV_ORG/Controllers/Internal Pages/EventsViewController.swift"
+            filePath = "NV_ORG/Controllers/Internal Pages/MeetingsDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "expandableTableView(_:cellForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D9B48F87-0528-4636-9B4A-AF474EA37EF4 - fadc57800e6c0ddd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NV_ORG.MeetingsDetailsViewController.expandableTableView(_: ExpandableCell.ExpandableTableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "NV_ORG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/netventure/Documents/Projects/NV_ORG/NV_ORG/Controllers/Internal%20Pages/MeetingsDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "33568">
+               </Location>
+               <Location
+                  uuid = "D9B48F87-0528-4636-9B4A-AF474EA37EF4 - fadc57800e6c0ddd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NV_ORG.MeetingsDetailsViewController.expandableTableView(_: ExpandableCell.ExpandableTableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "NV_ORG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/netventure/Documents/Projects/NV_ORG/NV_ORG/Controllers/Internal%20Pages/MeetingsDetailsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "158"
+                  endingLineNumber = "158"
+                  offsetFromSymbolStart = "62369">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

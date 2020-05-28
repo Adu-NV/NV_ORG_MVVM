@@ -19,10 +19,10 @@ class MainTabBar : UITabBarController{
         self.tabBar.layer.masksToBounds = true
         self.tabBar.isTranslucent = true
         self.tabBar.barStyle = .default
-        self.tabBar.backgroundColor = BUTTON_LOGIN_COLOR
-        self.tabBar.layer.cornerRadius   = 20.0
-//        self.tabBar.selectedItem
-        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+//        self.tabBar.backgroundColor = BUTTON_LOGIN_COLOR
+//        self.tabBar.layer.cornerRadius   = 20.0
+////        self.tabBar.selectedItem
+//        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner,.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
         self.delegate = self
 //        self.tabBar.selectedItem.h
     }
@@ -41,7 +41,6 @@ class MainTabBar : UITabBarController{
 
 extension MainTabBar : UITabBarControllerDelegate{
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        debugPrint("\(item.title)")
         
     }
     

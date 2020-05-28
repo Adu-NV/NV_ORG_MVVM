@@ -24,19 +24,22 @@ class NotificationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.notificationsTableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tag = 0
+        self.notificationsTableView.register(EmptyTableViewCell.self, forCellReuseIdentifier: "EmptyTableViewCell")
         self.setUP()
     }
     
     func setUI(){
-        self.notificationsTableView.register(EmptyTableViewCell.self, forCellReuseIdentifier: "EmptyTableViewCell")
-        self.anouncementButton.titleLabel?.textColor = (tag == 0 ? .black : .blue)
-        self.notificationsButton.titleLabel?.textColor = (tag == 0 ? .blue : .black)
-        self.anouncementView.backgroundColor = (tag == 0 ? .white : .gray)
-        self.notificationsView.backgroundColor = (tag == 0 ? .gray : .white)
+        DispatchQueue.main.async {
+            self.anouncementButton.titleLabel?.textColor = (self.tag == 0 ? .black : .blue)
+            self.notificationsButton.titleLabel?.textColor = (self.tag == 0 ? .blue : .black)
+            self.anouncementView.backgroundColor = (self.tag == 0 ? .white : .gray)
+            self.notificationsView.backgroundColor = (self.tag == 0 ? .gray : .white)
+        }
+        
     }
     
     @IBAction func anouncementButtonTapped(_ sender: Any) {

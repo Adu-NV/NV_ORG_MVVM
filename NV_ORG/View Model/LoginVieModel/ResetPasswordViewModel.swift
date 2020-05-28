@@ -25,7 +25,7 @@ extension ResetPasswordViewModel: ResetPasswordViewModelDelegateProtocol{
         }else{
             delegate?.sendInformationBack(success: false, message: PASSWORD_INCORRECT,model: nil)
         }
-     }
+    }
     
     func moveToLoginPage(viewController: UIViewController) {
         self.loginPage(viewController: viewController)
@@ -41,7 +41,8 @@ extension ResetPasswordViewModel: ResetPasswordViewModelDelegateProtocol{
             let storyboardValue = UIStoryboard.init(name: "Main", bundle: nil)
             let login =  storyboardValue.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             if #available(iOS 13.0, *) {
-                viewController.navigationController?.pushViewController(login, animated: false)
+                login.modalPresentationStyle = .fullScreen
+                viewController.present(login, animated: true)
             }else{
                 viewController.present(login, animated: false, completion: nil)
             }

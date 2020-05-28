@@ -24,7 +24,8 @@ extension LoginViewModel : LoginViewDelegateProtocol{
             let storyboardValue = UIStoryboard.init(name: "Main", bundle: nil)
             let email =  storyboardValue.instantiateViewController(withIdentifier: "EmailCheckViewController") as! EmailCheckViewController
             if #available(iOS 13.0, *) {
-                viewController.navigationController?.pushViewController(email, animated: false)
+                email.modalPresentationStyle = .fullScreen
+                viewController.present(email, animated: true)
             }else{
                 viewController.present(email, animated: false, completion: nil)
             }
@@ -36,11 +37,8 @@ extension LoginViewModel : LoginViewDelegateProtocol{
             let storyboardValue = UIStoryboard.init(name: "Main", bundle: nil)
             let otpPage =  storyboardValue.instantiateViewController(withIdentifier: "OTPViewController") as! OTPViewController
             if #available(iOS 13.0, *) {
-//                LoginViewController().navigationController
-                let aObjNavi = UINavigationController(rootViewController: otpPage)
-                (viewController as! LoginViewController).navigationController?.pushViewController(otpPage, animated: false)
-//                viewController.parent?.navigationController?.pushViewController(otpPage, animated: false)
-//                 viewController.present(aObjNavi, animated: false, completion: nil)
+                otpPage.modalPresentationStyle = .fullScreen
+                viewController.present(otpPage, animated: true)
             }else{
                 viewController.present(otpPage, animated: false, completion: nil)
             }

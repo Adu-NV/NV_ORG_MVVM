@@ -10,6 +10,7 @@ import UIKit
 
 class MenuViewController: UIViewController{
     @IBOutlet weak var innerView: UIView!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var menuTableView: UITableView!
     @IBOutlet weak var outsideVide: UIView!
     var dashModel :DashBoardViewModel!
@@ -19,24 +20,30 @@ class MenuViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
        dashModel = DashBoardViewModel()
-        
+        self.menuTableView.tableFooterView = UIView()
     }
     override func viewWillAppear(_ animated: Bool) {
         setUpUI()
     }
     
+    @IBAction func backButtonTapped(_ sender: Any) {
+        self.view.removeFromSuperview()
+//         dashModel.skipButtontapped(view: self)
+    }
     func setUpUI(){
+        backButton.setCornerRadiusWithoutBackground(radius: 6.0)
         self.menuControllerVM = MenuControllerViewModel(model: model)
         self.menuControllerVM.delegate = self
 //        let _tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backButton))
-//        self.view.addGestureRecognizer(_tap)
+//        self.menuTableView.addGestureRecognizer(_tap)
         self.menuTableView.reloadData()
     }
     
-    @objc func backButton(){
-        dashModel.skipButtontapped(view: self)
-//        menuControllerVM.skipButtontapped(view: self)
-    }
+//    @objc func backButton(){
+//        self.removeFromParent()
+////        dashModel.skipButtontapped(view: self)
+////        menuControllerVM.skipButtontapped(view: self)
+//    }
 }
 
 extension MenuViewController: UITableViewDelegate,UITableViewDataSource{
@@ -53,8 +60,8 @@ extension MenuViewController: UITableViewDelegate,UITableViewDataSource{
         if indexPath.row == 0{
             let  cell0 = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCells0", for: indexPath) as? MenuTableViewCells
 //            let _tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backButton))
-//            cell0!.addGestureRecognizer(_tap)
-//            cell0!.selectionStyle = .none
+//            cell0!.contentView.addGestureRecognizer(_tap)
+            cell0!.selectionStyle = .none
             return cell0!
         }else{
             let  cell1 = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCells1" , for: indexPath) as? MenuTableViewCells
@@ -74,14 +81,14 @@ extension MenuViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0{
             return 80
-        }else{
+        }else if indexPath.row > 0 && indexPath.row < self.menuControllerVM.numberOfRowsInSection(0){
             return 50
+        }else{
+            return 180
         }
     }
     
     @objc func selectedRow(sender: UITapGestureRecognizer){
-        print("Label tag is:\(sender.view!.tag)")
-        debugPrint("\(sender)")
         menuControllerVM.moveToPage(from: self, index: sender.view!.tag - 1)
     }
 }
@@ -89,7 +96,6 @@ extension MenuViewController: UITableViewDelegate,UITableViewDataSource{
 extension MenuViewController: MenuViewControllerDelegateProtocol{
     func didCallSignOutAPI() {
         Webservice.shared.signOutRequest{ (model, erroe) in
-            debugPrint(model)
             self.menuControllerVM.moveToLogin()
         }
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 class OTPViewController: UIViewController {
-    
+    var tap = false
     @IBOutlet weak var centerConstraint: NSLayoutConstraint!       {
         didSet{
             guard let field = self.centerConstraint  else { return }
@@ -72,26 +72,15 @@ class OTPViewController: UIViewController {
         setUI()
     }
 
+    func checkFields(){
+        
+    }
     //MARK:- Button Actions
     
     @IBAction func buttonEnterTapped(_ sender: UIButton) {
-        DispatchQueue.main.async {
-            self.verifyButton.showLoading()
-            Webservice.shared.OTPSubmit(body: self.model, completionBlock: { (model, message) in
-                DispatchQueue.main.async {
-                    self.verifyButton.hideLoading()
-                        if model != nil{
-                            self.otpViewModel.moveToDashBoard(viewController: self)
-                        }else{
-                            if message == LOGIN_ERROR_MESSAGE{
-                                self.showAlert(message!)
-                            }else{
-                                self.showAlert(INVALID_LOGIN_MESSAGE)
-                            }
-                        }
-                    }
-                })
-         }
+        tap = true
+        checkAllFields()
+       
     }
     @IBAction func resendButtonTapped(_ sender: Any) {
         let otpResendRequest = OTPResendRequestModel(_deviceType: DEVICE_TYPE, _user_id: "\(UserDefaults.standard.value(forKey: "userID") as! Int)")
@@ -140,7 +129,6 @@ extension OTPViewController{
 extension OTPViewController: UITextFieldDelegate{
     func checkAllFields(){
         otpViewModel.sendOTP(from: textField1.text, otpField2: textField2.text, otpField3: textField3.text, otpField4: textField4.text, otpField5: textField5.text, otpField6: textField6.text)
-        buttonEnterTapped(verifyButton)
     }
     
     @objc func textFieldDidChange(textField: UITextField){
@@ -176,16 +164,30 @@ extension OTPViewController : OTPViewControllerDelegateProtocol{
     func sendInformationBack(success: Bool, message: String?, model: Dictionary<String, String>?) {
         if success{
             self.model = model!
-            buttonEnterTapped(verifyButton)
+            sendOTP()
         }else{
             showAlert( message!)
         }
     }
     
+    func sendOTP(){
+        DispatchQueue.main.async {
+            self.verifyButton.showLoading()
+            Webservice.shared.OTPSubmit(body: self.model, completionBlock: { (model, message) in
+                DispatchQueue.main.async {
+                    self.verifyButton.hideLoading()
+                    if model != nil{
+                        self.otpViewModel.moveToDashBoard(viewController: self)
+                    }else{
+                        self.showAlert(message!)
+                    }
+                }
+            })
+        }
+    }
     func stopTimerAndVisibleButton() {
         self.resendButton.isHidden =  false
     }
-
 }
 
     //MARK:- UserDefined functions
@@ -218,6 +220,9 @@ extension OTPViewController{
     
     func showAlert(_ message:String){
         let alertController = UIAlertController()
+        if #available(iOS 13, *){
+            self.addChild(alertController)
+        }
         alertController.simpAler(title: APPLICATION_NAME, message: message, isOkButton: true, isCancelButton: false, okButtonText: OK_TEXT, cancelbuttonText: nil, preferredStyle: .alert)
     }
 }

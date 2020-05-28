@@ -102,8 +102,28 @@ class NormalCell: UITableViewCell {
     @IBOutlet weak var eventDescriptionLabel: UILabel!
     
     
+    @IBOutlet weak var buttonArrow: UIButton!
+    @IBAction func dropDownButton(_ sender: UIButton) {
+        touchDelegate.touchInitiated(row: sender.tag)
+    }
+    @IBOutlet weak var expandedView: UIView!
+    @IBOutlet weak var expandedViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addressPriceStackHeight: NSLayoutConstraint!
+    @IBOutlet weak var contactStackViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var registerButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var eventDecriptiionHeight: NSLayoutConstraint!
+    
+    var touchDelegate : TableViewTouchDelegate!
+    
+    @objc func touches(_ sender: Int) {
+        touchDelegate.touchInitiated(row: sender )
+    }
+    
     @IBAction func buttonRegister(_ sender: Any) {
     }
+    
+    
     @IBOutlet weak open var buttonEventsPrevious: UIButton!
     @IBOutlet weak open var buttonEventsUpcoming: UIButton!
     
@@ -119,19 +139,13 @@ class NormalCell: UITableViewCell {
         buttonEventsUpcoming.backgroundColor = UIColor(red: 13  / 255, green: 158 / 255, blue: 59 / 255, alpha: 1)
     }
     
-}
-
-
-class ExpandableCell2: ExpandableCell {
     
-//    meetings
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-//    override func awakeFromNib() {
-//    }
-    static let ID = "ExpandableCell"
+    // eventsExpanded Row
+       static let ID4 = "NormalCell4"
+    
+    
 }
+
 
 class ExpandableCell3 : ExpandableCell{
     //    events
@@ -168,4 +182,5 @@ class ExpandedCell: UITableViewCell {
     }
     //    events
     static let ID1 = "ExpandedCell1"
+    
 }

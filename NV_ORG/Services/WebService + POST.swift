@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AFNetworking
 
 extension Webservice{
 
@@ -332,5 +333,191 @@ extension Webservice{
             task.resume()
         }catch{
         }
+    }
+    
+//MARK:- ISATTENDING{
+    func isAttending(body : Dictionary<String,Any>,completionBlock : @escaping(MeetingAttendingResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + MEETINGS_ATTENDING_URL)
+        do {
+            let request  = getRequest(url: url!, method: .post, auth: true, accept: .json, Content_Type: .json, body: body)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(MeetingAttendingResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
+    
+    //MARK:- INewsDetails
+    func newsDetails(body : Dictionary<String,Any>,completionBlock : @escaping(NewsDetailsResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + NEWS_DETAILS_URL)
+        do {
+            let request  = getRequest(url: url!, method: .post, auth: true, accept: .json, Content_Type: .json, body: body)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(NewsDetailsResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
+    
+    //MARK:- INewsDetails
+    func directorySearch(body : Dictionary<String,Any>,completionBlock : @escaping(DirectoryListResponseModel?,String?) -> ()){
+        let url = URL(string : BASE_URL + DIRECTORY_SEARCH_URL)
+        do {
+            let request  = getRequest(url: url!, method: .post, auth: true, accept: .json, Content_Type: .json, body: body)
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let error = error{
+                        debugPrint(error.localizedDescription)
+                        completionBlock(nil, "internet error")
+                    }else if let data = data{
+                        let user = try? jsonDecoder.decode(DirectoryListResponseModel.self,from: data)
+                        if user?.data != nil{
+                            if  (user?.code)! == 200{
+                                completionBlock(user, nil)
+                            }else{
+                                completionBlock(nil, user?.message)
+                            }
+                        }else{
+                            completionBlock(nil,"internet error")
+                        }
+                    }
+                }catch{
+                }
+            }
+            task.resume()
+        }catch{
+        }
+    }
+    
+    // MARK:- File upload
+    
+    func profileImageUpload(files: String,uploadDictionary:Dictionary<String,String>,filename :String,mimeType:String,imagedata:Data,CompletionBlock:@escaping(Bool,String?,ProfileUploadResponseModel?)-> Void){
+        // do coding for file upload types { video,audio,image,file }
+//        let url = URL(string: "\(BASE_URL + PROFILE_EDIT_URL)")
+//        let manager = AFHTTPSessionManager()
+        var Timestamp: String {
+            return "\(NSDate().timeIntervalSince1970 * 1000)"
+        }
+        var r  = URLRequest(url: URL(string: "\(BASE_URL + PROFILE_EDIT_URL)")!)
+        r.httpMethod = "POST"
+        r.setValue("application/json",forHTTPHeaderField: "Accept")
+        let boundary = "Boundary-\(UUID().uuidString)"
+        r.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        r.httpBody = createBody(key: files, parameters: uploadDictionary, boundary: boundary,
+                                data:imagedata,
+                                mimeType: mimeType,
+                                filename: filename)
+        r.setValue("\(String(describing:UserDefaults.standard.value(forKey: "token_type")!)) \(String(describing:UserDefaults.standard.value(forKey: "token")!))", forHTTPHeaderField: "Authorization")
+        URLSession.shared.dataTask(with: r) {
+            (data: Data?, response: URLResponse?, error: Error?) in
+            if (error as NSError?)?.code == -1005 {
+                DispatchQueue.global(qos: .default).async(execute: {() -> Void in
+                    let downloadGroup = DispatchGroup()
+                    downloadGroup.enter()
+                    _ = downloadGroup.wait(timeout: DispatchTime.now() + 5.0)
+                    // Wait 5 seconds before trying again.
+                    downloadGroup.leave()
+                    DispatchQueue.main.async(execute: {() -> Void in
+                        //Main Queue stuff here
+                        
+                    })
+                })
+                return
+            }
+            DispatchQueue.main.async {
+                let jsonDecoder = JSONDecoder()
+                do{
+                    if let _ = data{
+                        let responseModel = try jsonDecoder.decode(ProfileUploadResponseModel.self, from: data!)
+                        if responseModel.code != 200{
+                            CompletionBlock(true,String(data: data!, encoding: .utf8)!,nil)
+                        }else{
+                            CompletionBlock(true,nil,responseModel)
+                        }
+                    }else{
+                        CompletionBlock(false,"error",nil)
+                    }
+
+                }catch{
+                    CompletionBlock(false,"error",nil)
+                }
+            }
+            
+        }.resume()
+        
+    }
+    
+    //MARK:- multipart form
+       
+    func createBody(key : String,parameters: [String: String],
+                       boundary: String,
+                       data: Data,
+                       mimeType: String,
+                       filename: String) -> Data {
+           let body = NSMutableData()
+           let boundaryPrefix = "--\(boundary)\r\n"
+           
+//           for (key, value) in parameters {
+//               body.appendString(boundaryPrefix)
+//               body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+//               body.appendString("\(value)\r\n")
+//           }
+           
+           body.appendString(boundaryPrefix)
+           body.appendString("Content-Disposition: form-data; name=\"\(key)\"; filename=\"\(filename)\"\r\n")
+           body.appendString("Content-Type: \(mimeType)\r\n\r\n")
+           body.append(data)
+           body.appendString("\r\n")
+           body.appendString("--".appending(boundary.appending("--")))
+           
+           return body as Data
+       }
+       
+}
+
+
+extension NSMutableData {
+    func appendString(_ string: String) {
+        let data = string.data(using: String.Encoding.utf8, allowLossyConversion: false)
+        append(data!)
     }
 }

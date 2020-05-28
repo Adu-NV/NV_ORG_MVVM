@@ -33,22 +33,16 @@ extension EmailVerificationViewModel: EmailCheckDelegateProtocol{
             let email =  storyboardValue.instantiateViewController(withIdentifier: "EmailOTPViewController") as! EmailOTPViewController
             email.email = otp
             if #available(iOS 13.0, *) {
-                viewController.navigationController?.pushViewController(email, animated: false)
+                email.modalPresentationStyle = .fullScreen
+                viewController.present(email, animated: true)
             }else{
                 viewController.present(email, animated: false, completion: nil)
             }
         }
-       debugPrint("reset OTP Page")
     }
     
     func backButtontapped(view: UIViewController) {
-        if #available(iOS 13.0, *) {
-            if let navController = view.navigationController {
-                navController.popViewController(animated: true)
-            }
-        }else{
-            view.dismiss(animated: false, completion: nil)
-        }
+        view.dismiss(animated: false, completion: nil)
     }
     
 

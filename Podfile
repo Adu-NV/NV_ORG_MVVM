@@ -10,6 +10,7 @@ target 'NV_ORG' do
   pod 'DropDown', '2.3.2'
   pod 'ExpandableCell'
   pod 'FSCalendar'
+  pod 'AFNetworking'
   # Pods for NV_ORG
   
   target 'NV_ORGTests' do

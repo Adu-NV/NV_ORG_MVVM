@@ -105,6 +105,9 @@
 		E4B92C5724644546004B7EF7 /* JobDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B92C5624644546004B7EF7 /* JobDetailResponseModel.swift */; };
 		E4BB3E7E246BC679000052C6 /* String + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB3E7D246BC679000052C6 /* String + extensions.swift */; };
 		E4BB3E80246BCD7E000052C6 /* EventDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BB3E7F246BCD7E000052C6 /* EventDetailResponseModel.swift */; };
+		E4BBA7AF246DA5C100246564 /* NewsListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BBA7AE246DA5C100246564 /* NewsListResponseModel.swift */; };
+		E4BE2D48246D0F2000E1C511 /* MeetingAttendingResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE2D47246D0F2000E1C511 /* MeetingAttendingResponseModel.swift */; };
+		E4BE2D4A246D3B3000E1C511 /* NewsDetailsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE2D49246D3B3000E1C511 /* NewsDetailsResponseModel.swift */; };
 		E4C6EE7F2462AE75009B4EDF /* GalleryListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6EE7E2462AE74009B4EDF /* GalleryListResponseModel.swift */; };
 		E4C6EE822462CEE4009B4EDF /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6EE812462CEE3009B4EDF /* URLViewController.swift */; };
 		E4C6EE842462DB2B009B4EDF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C6EE832462DB2B009B4EDF /* WebKit.framework */; };
@@ -128,6 +131,9 @@
 		E4CC775A246122FB00BFD92E /* JobsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC7759246122FB00BFD92E /* JobsDetailViewController.swift */; };
 		E4CC775C2461235100BFD92E /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC775B2461235100BFD92E /* NewsDetailViewController.swift */; };
 		E4CC775E246123A600BFD92E /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC775D246123A600BFD92E /* EventsViewController.swift */; };
+		E4FBE450246C317100827D3A /* ProfileUpdateReqquestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FBE44F246C317100827D3A /* ProfileUpdateReqquestModel.swift */; };
+		E4FBE452246C355800827D3A /* ProfileUpdateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FBE451246C355800827D3A /* ProfileUpdateResponseModel.swift */; };
+		E4FBE454246C468D00827D3A /* UIDateFormatter + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FBE453246C468D00827D3A /* UIDateFormatter + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -257,6 +263,9 @@
 		E4B92C5624644546004B7EF7 /* JobDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailResponseModel.swift; sourceTree = "<group>"; };
 		E4BB3E7D246BC679000052C6 /* String + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extensions.swift"; sourceTree = "<group>"; };
 		E4BB3E7F246BCD7E000052C6 /* EventDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailResponseModel.swift; sourceTree = "<group>"; };
+		E4BBA7AE246DA5C100246564 /* NewsListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListResponseModel.swift; sourceTree = "<group>"; };
+		E4BE2D47246D0F2000E1C511 /* MeetingAttendingResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingAttendingResponseModel.swift; sourceTree = "<group>"; };
+		E4BE2D49246D3B3000E1C511 /* NewsDetailsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsResponseModel.swift; sourceTree = "<group>"; };
 		E4C6EE7E2462AE74009B4EDF /* GalleryListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListResponseModel.swift; sourceTree = "<group>"; };
 		E4C6EE812462CEE3009B4EDF /* URLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLViewController.swift; sourceTree = "<group>"; };
 		E4C6EE832462DB2B009B4EDF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -280,6 +289,9 @@
 		E4CC7759246122FB00BFD92E /* JobsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsDetailViewController.swift; sourceTree = "<group>"; };
 		E4CC775B2461235100BFD92E /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		E4CC775D246123A600BFD92E /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		E4FBE44F246C317100827D3A /* ProfileUpdateReqquestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateReqquestModel.swift; sourceTree = "<group>"; };
+		E4FBE451246C355800827D3A /* ProfileUpdateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateResponseModel.swift; sourceTree = "<group>"; };
+		E4FBE453246C468D00827D3A /* UIDateFormatter + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDateFormatter + Extension.swift"; sourceTree = "<group>"; };
 		E8BB90CDEEA90F2D829A314A /* Pods_NV_ORGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NV_ORGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6900CB279A46063597E3D09 /* Pods-NV_ORG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NV_ORG.release.xcconfig"; path = "Target Support Files/Pods-NV_ORG/Pods-NV_ORG.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -523,6 +535,7 @@
 				E44FB51B242DC733001D9E3C /* ChangePasswordRequestModel.swift */,
 				E4B92C5424642093004B7EF7 /* JobListRequestModel.swift */,
 				E4AB5CAA246572BF00BF734C /* DirectoryProfileRequestModel.swift */,
+				E4FBE44F246C317100827D3A /* ProfileUpdateReqquestModel.swift */,
 			);
 			path = RequestModel;
 			sourceTree = "<group>";
@@ -569,6 +582,7 @@
 				E4C7F0CE242243FB0072E54B /* LineTextField.swift */,
 				E4C9CA572452FA0B0005E07A /* extensions + UICollectionViewCels.swift */,
 				E4BB3E7D246BC679000052C6 /* String + extensions.swift */,
+				E4FBE453246C468D00827D3A /* UIDateFormatter + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -665,6 +679,10 @@
 				E46A406A2467F970001EB14C /* JobTypeResponseModel.swift */,
 				E4A931EF2469699E00D557C6 /* MeetingsDetailsResponseModel.swift */,
 				E4BB3E7F246BCD7E000052C6 /* EventDetailResponseModel.swift */,
+				E4FBE451246C355800827D3A /* ProfileUpdateResponseModel.swift */,
+				E4BE2D47246D0F2000E1C511 /* MeetingAttendingResponseModel.swift */,
+				E4BE2D49246D3B3000E1C511 /* NewsDetailsResponseModel.swift */,
+				E4BBA7AE246DA5C100246564 /* NewsListResponseModel.swift */,
 			);
 			path = ResponseModel;
 			sourceTree = "<group>";
@@ -955,7 +973,9 @@
 				E4A62C8A2466CE8700961513 /* Reachability.swift in Sources */,
 				E4383E5E242F1E370032A6AD /* MainTabBar.swift in Sources */,
 				E437726F243DA5FE00C9FE25 /* DashBoardFeedResponseModel.swift in Sources */,
+				E4BE2D4A246D3B3000E1C511 /* NewsDetailsResponseModel.swift in Sources */,
 				E44FB518242DC6CC001D9E3C /* ChangePasswordViewController.swift in Sources */,
+				E4FBE452246C355800827D3A /* ProfileUpdateResponseModel.swift in Sources */,
 				E4A38DB7242361340023CB6D /* OTPResendRequestModel.swift in Sources */,
 				E4B033E52420E177007F9098 /* Definitions + Constants.swift in Sources */,
 				E4B033E92420E2D3007F9098 /* UIButton + Extension.swift in Sources */,
@@ -970,6 +990,7 @@
 				E4A38DC1242389490023CB6D /* EmailVerificationResponseModel.swift in Sources */,
 				E4383E56242F14BB0032A6AD /* DashBoardViewController.swift in Sources */,
 				E4AA654724248F8200B29271 /* ResetPasswordViewController.swift in Sources */,
+				E4FBE450246C317100827D3A /* ProfileUpdateReqquestModel.swift in Sources */,
 				E475FEA624584244004BCEA6 /* DirectoryListResponseModel.swift in Sources */,
 				E4347B40243303A70097920B /* PrivacyPolicyViewModel.swift in Sources */,
 				E4AB5CA72465703600BF734C /* DirectoryProfileViewController.swift in Sources */,
@@ -997,10 +1018,12 @@
 				E4BB3E80246BCD7E000052C6 /* EventDetailResponseModel.swift in Sources */,
 				E4A16B5E24595E040024C4D3 /* DirectoryFilterViewController.swift in Sources */,
 				E4A4AE84245A94810045C5A1 /* DirectoryFilterViewModel.swift in Sources */,
+				E4BE2D48246D0F2000E1C511 /* MeetingAttendingResponseModel.swift in Sources */,
 				E4B92C5724644546004B7EF7 /* JobDetailResponseModel.swift in Sources */,
 				E4B92C5124640DEC004B7EF7 /* ERProgressHud.swift in Sources */,
 				E4A38DC3242394F90023CB6D /* EmailOTPViewController.swift in Sources */,
 				E4AA65432424790B00B29271 /* ResetOTPViewModel.swift in Sources */,
+				E4BBA7AF246DA5C100246564 /* NewsListResponseModel.swift in Sources */,
 				E4CBE4AF245FDF7500EA7F0A /* GalleryVideoViewController.swift in Sources */,
 				E43A6EAD2441CF9100C97FAC /* NewsListPageResponseModel.swift in Sources */,
 				E4AA654524248F4800B29271 /* ResetPasswordViewModel.swift in Sources */,
@@ -1015,6 +1038,7 @@
 				E4B03359242088C7007F9098 /* SceneDelegate.swift in Sources */,
 				E4CC775A246122FB00BFD92E /* JobsDetailViewController.swift in Sources */,
 				E4A931F02469699F00D557C6 /* MeetingsDetailsResponseModel.swift in Sources */,
+				E4FBE454246C468D00827D3A /* UIDateFormatter + Extension.swift in Sources */,
 				E4383E60242F52F90032A6AD /* MenuViewController.swift in Sources */,
 				E4347B4A243346BC0097920B /* LeaderShipViewModel.swift in Sources */,
 				E4C9CA582452FA0B0005E07A /* extensions + UICollectionViewCels.swift in Sources */,
@@ -1194,6 +1218,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LQWZN799NJ;
 				INFOPLIST_FILE = NV_ORG/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -1214,6 +1239,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LQWZN799NJ;
 				INFOPLIST_FILE = NV_ORG/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;

@@ -14,13 +14,7 @@ class EditProfileViewController: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func buttonBackTapped(_ sender: Any) {
-        if #available(iOS 13.0, *) {
-            if let navController = self.navigationController {
-                navController.popViewController(animated: true)
-            }
-        }else{
-            self.dismiss(animated: false, completion: nil)
-        }
+        self.dismiss(animated: false, completion: nil)
     }
 }
 
